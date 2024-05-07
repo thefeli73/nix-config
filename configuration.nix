@@ -134,6 +134,7 @@
     gnupg
     ncdu
     whois
+    nodejs_20
     # PROGRAMS
     obsidian
     sparrow
