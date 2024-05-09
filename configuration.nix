@@ -134,6 +134,7 @@
     gnupg
     ncdu
     whois
+    dig
     nodejs_20
     # PROGRAMS
     obsidian
@@ -158,6 +159,9 @@
 
   # enable git
   programs.git.enable = true;
+
+  # SSH settings
+  programs.ssh.extraConfig = "";
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
