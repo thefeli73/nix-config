@@ -140,6 +140,7 @@
     obsidian
     sparrow
     tor-browser
+    ungoogled-chromium
     steam
     prismlauncher
     gitkraken
