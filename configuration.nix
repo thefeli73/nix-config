@@ -149,6 +149,7 @@
     vscodium-fhs
     plexamp
     mission-center
+    inkscape
   ];
 
   nixpkgs.config.permittedInsecurePackages = [
