@@ -150,6 +150,7 @@
     plexamp
     mission-center
     inkscape
+    remmina
   ];
 
   nixpkgs.config.permittedInsecurePackages = [
