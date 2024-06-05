@@ -161,7 +161,10 @@
   programs.firejail.enable = true;
 
   # enable git
-  programs.git.enable = true;
+  programs.git = {
+    enable = true;
+    lfs.enable = true;
+  };
 
   # SSH settings
   programs.ssh.extraConfig = "";
