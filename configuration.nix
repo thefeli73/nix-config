@@ -65,11 +65,11 @@
   services.xserver.desktopManager.gnome.enable = true;
 
   # Configure keymap in X11
-  services.xserver = {
+  services.xserver.xkb = {
     layout = "se";
-    xkbVariant = "";
+    variant = "";
   };
-
+  
   # Configure console keymap
   console.keyMap = "sv-latin1";
 
