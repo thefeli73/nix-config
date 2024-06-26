@@ -136,6 +136,7 @@
     whois
     dig
     nodejs_20
+    lact
     # PROGRAMS
     obsidian
     sparrow
@@ -208,5 +209,15 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "23.11"; # Did you read the comment?
-
+  
+  # Systemd services
+  systemd.services.lact = {
+    description = "AMDGPU Control Daemon";
+    after = ["multi-user.target"];
+    wantedBy = ["multi-user.target"];
+    serviceConfig = {
+      ExecStart = "${pkgs.lact}/bin/lact daemon";
+    };
+    enable = true;
+  };
 }
