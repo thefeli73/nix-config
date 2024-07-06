@@ -22,6 +22,10 @@
   system.autoUpgrade.enable = true;
   system.autoUpgrade.allowReboot = true;
   
+
+  # Graphics
+  hardware.opengl.enable = true;
+
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
@@ -137,6 +141,7 @@
     dig
     nodejs_20
     lact
+    glxinfo
     # PROGRAMS
     obsidian
     sparrow
