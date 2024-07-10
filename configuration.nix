@@ -142,6 +142,11 @@
     nodejs_20
     lact
     glxinfo
+    # Buildtools
+    python3
+    gnumake
+    gcc
+    libgcc
     # PROGRAMS
     obsidian
     sparrow
