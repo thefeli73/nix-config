@@ -23,8 +23,12 @@
   system.autoUpgrade.allowReboot = true;
   
 
-  # Graphics
-  hardware.opengl.enable = true;
+  hardware = {
+    xone.enable = true;
+    xpadneo.enable = true;
+    steam-hardware.enable = true;
+    opengl.enable = true;
+  };
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
@@ -74,6 +78,7 @@
     variant = "";
   };
   
+
   # Configure console keymap
   console.keyMap = "sv-latin1";
 
@@ -142,6 +147,8 @@
     nodejs_20
     lact
     glxinfo
+    # Controller
+    linuxConsoleTools
     # Buildtools
     python3
     gnumake
