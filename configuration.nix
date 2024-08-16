@@ -147,6 +147,7 @@
     nodejs_20
     lact
     glxinfo
+    jdk
     # Controller
     linuxConsoleTools
     # Buildtools
