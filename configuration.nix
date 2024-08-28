@@ -148,6 +148,8 @@
     lact
     glxinfo
     jdk
+    cypress
+    jq
     # Controller
     linuxConsoleTools
     # Buildtools
