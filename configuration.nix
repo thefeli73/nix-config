@@ -159,7 +159,7 @@
     libgcc
     # PROGRAMS
     obsidian
-    sparrow
+    wasabiwallet
     tor-browser
     ungoogled-chromium
     steam
