@@ -109,7 +109,7 @@
   users.users.schulze = {
     isNormalUser = true;
     description = "Felix Schulze";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" ];
     packages = with pkgs; [
       firefox
       thunderbird
@@ -186,6 +186,9 @@
     enable = true;
     lfs.enable = true;
   };
+  
+  # enable and configure Docker
+  virtualisation.docker.enable = true;
 
   # SSH settings
   programs.ssh.extraConfig = "";
