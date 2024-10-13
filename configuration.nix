@@ -172,6 +172,8 @@
     mission-center
     inkscape
     remmina
+    krita
+    darktable
   ];
 
   nixpkgs.config.permittedInsecurePackages = [
