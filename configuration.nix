@@ -24,8 +24,8 @@
   
 
   hardware = {
-    xone.enable = true;
-    xpadneo.enable = true;
+    #xone.enable = true;
+    #xpadneo.enable = true;
     steam-hardware.enable = true;
     opengl.enable = true;
   };
@@ -40,7 +40,7 @@
   # Network security 
   # enable firewall and block all ports
   networking.firewall.enable = true;
-  networking.firewall.allowedTCPPorts = [];
+  networking.firewall.allowedTCPPorts = [7777];
   networking.firewall.allowedUDPPorts = [];
 
   # disable coredump that could be exploited later
@@ -150,6 +150,7 @@
     jdk
     cypress
     jq
+    swtpm
     # Controller
     linuxConsoleTools
     # Buildtools
@@ -174,6 +175,7 @@
     remmina
     krita
     darktable
+    kdePackages.kleopatra
   ];
 
   nixpkgs.config.permittedInsecurePackages = [
@@ -191,6 +193,22 @@
   
   # enable and configure Docker
   virtualisation.docker.enable = true;
+
+  # enable VMs
+  programs.virt-manager.enable = true;
+  users.groups.libvirtd.members = ["schulze"];
+  virtualisation = {
+    libvirtd = {
+      enable = true;
+      qemu = {
+        swtpm.enable = true;
+        ovmf.enable = true;
+        ovmf.packages = [ pkgs.OVMFFull.fd ];
+        # package = pkgs.qemu_kvm;
+      };
+    };
+    spiceUSBRedirection.enable = true;
+  };
 
   # SSH settings
   programs.ssh.extraConfig = "";
