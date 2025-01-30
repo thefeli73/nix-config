@@ -14,6 +14,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   boot.initrd.luks.devices."luks-1728f038-43a6-4e0d-b7dd-19a4c1083605".device = "/dev/disk/by-uuid/1728f038-43a6-4e0d-b7dd-19a4c1083605";
+  boot.initrd.kernelModules = [ "amdgpu" ];
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   networking.hostName = "wildfire"; # Define your hostname.
@@ -28,6 +29,10 @@
     #xpadneo.enable = true;
     steam-hardware.enable = true;
     opengl.enable = true;
+    opengl.extraPackages = with pkgs; [
+      amdvlk
+      rocm-opencl-icd
+    ];
   };
 
   # Configure network proxy if necessary
@@ -151,6 +156,7 @@
     cypress
     jq
     swtpm
+    openssl
     # Controller
     linuxConsoleTools
     # Buildtools
