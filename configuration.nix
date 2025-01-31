@@ -30,7 +30,6 @@
     steam-hardware.enable = true;
     opengl.enable = true;
     opengl.extraPackages = with pkgs; [
-      amdvlk
       rocm-opencl-icd
     ];
   };
