@@ -28,10 +28,7 @@
     #xone.enable = true;
     #xpadneo.enable = true;
     steam-hardware.enable = true;
-    opengl.enable = true;
-    opengl.extraPackages = with pkgs; [
-      rocm-opencl-icd
-    ];
+    graphics.enable = true;
   };
 
   # Configure network proxy if necessary
@@ -90,7 +87,6 @@
   services.printing.enable = true;
 
   # Enable sound with pipewire.
-  sound.enable = true;
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
