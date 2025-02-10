@@ -152,6 +152,7 @@
     jq
     swtpm
     openssl
+    imagemagick
     # Controller
     linuxConsoleTools
     # Buildtools
@@ -159,6 +160,7 @@
     gnumake
     gcc
     libgcc
+    hugo
     # PROGRAMS
     obsidian
     wasabiwallet
