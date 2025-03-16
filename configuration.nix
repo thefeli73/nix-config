@@ -181,8 +181,8 @@
     kdePackages.kleopatra
   ];
 
-  nixpkgs.config.permittedInsecurePackages = [
-    (pkgs.obsidian.version == "1.4.16") "electron-25.9.0"
+  fonts.packages = with pkgs; [
+    intel-one-mono
   ];
 
   # enable firejail
