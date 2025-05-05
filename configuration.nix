@@ -179,6 +179,7 @@
     krita
     darktable
     kdePackages.kleopatra
+    code-cursor
   ];
 
   fonts.packages = with pkgs; [
