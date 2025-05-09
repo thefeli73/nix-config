@@ -144,7 +144,7 @@
     ncdu
     whois
     dig
-    nodejs_20
+    nodejs_22
     lact
     glxinfo
     jdk
