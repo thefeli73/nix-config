@@ -180,6 +180,7 @@
     darktable
     kdePackages.kleopatra
     code-cursor
+    multiviewer-for-f1
   ];
 
   fonts.packages = with pkgs; [
