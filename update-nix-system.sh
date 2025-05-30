@@ -1,3 +1,7 @@
 #!/bin/bash
-sudo nix flake update /etc/nixos
-sudo nixos-rebuild switch --flake /etc/nixos/#default
+
+# Update the system
+sudo nix flake update ./
+
+# Rebuild the system
+./rebuild-nix-system.sh
