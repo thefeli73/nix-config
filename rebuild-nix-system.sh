@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# First, run a check to see if the flake is valid
+nix flake check
+
 # Rebuild the system
 sudo nixos-rebuild switch --flake ./#default
 
