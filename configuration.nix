@@ -138,7 +138,6 @@
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
     unzip
-    htop
     pciutils
     gnupg
     ncdu
@@ -171,7 +170,6 @@
     gitkraken
     nextcloud-client
     libreoffice-fresh
-    vscodium-fhs
     plexamp
     mission-center
     inkscape
