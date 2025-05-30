@@ -4,4 +4,4 @@
 sudo nix flake update 
 
 # Rebuild the system
-./rebuild-nix-system.sh
+. rebuild-nix-system.sh
