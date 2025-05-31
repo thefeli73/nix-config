@@ -161,6 +161,7 @@
     swtpm
     openssl
     imagemagick
+    git-filter-repo
     # Controller
     linuxConsoleTools
     # Buildtools
