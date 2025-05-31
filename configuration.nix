@@ -128,8 +128,7 @@
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-  # Enable Flatpack
-  services.flatpak.enable = true;
+  
   # Enable Flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
