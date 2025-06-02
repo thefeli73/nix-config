@@ -152,6 +152,7 @@
     whois
     dig
     nodejs_22
+    pnpm
     lact
     glxinfo
     jdk
