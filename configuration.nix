@@ -119,6 +119,7 @@
     isNormalUser = true;
     description = "Felix Schulze";
     extraGroups = [ "networkmanager" "wheel" "docker" ];
+    shell = pkgs.fish;
     packages = with pkgs; [
       firefox
       thunderbird
@@ -194,6 +195,8 @@
   fonts.packages = with pkgs; [
     intel-one-mono
   ];
+
+  programs.fish.enable = true;
 
   # enable firejail
   programs.firejail.enable = true;
