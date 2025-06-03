@@ -25,13 +25,22 @@ else
     fi
 fi
 
-echo "Building configuration for host: $NIXOS_HOST"
+# Shows your changes
+git diff -U0 '*.nix'
+
+echo "NixOS Rebuilding configuration for host: $NIXOS_HOST..."
 
 # First, run a check to see if the flake is valid
 nix flake check
 
 # Rebuild the system
-sudo nixos-rebuild switch --flake ./#$NIXOS_HOST
+sudo nixos-rebuild switch --flake ./#$NIXOS_HOST &>nixos-switch.log || (cat nixos-switch.log | grep --color error && exit 1)
+
+# Get current generation metadata
+current=$(nixos-rebuild list-generations | grep current)
+
+# Commit all changes witih the generation metadata
+git commit -am "$current"
 
 # Clean up old generations older than 180 days
 sudo nix-collect-garbage --delete-older-than 180d 
