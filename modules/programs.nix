@@ -49,7 +49,6 @@
     ungoogled-chromium
     prismlauncher
     plexamp
-    mission-center
     remmina
 
     # Visual
