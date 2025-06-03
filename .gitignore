@@ -2,4 +2,4 @@
 .env
 
 # Logs
-nixos-switch.log
+logs/
