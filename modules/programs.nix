@@ -63,7 +63,10 @@
 
   programs = {
     # CLI
-    zoxide.enable = true;
+    zoxide = {
+      enable = true;
+      flags = ["--cmd cd"];
+    };
     fish.enable = true;
     vim = {
       enable = true;
