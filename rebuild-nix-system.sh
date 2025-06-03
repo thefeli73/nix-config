@@ -28,7 +28,7 @@ fi
 # Early return if no changes were detected
 if git diff --quiet '*.nix'; then
     echo "No changes detected, exiting."
-    exit 0
+    # exit 0
 fi
 
 # Autoformat your nix files
