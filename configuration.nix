@@ -176,7 +176,6 @@
     wasabiwallet
     tor-browser
     ungoogled-chromium
-    steam
     prismlauncher
     gitkraken
     nextcloud-client
