@@ -40,6 +40,7 @@
     libgcc
 
     # Common programs
+    ghostty
     obsidian
     nextcloud-client
     multiviewer-for-f1
