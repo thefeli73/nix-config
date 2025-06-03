@@ -92,7 +92,6 @@
   # enable VMs
   programs.virt-manager.enable = true;
   virtualisation = {
-    tmp.enable = true;
     libvirtd = {
       enable = true;
       qemu = {
