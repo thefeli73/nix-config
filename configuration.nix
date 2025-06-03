@@ -120,10 +120,6 @@
     description = "Felix Schulze";
     extraGroups = [ "networkmanager" "wheel" "docker" ];
     shell = pkgs.fish;
-    packages = with pkgs; [
-      firefox
-      bitcoin
-    ];
   };
 
   # Allow unfree packages
@@ -193,6 +189,8 @@
   fonts.packages = with pkgs; [
     intel-one-mono
   ];
+
+  programs.firefox.enable = true;
 
   programs.thunderbird.enable = true;
 
