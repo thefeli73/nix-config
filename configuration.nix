@@ -122,7 +122,6 @@
     shell = pkgs.fish;
     packages = with pkgs; [
       firefox
-      thunderbird
       bitcoin
     ];
   };
@@ -194,6 +193,8 @@
   fonts.packages = with pkgs; [
     intel-one-mono
   ];
+
+  programs.thunderbird.enable = true;
 
   programs.fish.enable = true;
 
