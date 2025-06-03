@@ -22,6 +22,7 @@
     pciutils
     glxinfo
     btop
+    alejandra
 
     # Development
     code-cursor
