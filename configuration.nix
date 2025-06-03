@@ -139,7 +139,6 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     # TOOLS
-    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
     unzip
     pciutils
@@ -189,6 +188,13 @@
   fonts.packages = with pkgs; [
     intel-one-mono
   ];
+
+  programs.zoxide.enable = true;
+
+  programs.vim = {
+    enable = true;
+    defaultEditor = true;
+  }
 
   programs.firefox.enable = true;
 
