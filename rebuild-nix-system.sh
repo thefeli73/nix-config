@@ -28,7 +28,6 @@ fi
 # Early return if no changes were detected
 if git diff --quiet '*.nix'; then
     echo "No changes detected, exiting."
-    popd
     exit 0
 fi
 
@@ -45,7 +44,7 @@ echo "NixOS Rebuilding configuration for host: $NIXOS_HOST..."
 nix flake check
 
 # Rebuild the system
-sudo nixos-rebuild switch --flake ./#$NIXOS_HOST &>nixos-switch.log || (cat nixos-switch.log | grep --color error && exit 1)
+sudo nixos-rebuild switch --flake ./#$NIXOS_HOST &>logs/nixos-switch.log || (cat logs/nixos-switch.log | grep --color error && exit 1)
 
 # Get current generation metadata
 current=$(nixos-rebuild list-generations | grep current)
@@ -54,6 +53,6 @@ current=$(nixos-rebuild list-generations | grep current)
 git commit -am "$current"
 
 # Clean up old generations older than 180 days
-sudo nix-collect-garbage --delete-older-than 180d 
+sudo nix-collect-garbage --delete-older-than 180d &>logs/nixos-gc.log || (cat logs/nixos-gc.log | grep --color error && exit 1)
 
 
