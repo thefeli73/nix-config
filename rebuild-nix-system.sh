@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
 
+# Check for force flag
+FORCE_REBUILD=false
+if [[ "$1" == "-f" || "$1" == "--force" ]]; then
+    FORCE_REBUILD=true
+fi
+
 # Source .env file
 if [ -f ".env" ]; then
     source .env
@@ -25,8 +31,8 @@ else
     fi
 fi
 
-# Early return if no changes were detected
-if git diff --quiet '*.nix'; then
+# Early return if no changes were detected (unless forced)
+if [ "$FORCE_REBUILD" = false ] && git diff --quiet '*.nix'; then
     echo "No changes detected, exiting."
     exit 0
 fi
