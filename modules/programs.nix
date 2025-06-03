@@ -25,6 +25,7 @@
     glxinfo
     btop
     alejandra
+    fzf
 
     # Development
     code-cursor
