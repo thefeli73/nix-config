@@ -1,6 +1,9 @@
-{ config, pkgs, inputs, ... }:
-
 {
+  config,
+  pkgs,
+  inputs,
+  ...
+}: {
   imports = [
     ./desktop.nix
     ./users.nix
@@ -11,14 +14,14 @@
   boot = {
     loader.systemd-boot.enable = true;
     loader.efi.canTouchEfiVariables = true;
-    initrd.kernelModules = [ "amdgpu" ];
+    initrd.kernelModules = ["amdgpu"];
     kernelPackages = pkgs.linuxPackages_latest;
   };
 
   # Enable networking
   networking.networkmanager.enable = true;
 
-  # Network security 
+  # Network security
   # enable firewall and block all ports
   networking.firewall.enable = true;
 
@@ -62,9 +65,9 @@
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-  
+
   # Enable Flakes
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = ["nix-command" "flakes"];
 
   # Automatic system upgrades
   system.autoUpgrade = {
@@ -109,4 +112,4 @@
   # settings for stateful data, like file locations and database versions
   # on your system were taken.
   system.stateVersion = "23.11";
-} 
+}

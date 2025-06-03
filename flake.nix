@@ -10,11 +10,14 @@
     # };
   };
 
-  outputs = { self, nixpkgs }: {
+  outputs = {
+    self,
+    nixpkgs,
+  }: {
     nixosConfigurations = {
       wildfire = nixpkgs.lib.nixosSystem {
-        specialArgs = { inputs = self.inputs // { inherit self; }; };
-        modules = [ ./hosts/wildfire/configuration.nix ];
+        specialArgs = {inputs = self.inputs // {inherit self;};};
+        modules = [./hosts/wildfire/configuration.nix];
       };
     };
   };
