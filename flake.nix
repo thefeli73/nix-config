@@ -1,8 +1,8 @@
 {
-  description = "Nixos config flake";
+  description = "Felix's NixOS configurations";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
 
     # home-manager = {
     #   url = "github:nix-community/home-manager";
@@ -10,13 +10,12 @@
     # };
   };
 
-  outputs = { self, nixpkgs, ... }@inputs: {
-    nixosConfigurations.default = nixpkgs.lib.nixosSystem {
-      specialArgs = {inherit inputs;};
-      modules = [
-        ./configuration.nix
-        # inputs.home-manager.nixosModules.default
-      ];
+  outputs = { self, nixpkgs }: {
+    nixosConfigurations = {
+      wildfire = nixpkgs.lib.nixosSystem {
+        specialArgs = { inputs = self.inputs; };
+        modules = [ ./hosts/wildfire/configuration.nix ];
+      };
     };
   };
 }
