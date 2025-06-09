@@ -18,6 +18,9 @@
     gnupg
     openssl
     kdePackages.kleopatra
+    xdg-desktop-portal
+    xdg-desktop-portal-gtk
+    xdg-desktop-portal-gnome
 
     # cli tools
     jq
