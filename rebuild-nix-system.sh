@@ -34,7 +34,7 @@ else
 fi
 
 # Early return if no changes were detected (unless forced)
-if [ "$FORCE_REBUILD" = false ] && git diff --quiet '*.nix'; then
+if [ "$FORCE_REBUILD" = false ] && git diff --quiet '*.nix' && git diff --quiet 'flake.lock'; then
     echo "No changes detected, exiting."
     exit 0
 fi
