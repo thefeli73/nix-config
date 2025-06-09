@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -e
+
 # Check for force flag
 FORCE_REBUILD=false
 if [[ "$1" == "-f" || "$1" == "--force" ]]; then
