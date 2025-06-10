@@ -17,8 +17,4 @@
       variant = "";
     };
   };
-  environment.etc."xdg/xdg-desktop-portal/portals.conf".text = ''
-    [preferred]
-    default=gnome
-  '';
 }
