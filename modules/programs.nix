@@ -18,9 +18,6 @@
     gnupg
     openssl
     kdePackages.kleopatra
-    xdg-desktop-portal
-    xdg-desktop-portal-gtk
-    xdg-desktop-portal-gnome
 
     # cli tools
     jq
@@ -88,7 +85,9 @@
     java.enable = true;
 
     # programs
-    firefox.enable = true;
+    firefox = {
+      enable = true;
+    };
     thunderbird.enable = true;
     steam = {
       enable = true;

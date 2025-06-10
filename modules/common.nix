@@ -87,6 +87,11 @@
     intel-one-mono
   ];
 
+  # This improves touchscreen support and enables additional touchpad gestures. It also enables smooth scrolling as opposed to the stepped scrolling that Firefox has by default
+  environment.sessionVariables = {
+    MOZ_USE_XINPUT2 = "1";
+  };
+
   # create system-wide executables firefox and chromium
   # that will wrap the real binaries so everything work out of the box.
   # enable firejail
