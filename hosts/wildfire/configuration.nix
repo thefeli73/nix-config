@@ -7,6 +7,8 @@
   imports = [
     ./hardware-configuration.nix
     ../../modules/common.nix
+    ../../modules/desktops/gnome-desktop.nix
+    ../../modules/programs.nix
   ];
 
   # Encrypted drive
@@ -26,6 +28,11 @@
   # Wildfire-specific packages
   environment.systemPackages = with pkgs; [
     lact
+    multiviewer-for-f1
+    wasabiwallet
+    prismlauncher
+    davinci-resolve
+    ardour
   ];
 
   # Wildfire-specific Systemd services

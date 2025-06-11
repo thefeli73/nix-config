@@ -44,22 +44,17 @@
     ghostty
     obsidian
     nextcloud-client
-    multiviewer-for-f1
     libreoffice-fresh
     tor-browser
-    wasabiwallet
     ungoogled-chromium
-    prismlauncher
     plexamp
     remmina
 
-    # Audio/Visual
+    # Visual
     inkscape
     krita
     darktable
-    davinci-resolve
     imagemagick
-    ardour
   ];
 
   programs = {

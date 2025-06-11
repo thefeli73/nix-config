@@ -4,11 +4,17 @@
   inputs,
   ...
 }: {
-  imports = [
-    ./desktop.nix
-    ./users.nix
-    ./programs.nix
-  ];
+  
+  # Define the main user account
+  users = {
+    users.schulze = {
+      isNormalUser = true;
+      description = "Felix Schulze";
+      extraGroups = ["networkmanager" "wheel" "docker"];
+      shell = pkgs.fish;
+    };
+    groups.libvirtd.members = ["schulze"];
+  };
 
   # Bootloader.
   boot = {
@@ -18,12 +24,14 @@
     kernelPackages = pkgs.linuxPackages_latest;
   };
 
+  networking = {
   # Enable networking
-  networking.networkmanager.enable = true;
+    networkmanager.enable = true;
 
   # Network security
-  # enable firewall and block all ports
-  networking.firewall.enable = true;
+    # enable firewall and block all ports
+    firewall.enable = true;
+  };
 
   # disable coredump that could be exploited later
   # and also slow down the system when something crash
@@ -33,9 +41,10 @@
   time.timeZone = "Europe/Stockholm";
 
   # Select internationalisation properties.
-  i18n.defaultLocale = "en_GB.UTF-8";
+  i18n = {
+    defaultLocale = "en_GB.UTF-8";
 
-  i18n.extraLocaleSettings = {
+  extraLocaleSettings = {
     LC_ADDRESS = "sv_SE.UTF-8";
     LC_IDENTIFICATION = "sv_SE.UTF-8";
     LC_MEASUREMENT = "sv_SE.UTF-8";
@@ -45,6 +54,7 @@
     LC_PAPER = "sv_SE.UTF-8";
     LC_TELEPHONE = "sv_SE.UTF-8";
     LC_TIME = "sv_SE.UTF-8";
+  };
   };
 
   # Configure console keymap
@@ -110,8 +120,10 @@
   };
 
   # enable antivirus clamav and keep the signatures' database updated
-  services.clamav.daemon.enable = true;
-  services.clamav.updater.enable = true;
+  services.clamav = {
+    daemon.enable = true;
+    updater.enable = true;
+  };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
