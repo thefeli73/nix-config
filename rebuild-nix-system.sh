@@ -49,7 +49,7 @@ git diff -U0 '*.nix'
 echo "NixOS Rebuilding configuration for host: $NIXOS_HOST..."
 
 # First, run a check to see if the flake is valid
-nix flake check
+nix flake check 2>&1 | grep -i --color error && exit 1
 
 # Rebuild the system
 sudo nixos-rebuild switch --flake ./#$NIXOS_HOST &>logs/nixos-switch.log || (cat logs/nixos-switch.log | grep --color error && exit 1)

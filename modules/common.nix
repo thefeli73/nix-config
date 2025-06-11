@@ -41,7 +41,6 @@
   # Select internationalisation properties.
   i18n = {
     defaultLocale = "en_GB.UTF-8";
-
     extraLocaleSettings = {
       LC_ADDRESS = "sv_SE.UTF-8";
       LC_IDENTIFICATION = "sv_SE.UTF-8";
@@ -58,18 +57,31 @@
   # Configure console keymap
   console.keyMap = "sv-latin1";
 
-  # Enable CUPS to print documents.
-  services.printing.enable = false;
+  services = {
+    # Enable CUPS to print documents.
+    printing.enable = false;
 
-  # Enable sound with pipewire.
-  services.pulseaudio.enable = false;
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
+    # Enable sound with pipewire.
+    pulseaudio.enable = false;
+    pipewire = {
+      enable = true;
+      alsa.enable = true;
+      alsa.support32Bit = true;
+      pulse.enable = true;
+      wireplumber.enable = true;
+    };
+
+    # enable antivirus clamav and keep the signatures' database updated
+    clamav = {
+      daemon.enable = true;
+      updater.enable = true;
+    };
   };
+
+  # Realtime scheduling priority for audio
+  security.rtkit.enable = true;
+  # Polkit agent (authentication dialogs)
+  security.polkit.enable = true;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -93,6 +105,7 @@
   # Fonts
   fonts.packages = with pkgs; [
     intel-one-mono
+    noto-fonts
   ];
 
   # This improves touchscreen support and enables additional touchpad gestures. It also enables smooth scrolling as opposed to the stepped scrolling that Firefox has by default
@@ -111,16 +124,10 @@
         profile = "${pkgs.firejail}/etc/firejail/firefox.profile";
       };
       chromium = {
-        executable = "${pkgs.lib.getBin pkgs.chromium}/bin/chromium";
+        executable = "${pkgs.lib.getBin pkgs.ungoogled-chromium}/bin/chromium";
         profile = "${pkgs.firejail}/etc/firejail/chromium.profile";
       };
     };
-  };
-
-  # enable antivirus clamav and keep the signatures' database updated
-  services.clamav = {
-    daemon.enable = true;
-    updater.enable = true;
   };
 
   # This value determines the NixOS release from which the default

@@ -2,7 +2,7 @@
   imports = [
     ./hardware-configuration.nix
     ../../modules/common.nix
-    ../../modules/desktops/gnome-desktop.nix
+    ../../modules/desktops/hyprland-desktop.nix
     ../../modules/programs.nix
   ];
 
