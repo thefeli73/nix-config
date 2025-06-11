@@ -106,6 +106,7 @@
   fonts.packages = with pkgs; [
     intel-one-mono
     noto-fonts
+    noto-fonts-emoji
   ];
 
   # This improves touchscreen support and enables additional touchpad gestures. It also enables smooth scrolling as opposed to the stepped scrolling that Firefox has by default

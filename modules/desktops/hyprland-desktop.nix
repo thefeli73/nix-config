@@ -6,12 +6,12 @@
       displayManager.gdm.enable = false;
     };
 
-    # Greetd with tuigreet is lightweight and Wayland-native
+    # Greetd is lightweight and Wayland-native
     greetd = {
       enable = true;
       settings.default_session = {
-        command = "tuigreet --cmd Hyprland";
-        user = "greeter";
+        user = "schulze";
+        command = "$SHELL -l";
       };
     };
 
@@ -22,18 +22,26 @@
 
   # Hyprland is your new desktop
   programs.hyprland.enable = true;
-
-  programs.dconf.profiles.user.databases = [
-    {
-      settings."org/gnome/desktop/interface" = {
-        gtk-theme = "Gruvbox-Dark-B";
-        icon-theme = "Flat-Remix-Red-Dark";
-        font-name = "Noto Sans Medium 11";
-        document-font-name = "Noto Sans Medium 11";
-        monospace-font-name = "Intel One Mono Medium 11";
-      };
-    }
-  ];
+  programs.hyprland.withUWSM = true;
+  programs.regreet.enable = true;
+  programs.dconf = {
+    enable = true;
+    profiles.user.databases = [
+      {
+        settings."org/gnome/desktop/interface" = {
+          gtk-theme = "Gruvbox-Dark-B";
+          icon-theme = "Flat-Remix-Red-Dark";
+          font-name = "Noto Sans Medium 11";
+          document-font-name = "Noto Sans Medium 11";
+          monospace-font-name = "Intel One Mono Medium 11";
+        };
+      }
+    ];
+  };
+  xdg.portal = {
+    enable = true;
+    wlr.enable = true;
+  };
 
   environment.sessionVariables = {
     GTK_THEME = "Gruvbox-Dark-B"; # or whatever your installed variant is called
