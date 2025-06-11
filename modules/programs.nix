@@ -39,6 +39,7 @@
     gnumake
     gcc
     libgcc
+    nil
 
     # Common programs
     ghostty
