@@ -1,8 +1,4 @@
-{
-  config,
-  pkgs,
-  ...
-}: {
+{...}: {
   services.xserver = {
     # Enable the X11 windowing system (needed even for Wayland sessions)
     enable = true;

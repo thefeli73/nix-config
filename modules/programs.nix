@@ -1,8 +1,4 @@
-{
-  config,
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   # Common packages for ALL systems
   environment.systemPackages = with pkgs; [
     # networking
