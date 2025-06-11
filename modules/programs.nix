@@ -53,12 +53,13 @@
     plexamp
     remmina
 
-    # Visual
+    # Audio/Visual
     inkscape
     krita
     darktable
     davinci-resolve
     imagemagick
+    ardour
   ];
 
   programs = {
