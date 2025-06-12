@@ -43,6 +43,12 @@
     wlr.enable = true;
   };
 
+  environment.etc = {
+    "xdg/config/hypr/hyprland.conf".text = ''
+      bind = SUPER,RETURN, exec, ghostty
+    '';
+  };
+
   environment.sessionVariables = {
     GTK_THEME = "Gruvbox-Dark-B"; # or whatever your installed variant is called
     QT_QPA_PLATFORMTHEME = "qt5ct";
