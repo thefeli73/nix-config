@@ -2,7 +2,6 @@
   services = {
     xserver = {
       enable = true;
-      # Only enable GDM if you want login screen; alternatively, use greetd (recommended)
       displayManager.gdm.enable = false;
     };
 
@@ -11,7 +10,13 @@
       enable = true;
       settings.default_session = {
         user = "schulze";
-        command = "$SHELL -l";
+        command = ''
+          ${pkgs.runtimeShell} -l -c '
+            if ${pkgs.uwsm}/bin/uwsm check may-start; then
+              exec ${pkgs.uwsm}/bin/uwsm start hyprland.desktop
+            fi
+          '
+        '';
       };
     };
 
@@ -41,12 +46,6 @@
   xdg.portal = {
     enable = true;
     wlr.enable = true;
-  };
-
-  environment.etc = {
-    "xdg/config/hypr/hyprland.conf".text = ''
-      bind = SUPER,RETURN, exec, ghostty
-    '';
   };
 
   environment.sessionVariables = {
