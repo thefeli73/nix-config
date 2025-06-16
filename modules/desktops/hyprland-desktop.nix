@@ -10,13 +10,7 @@
       enable = true;
       settings.default_session = {
         user = "schulze";
-        command = ''
-          ${pkgs.runtimeShell} -l -c '
-            if ${pkgs.uwsm}/bin/uwsm check may-start; then
-              exec ${pkgs.uwsm}/bin/uwsm start hyprland.desktop
-            fi
-          '
-        '';
+        command = "$SHELL -l";
       };
     };
 
