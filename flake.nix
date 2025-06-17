@@ -57,20 +57,16 @@
     };
   };
 
-  outputs = {
-    self,
-    nixpkgs,
-    ...
-  }: {
+  outputs = {nixpkgs, ...} @ inputs: {
     nixosConfigurations = {
       wildfire = nixpkgs.lib.nixosSystem {
-        specialArgs = {inputs = self.inputs // {inherit self;};};
+        specialArgs = {inherit inputs;};
         modules = [
           ./hosts/wildfire/configuration.nix
         ];
       };
       hurricane = nixpkgs.lib.nixosSystem {
-        specialArgs = {inputs = self.inputs // {inherit self;};};
+        specialArgs = {inherit inputs;};
         modules = [
           ./hosts/hurricane/configuration.nix
         ];
