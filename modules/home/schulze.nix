@@ -3,6 +3,8 @@
   pkgs,
   ...
 }: {
+  home.stateVersion = "25.05"; # Dont change
+
   # Hyprland settings
   wayland.windowManager.hyprland.settings = {
     "$mod" = "SUPER";
