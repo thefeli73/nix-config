@@ -41,9 +41,14 @@
     };
   };
 
-  xdg.portal = {
-    enable = true;
-    xdgOpenUsePortal = true;
+  xdg = {
+    mime.defaultApplications = {
+      "default-web-browser" = ["firefox.desktop"];
+    };
+    portal = {
+      enable = true;
+      xdgOpenUsePortal = true;
+    };
   };
 
   environment.sessionVariables = {
