@@ -4,7 +4,7 @@
       enable = true;
       displayManager.gdm.enable = false;
     };
-
+    # Greetd is lightweight and Wayland-native
     greetd.enable = true;
 
     upower.enable = true;

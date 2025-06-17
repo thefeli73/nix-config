@@ -8,7 +8,7 @@
     users.schulze = {
       isNormalUser = true;
       description = "Felix Schulze";
-      extraGroups = ["networkmanager" "wheel" "docker"];
+      extraGroups = ["networkmanager" "wheel" "docker" "plugdev"];
       shell = pkgs.fish;
     };
     groups.libvirtd.members = ["schulze"];
@@ -18,7 +18,6 @@
   boot = {
     loader.systemd-boot.enable = true;
     loader.efi.canTouchEfiVariables = true;
-    initrd.kernelModules = ["amdgpu"];
     kernelPackages = pkgs.linuxPackages_latest;
   };
 
@@ -123,6 +122,12 @@
       firefox = {
         executable = "${pkgs.lib.getBin pkgs.firefox}/bin/firefox";
         profile = "${pkgs.firejail}/etc/firejail/firefox.profile";
+      extraArgs = [
+        # Required for U2F USB stick
+        "--ignore=private-dev"
+        # Enable system notifications
+        "--dbus-user.talk=org.freedesktop.Notifications"
+      ];
       };
       chromium = {
         executable = "${pkgs.lib.getBin pkgs.ungoogled-chromium}/bin/chromium";
@@ -130,9 +135,7 @@
       };
     };
   };
-
-  # This value determines the NixOS release from which the default
-  # settings for stateful data, like file locations and database versions
-  # on your system were taken.
-  system.stateVersion = "23.11";
+# Yubikey Settings
+  services.yubikey-agent.enable = true;
+security.pam.u2f.enable =true ;
 }
