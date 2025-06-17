@@ -71,7 +71,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.schulze = import ./modules/home.nix;
+            home-manager.users.schulze = import ./modules/home/schulze.nix;
           }
         ];
       };
@@ -83,7 +83,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.schulze = import ./modules/home.nix;
+            home-manager.users.schulze = import ./modules/home/schulze.nix;
           }
         ];
       };
