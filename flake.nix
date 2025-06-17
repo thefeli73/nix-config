@@ -2,26 +2,78 @@
   description = "Felix's NixOS configurations";
 
   inputs = {
+    # NixOS
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
 
-    # home-manager = {
-    #   url = "github:nix-community/home-manager";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
+    # Home Manager
+    hm = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    # hyprwm
+    hyprland.url = "github:hyprwm/hyprland";
+
+    hypridle = {
+      url = "github:hyprwm/hypridle";
+      inputs = {
+        hyprlang.follows = "hyprland/hyprlang";
+        hyprutils.follows = "hyprland/hyprutils";
+        nixpkgs.follows = "hyprland/nixpkgs";
+        systems.follows = "hyprland/systems";
+      };
+    };
+
+    hyprland-contrib = {
+      url = "github:hyprwm/contrib";
+      inputs.nixpkgs.follows = "hyprland/nixpkgs";
+    };
+
+    hyprland-plugins = {
+      url = "github:hyprwm/hyprland-plugins";
+      inputs.hyprland.follows = "hyprland";
+    };
+
+    hyprlock = {
+      url = "github:hyprwm/hyprlock";
+      inputs = {
+        hyprgraphics.follows = "hyprland/hyprgraphics";
+        hyprlang.follows = "hyprland/hyprlang";
+        hyprutils.follows = "hyprland/hyprutils";
+        nixpkgs.follows = "hyprland/nixpkgs";
+        systems.follows = "hyprland/systems";
+      };
+    };
+
+    hyprpaper = {
+      url = "github:hyprwm/hyprpaper";
+      inputs = {
+        hyprgraphics.follows = "hyprland/hyprgraphics";
+        hyprlang.follows = "hyprland/hyprlang";
+        hyprutils.follows = "hyprland/hyprutils";
+        nixpkgs.follows = "hyprland/nixpkgs";
+        systems.follows = "hyprland/systems";
+      };
+    };
   };
 
   outputs = {
     self,
     nixpkgs,
+    ...
   }: {
     nixosConfigurations = {
       wildfire = nixpkgs.lib.nixosSystem {
         specialArgs = {inputs = self.inputs // {inherit self;};};
-        modules = [./hosts/wildfire/configuration.nix];
+        modules = [
+          ./hosts/wildfire/configuration.nix
+        ];
       };
       hurricane = nixpkgs.lib.nixosSystem {
         specialArgs = {inputs = self.inputs // {inherit self;};};
-        modules = [./hosts/hurricane/configuration.nix];
+        modules = [
+          ./hosts/hurricane/configuration.nix
+        ];
       };
     };
   };
