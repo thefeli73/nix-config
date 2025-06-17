@@ -52,6 +52,7 @@
   };
 
   environment.sessionVariables = {
+    BROWSER = "${pkgs.lib.getBin pkgs.firefox}";
     GTK_THEME = "Gruvbox-Dark-B"; # or whatever your installed variant is called
     QT_QPA_PLATFORMTHEME = "qt5ct";
     NIXOS_OZONE_WL = "1";
