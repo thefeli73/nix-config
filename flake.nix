@@ -6,7 +6,7 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
 
     # Home Manager
-    hm = {
+    home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
@@ -57,18 +57,34 @@
     };
   };
 
-  outputs = {nixpkgs, ...} @ inputs: {
+  outputs = inputs @ {
+    nixpkgs,
+    home-manager,
+    ...
+  }: {
     nixosConfigurations = {
       wildfire = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs;};
         modules = [
           ./hosts/wildfire/configuration.nix
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.schulze = import ./modules/home.nix;
+          }
         ];
       };
       hurricane = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs;};
         modules = [
           ./hosts/hurricane/configuration.nix
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.schulze = import ./modules/home.nix;
+          }
         ];
       };
     };
