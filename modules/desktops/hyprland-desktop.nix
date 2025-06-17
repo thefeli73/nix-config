@@ -5,45 +5,42 @@
       displayManager.gdm.enable = false;
     };
 
-    # Greetd is lightweight and Wayland-native
-    greetd = {
-      enable = true;
-      settings.default_session = {
-        user = "schulze";
-        command = ''
-          ${pkgs.runtimeShell} -l -c '
-            if ${pkgs.uwsm}/bin/uwsm check may-start; then
-              exec ${pkgs.uwsm}/bin/uwsm start hyprland.desktop
-            fi
-          '
-        '';
-      };
-    };
+    greetd.enable = true;
 
-    # Power management (battery status, etc)
     upower.enable = true;
     power-profiles-daemon.enable = true;
   };
 
-  # Hyprland is your new desktop
-  programs.hyprland.enable = true;
-  programs.hyprland.withUWSM = true;
-  programs.regreet.enable = true;
-  programs.uwsm.enable = true;
-  programs.dconf = {
-    enable = true;
-    profiles.user.databases = [
-      {
-        settings."org/gnome/desktop/interface" = {
-          gtk-theme = "Gruvbox-Dark-B";
-          icon-theme = "Flat-Remix-Red-Dark";
-          font-name = "Noto Sans Medium 11";
-          document-font-name = "Noto Sans Medium 11";
-          monospace-font-name = "Intel One Mono Medium 11";
-        };
-      }
-    ];
+  programs = {
+    hyprland = {
+      enable = true;
+      withUWSM = true;
+    };
+    regreet.enable = true;
+    uwsm = {
+      enable = true;
+      waylandCompositors.hyprland = {
+        prettyName = "Hyprland";
+        comment = "Hyprland compositor managed by UWSM";
+        binPath = "/run/current-system/sw/bin/Hyprland";
+      };
+    };
+    dconf = {
+      enable = true;
+      profiles.user.databases = [
+        {
+          settings."org/gnome/desktop/interface" = {
+            gtk-theme = "Gruvbox-Dark-B";
+            icon-theme = "Flat-Remix-Red-Dark";
+            font-name = "Noto Sans Medium 11";
+            document-font-name = "Noto Sans Medium 11";
+            monospace-font-name = "Intel One Mono Medium 11";
+          };
+        }
+      ];
+    };
   };
+
   xdg.portal = {
     enable = true;
     wlr.enable = true;
