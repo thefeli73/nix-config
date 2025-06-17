@@ -19,6 +19,10 @@
         specialArgs = {inputs = self.inputs // {inherit self;};};
         modules = [./hosts/wildfire/configuration.nix];
       };
+      hurricane = nixpkgs.lib.nixosSystem {
+        specialArgs = {inputs = self.inputs // {inherit self;};};
+        modules = [./hosts/hurricane/configuration.nix];
+      };
     };
   };
 }
