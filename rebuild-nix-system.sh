@@ -12,7 +12,7 @@ fi
 if [ -f ".env" ]; then
     source .env
 else
-    echo "Error: No .env file found. Copy example.env to .env and set your NIXOS_HOST"
+    echo "Error: No .env file found. Copy .env.example to .env and set your NIXOS_HOST"
     exit 1
 fi
 
