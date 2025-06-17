@@ -122,12 +122,12 @@
       firefox = {
         executable = "${pkgs.lib.getBin pkgs.firefox}/bin/firefox";
         profile = "${pkgs.firejail}/etc/firejail/firefox.profile";
-      extraArgs = [
-        # Required for U2F USB stick
-        "--ignore=private-dev"
-        # Enable system notifications
-        "--dbus-user.talk=org.freedesktop.Notifications"
-      ];
+        extraArgs = [
+          # Required for U2F USB stick
+          "--ignore=private-dev"
+          # Enable system notifications
+          "--dbus-user.talk=org.freedesktop.Notifications"
+        ];
       };
       chromium = {
         executable = "${pkgs.lib.getBin pkgs.ungoogled-chromium}/bin/chromium";
@@ -135,7 +135,7 @@
       };
     };
   };
-# Yubikey Settings
+  # Yubikey Settings
   services.yubikey-agent.enable = true;
-security.pam.u2f.enable =true ;
+  security.pam.u2f.enable = true;
 }

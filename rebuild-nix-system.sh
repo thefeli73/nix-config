@@ -52,6 +52,7 @@ echo "NixOS Rebuilding configuration for host: $NIXOS_HOST..."
 nix flake check 2>&1 | grep -i --color error && exit 1
 
 # Rebuild the system
+mkdir -p logs
 sudo nixos-rebuild switch --flake ./#$NIXOS_HOST &>logs/nixos-switch.log || (cat logs/nixos-switch.log | grep --color error && exit 1)
 
 # Get current generation metadata
