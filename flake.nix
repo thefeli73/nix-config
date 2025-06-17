@@ -69,6 +69,7 @@
           ./hosts/wildfire/configuration.nix
           home-manager.nixosModules.home-manager
           {
+            home-manager.backupFileExtension = "backupHM";
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.schulze = import ./modules/home/schulze.nix;
@@ -81,6 +82,7 @@
           ./hosts/hurricane/configuration.nix
           home-manager.nixosModules.home-manager
           {
+            home-manager.backupFileExtension = "backupHM";
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.schulze = import ./modules/home/schulze.nix;

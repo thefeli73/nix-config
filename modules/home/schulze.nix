@@ -6,6 +6,7 @@
   home.stateVersion = "25.05"; # Dont change
 
   # Hyprland settings
+  wayland.windowManager.hyprland.enable = true;
   wayland.windowManager.hyprland.settings = {
     "$mod" = "SUPER";
     "$terminal" = "ghostty";
