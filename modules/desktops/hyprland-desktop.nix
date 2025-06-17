@@ -29,6 +29,7 @@
   programs.hyprland.enable = true;
   programs.hyprland.withUWSM = true;
   programs.regreet.enable = true;
+  programs.uwsm.enable = true;
   programs.dconf = {
     enable = true;
     profiles.user.databases = [
