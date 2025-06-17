@@ -59,7 +59,7 @@ sudo nixos-rebuild switch --flake ./#$NIXOS_HOST &>logs/nixos-switch.log || (cat
 current=$(nixos-rebuild list-generations | grep current)
 
 # Commit all changes witih the generation metadata
-git commit -am "$current"
+git commit -am "$NIXOS_HOST: $current"
 
 # Clean up old generations older than 180 days
 sudo nix-collect-garbage --delete-older-than 180d &>logs/nixos-gc.log || (cat logs/nixos-gc.log | grep --color error && exit 1)
