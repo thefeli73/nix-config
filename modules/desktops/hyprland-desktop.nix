@@ -1,35 +1,55 @@
+# Hyprland Desktop Environment Configuration
+# Complete setup for Hyprland Wayland compositor with modern desktop tools
 {
   inputs,
   pkgs,
   ...
 }: {
+  # ================================
+  # DISPLAY SERVER CONFIGURATION
+  # ================================
   services = {
+    # X11 server configuration (for compatibility)
     xserver = {
       enable = true;
-      displayManager.gdm.enable = false;
+      displayManager.gdm.enable = false; # Disable GDM in favor of regreet
     };
-    # Greetd is lightweight and Wayland-native
+
+    # Lightweight Wayland-native display manager
     greetd.enable = true;
 
-    upower.enable = true;
-    power-profiles-daemon.enable = true;
+    # Power management services for laptops and desktops
+    upower.enable = true; # Battery and power device monitoring
+    power-profiles-daemon.enable = true; # CPU frequency scaling
   };
 
+  # ================================
+  # HYPRLAND BINARY CACHE
+  # ================================
+  # Configure Cachix for faster Hyprland installations
   nix.settings = {
     substituters = ["https://hyprland.cachix.org"];
     trusted-substituters = ["https://hyprland.cachix.org"];
     trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
   };
 
+  # ================================
+  # HYPRLAND & SESSION MANAGEMENT
+  # ================================
   programs = {
+    # Main Hyprland configuration
     hyprland = {
       enable = true;
-      withUWSM = true;
-      # Only enable the flake packages after Cachix has already been enabled
+      withUWSM = true; # Enable Universal Wayland Session Manager
+      # Use cutting-edge Hyprland from flake input (latest features)
       package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
       portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
     };
+
+    # regreet: Modern, customizable greeter for greetd
     regreet.enable = true;
+
+    # UWSM: Universal Wayland Session Manager
     uwsm = {
       enable = true;
       waylandCompositors.hyprland = {
@@ -38,62 +58,96 @@
         binPath = "/run/current-system/sw/bin/Hyprland";
       };
     };
+
+    # ================================
+    # GTK THEMING CONFIGURATION
+    # ================================
+    # dconf: Configure GTK applications and GNOME settings
     dconf = {
       enable = true;
       profiles.user.databases = [
         {
           settings."org/gnome/desktop/interface" = {
-            gtk-theme = "Gruvbox-Dark-B";
-            icon-theme = "Flat-Remix-Red-Dark";
-            font-name = "Noto Sans Medium 11";
-            document-font-name = "Noto Sans Medium 11";
-            monospace-font-name = "Intel One Mono Medium 11";
+            gtk-theme = "Gruvbox-Dark-B"; # Dark theme for GTK apps
+            icon-theme = "Flat-Remix-Red-Dark"; # Icon theme
+            font-name = "Noto Sans Medium 11"; # UI font
+            document-font-name = "Noto Sans Medium 11"; # Document font
+            monospace-font-name = "Intel One Mono Medium 11"; # Terminal/code font
           };
         }
       ];
     };
   };
 
+  # ================================
+  # XDG & DESKTOP INTEGRATION
+  # ================================
   xdg = {
+    # Set default applications for file types
     mime.defaultApplications = {
       "default-web-browser" = ["firefox.desktop"];
     };
+
+    # XDG Desktop Portal for Wayland integration
     portal = {
       enable = true;
-      xdgOpenUsePortal = true;
+      xdgOpenUsePortal = true; # Use portal for opening files/URLs
     };
   };
 
+  # ================================
+  # ENVIRONMENT VARIABLES
+  # ================================
   environment.sessionVariables = {
+    # Set Firefox as default browser
     BROWSER = "${pkgs.lib.getBin pkgs.firefox}";
+    # Enable Wayland support for Electron apps (VS Code, Discord, etc.)
     NIXOS_OZONE_WL = "1";
   };
 
+  # ================================
+  # HYPRLAND DESKTOP PACKAGES
+  # ================================
+  # Essential tools for a functional Hyprland desktop
   environment.systemPackages = with pkgs; [
-    # Core Hyprland workflow tools
-    waybar # Panel
-    rofi-wayland # Launcher
+    # ---- CORE HYPRLAND WORKFLOW ----
+    waybar # Status bar/panel
+    rofi-wayland # Application launcher and dmenu replacement
     mako # Notification daemon
     hyprpaper # Wallpaper daemon
-    hyprlock # Lock screen
-    wl-clipboard # Clipboard utils
-    cliphist # Clipboard manager
-    pavucontrol # GUI audio mixer
-    blueman # Bluetooth tray
-    networkmanagerapplet # System tray for network
-    brightnessctl # Brightness (for laptops)
-    wlsunset # Night light/gamma adjustment
-    grim
-    slurp
-    swappy
-    wf-recorder # Screenshots & screenrecording
-    libsForQt5.qt5ct # For QT application appearance
-    nautilus # File manager
+    hyprlock # Screen lock utility
+
+    # ---- CLIPBOARD & INPUT ----
+    wl-clipboard # Clipboard utilities for Wayland
+    cliphist # Clipboard history manager
+
+    # ---- SYSTEM CONTROL ----
+    pavucontrol # GUI audio mixer and control
+    blueman # Bluetooth manager with system tray
+    networkmanagerapplet # Network management system tray
+    brightnessctl # Screen brightness control (laptops)
+    wlsunset # Blue light filter/night mode
+
+    # ---- SCREENSHOT & RECORDING ----
+    grim # Screenshot tool for Wayland
+    slurp # Screen area selection for screenshots
+    swappy # Screenshot editing and annotation
+    wf-recorder # Screen recording for Wayland
+
+    # ---- APPLICATION INTEGRATION ----
+    libsForQt5.qt5ct # Qt5 application theming control
+    nautilus # GNOME file manager (GTK)
   ];
 
+  # ================================
+  # FILE MANAGER INTEGRATION
+  # ================================
+  # Configure Nautilus to work seamlessly with the desktop
   programs.nautilus-open-any-terminal = {
     enable = true;
-    terminal = "ghostty";
+    terminal = "ghostty"; # Use Ghostty as default terminal in file manager
   };
+
+  # Enable GNOME Sushi for file preview in Nautilus
   services.gnome.sushi.enable = true;
 }

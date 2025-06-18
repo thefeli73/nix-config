@@ -1,25 +1,37 @@
+# Common system configuration shared across all hosts
+# This module contains the base settings that every system should have
 {
   pkgs,
   inputs,
   ...
 }: {
   imports = [
+    # Import Home Manager as a NixOS module for user-specific configurations
     inputs.home-manager.nixosModules.home-manager
   ];
 
-  # Home Manager configuration
+  # ================================
+  # HOME MANAGER INTEGRATION
+  # ================================
+  # Configure Home Manager to manage user-specific dotfiles and applications
   home-manager = {
+    # Create backup files when Home Manager would overwrite existing files
     backupFileExtension = "backupHM";
+    # Use system packages instead of separate user packages (saves space)
     useGlobalPkgs = true;
     useUserPackages = true;
+    # User-specific Home Manager configurations
     users.schulze.imports = [
-      ./home/hyprland.nix
-      ./home/home-manager.nix
+      ./home/hyprland.nix # Hyprland window manager user config
+      ./home/home-manager.nix # Base user environment
     ];
   };
 
-  # Define the main user account
+  # ================================
+  # USER MANAGEMENT
+  # ================================
   users = {
+    # Define the main user account
     users.schulze = {
       isNormalUser = true;
       description = "Felix Schulze";
@@ -29,33 +41,47 @@
     groups.libvirtd.members = ["schulze"];
   };
 
-  # Bootloader.
+  # ================================
+  # BOOT CONFIGURATION
+  # ================================
   boot = {
+    # Use systemd-boot (modern UEFI bootloader)
     loader.systemd-boot.enable = true;
     loader.efi.canTouchEfiVariables = true;
+    # Always use the latest kernel for best hardware support
     kernelPackages = pkgs.linuxPackages_latest;
   };
 
+  # ================================
+  # NETWORKING
+  # ================================
   networking = {
-    # Enable networking
+    # Enable NetworkManager for easy network configuration
     networkmanager.enable = true;
 
-    # Network security
-    # enable firewall and block all ports
+    # Security: Enable firewall and block all ports by default
+    # Host-specific ports are opened in individual host configurations
     firewall.enable = true;
   };
 
-  # disable coredump that could be exploited later
-  # and also slow down the system when something crash
+  # ================================
+  # SECURITY HARDENING
+  # ================================
+  # Disable core dumps to prevent potential security exploits
+  # and improve system performance during crashes
   systemd.coredump.enable = false;
 
-  # Set your time zone.
+  # ================================
+  # LOCALIZATION
+  # ================================
+  # Set timezone to Swedish time
   time.timeZone = "Europe/Stockholm";
 
-  # Select internationalisation properties.
+  # Internationalization: English UI with Swedish regional settings
   i18n = {
-    defaultLocale = "en_GB.UTF-8";
+    defaultLocale = "en_GB.UTF-8"; # British English for UI
     extraLocaleSettings = {
+      # Swedish locale for regional formats (dates, currency, etc.)
       LC_ADDRESS = "sv_SE.UTF-8";
       LC_IDENTIFICATION = "sv_SE.UTF-8";
       LC_MEASUREMENT = "sv_SE.UTF-8";
@@ -68,79 +94,99 @@
     };
   };
 
-  # Configure console keymap
+  # Configure console to use Swedish keyboard layout
   console.keyMap = "sv-latin1";
 
+  # ================================
+  # SYSTEM SERVICES
+  # ================================
   services = {
-    # Enable CUPS to print documents.
+    # Disable CUPS printing (enable per-host if needed)
     printing.enable = false;
 
-    # Enable sound with pipewire.
-    pulseaudio.enable = false;
+    # Modern audio stack: PipeWire replaces PulseAudio
+    pulseaudio.enable = false; # Disable old PulseAudio
     pipewire = {
       enable = true;
-      alsa.enable = true;
-      alsa.support32Bit = true;
-      pulse.enable = true;
-      wireplumber.enable = true;
+      alsa.enable = true; # ALSA compatibility
+      alsa.support32Bit = true; # 32-bit app support
+      pulse.enable = true; # PulseAudio compatibility
+      wireplumber.enable = true; # Session manager
     };
 
-    # enable antivirus clamav and keep the signatures' database updated
+    # Antivirus protection with automatic updates
     clamav = {
-      daemon.enable = true;
-      updater.enable = true;
+      daemon.enable = true; # Background virus scanning
+      updater.enable = true; # Automatic signature updates
     };
   };
 
-  # Realtime scheduling priority for audio
+  # ================================
+  # SECURITY & PERMISSIONS
+  # ================================
+  # Enable real-time scheduling for audio applications (low-latency audio)
   security.rtkit.enable = true;
-  # Polkit agent (authentication dialogs)
+  # Enable Polkit for GUI authentication dialogs (password prompts)
   security.polkit.enable = true;
 
-  # Allow unfree packages
+  # ================================
+  # NIX CONFIGURATION
+  # ================================
+  # Allow installation of proprietary/unfree software
   nixpkgs.config.allowUnfree = true;
 
-  # Enable Flakes
+  # Enable modern Nix features (flakes and new CLI)
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
-  # Automatic system upgrades
+  # ================================
+  # AUTOMATIC MAINTENANCE
+  # ================================
+  # Configure automatic system updates for security
   system.autoUpgrade = {
     enable = true;
-    flake = inputs.self.outPath;
+    flake = inputs.self.outPath; # Use this flake for updates
     flags = [
       "--update-input"
-      "nixpkgs"
-      "-L" # print build logs
+      "nixpkgs" # Update nixpkgs input
+      "-L" # Print build logs for transparency
     ];
-    dates = "02:00";
-    randomizedDelaySec = "45min";
+    dates = "02:00"; # Run at 2 AM
+    randomizedDelaySec = "45min"; # Random delay to avoid server load
   };
 
-  # Fonts
+  # ================================
+  # FONTS
+  # ================================
+  # System-wide fonts for consistent typography
   fonts.packages = with pkgs; [
-    intel-one-mono
-    noto-fonts
-    noto-fonts-emoji
+    intel-one-mono # Monospace font for coding
+    noto-fonts # Comprehensive Unicode support
+    noto-fonts-emoji # Emoji support
   ];
 
-  # This improves touchscreen support and enables additional touchpad gestures. It also enables smooth scrolling as opposed to the stepped scrolling that Firefox has by default
+  # ================================
+  # BROWSER OPTIMIZATIONS
+  # ================================
+  # Improve touchscreen and scrolling support in Firefox
   environment.sessionVariables = {
     MOZ_USE_XINPUT2 = "1";
   };
 
-  # create system-wide executables firefox and chromium
-  # that will wrap the real binaries so everything work out of the box.
-  # enable firejail
+  # ================================
+  # SANDBOXED APPLICATIONS
+  # ================================
+  # Enable Firejail for application sandboxing (security)
   programs.firejail = {
     enable = true;
+    # Create sandboxed wrappers for browsers
     wrappedBinaries = {
       firefox = {
         executable = "${pkgs.lib.getBin pkgs.firefox}/bin/firefox";
         profile = "${pkgs.firejail}/etc/firejail/firefox.profile";
         extraArgs = [
-          # Required for U2F USB stick
+          # Required for U2F USB security keys
           "--ignore=private-dev"
-          # Enable system notifications
+          # Enable desktop notifications
           "--dbus-user.talk=org.freedesktop.Notifications"
         ];
       };
@@ -150,7 +196,12 @@
       };
     };
   };
-  # Yubikey Settings
+
+  # ================================
+  # HARDWARE SECURITY (YUBIKEY)
+  # ================================
+  # Enable Yubikey support for SSH and GPG
   services.yubikey-agent.enable = true;
+  # Enable U2F authentication for login
   security.pam.u2f.enable = true;
 }
