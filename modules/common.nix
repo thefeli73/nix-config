@@ -188,6 +188,8 @@
           "--ignore=private-dev"
           # Enable desktop notifications
           "--dbus-user.talk=org.freedesktop.Notifications"
+          # Allow access to downloads
+          "--whitelist=/home/schulze/Nextcloud/Home-sync/Downloads"
         ];
       };
       chromium = {
