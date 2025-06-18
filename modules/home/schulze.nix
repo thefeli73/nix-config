@@ -58,7 +58,7 @@
       );
   };
   wayland.windowManager.hyprland.extraConfig = ''
-    monitor = DP-3, 2560x1440@143.97301, 1920x0, 1.00;
-    monitor = HDMI-A-1, 1920x1080@60, 0x0, 1.00;
+    monitor = DP-3, 2560x1440@143.97301, 1920x0, auto;
+    monitor = HDMI-A-1, 1920x1080@60, 0x0, auto;
   '';
 }
