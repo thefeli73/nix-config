@@ -4,14 +4,9 @@
     theme = "gruvbox-dark";
     font = "Intel One Mono";
     modes = [
-      "combi"
+      "drun"
+      "window"
     ];
-    extraConfig = {
-      "combi-modes" = [
-        "drun"
-        "window"
-      ];
-    };
     terminal = "\${pkgs.ghostty}/bin/ghostty";
   };
 }
