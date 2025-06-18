@@ -1,10 +1,11 @@
 {
   # Hyprland settings
-  wayland.windowManager.hyprland.enable = true;
-  wayland.windowManager.hyprland.settings = {
-    input = {
-      kb_layout = "se";
-      kb_variant = "";
+  wayland.windowManager.hyprland = {
+    enable = true;
+    settings = {
+      input = {
+        kb_layout = "se";
+        kb_variant = "";
       kb_model = "";
       kb_options = "";
       kb_rules = "";
@@ -90,8 +91,9 @@
       );
     # Move/resize windows with mainMod + LMB/RMB and dragging
     bindm = [
-      "$mod, mouse:272, movewindow"
-      "$mod, mouse:273, resizewindow"
-    ];
+        "$mod, mouse:272, movewindow"
+        "$mod, mouse:273, resizewindow"
+      ];
+    };
   };
 }
