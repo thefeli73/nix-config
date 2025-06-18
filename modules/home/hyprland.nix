@@ -18,7 +18,7 @@
       "$mod" = "SUPER";
       "$terminal" = "ghostty";
       "$filemanager" = "nautilus";
-      "$menu" = "rofi -show combi";
+      "$menu" = "rofi -show drun";
 
       general = {
         gaps_in = 4;
