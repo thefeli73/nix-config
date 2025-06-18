@@ -9,6 +9,7 @@
   home-manager.users.schulze.imports = [
     ./hyprland-monitors.nix
     ./hyprlock.nix
+    ./hyprpaper.nix
   ];
 
   networking.hostName = "hurricane";

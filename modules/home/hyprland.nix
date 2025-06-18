@@ -3,6 +3,9 @@
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
+      exec-once = [
+        "hyprpaper"
+      ];
       input = {
         kb_layout = "se";
         kb_variant = "";
