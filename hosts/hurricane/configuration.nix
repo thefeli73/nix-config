@@ -6,7 +6,10 @@
     ../../modules/programs.nix
   ];
   # Extend home-manager configuration with host-specific monitor settings
-  home-manager.users.schulze.imports = [./hyprland-monitors.nix];
+  home-manager.users.schulze.imports = [
+    ./hyprland-monitors.nix
+    ./hyprlock.nix
+  ];
 
   networking.hostName = "hurricane";
 
