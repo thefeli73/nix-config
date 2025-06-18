@@ -25,6 +25,7 @@
       ./home/hyprland.nix # Hyprland window manager user config
       ./home/home-manager.nix # Base user environment
       ./home/hyprlock.nix # Hyprlock screen lock user config
+      ./home/rofi.nix # Rofi user config
     ];
   };
 
@@ -165,6 +166,8 @@
     noto-fonts-cjk-sans # CJK support
     noto-fonts-emoji # Emoji support
     nerd-fonts.symbols-only # Symbols
+    fira-code # Monospace font for coding
+    fira-code-symbols # Symbols
   ];
 
   # ================================
