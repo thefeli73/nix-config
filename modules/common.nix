@@ -162,7 +162,9 @@
   fonts.packages = with pkgs; [
     intel-one-mono # Monospace font for coding
     noto-fonts # Comprehensive Unicode support
+    noto-fonts-cjk-sans # CJK support
     noto-fonts-emoji # Emoji support
+    nerd-fonts.symbols-only # Symbols
   ];
 
   # ================================

@@ -1,9 +1,11 @@
-{
+let
+  colors = import ../gruvbox-theme.nix;
+in {
   programs.hyprlock = {
     enable = true;
     settings = {
       background = {
-        path = "./images/sunset-rocks.png";
+        path = "$HOME/git/nixos/modules/home/images/sunset-rocks.png";
         blur_passes = 2;
         contrast = 1;
         brightness = 0.5;
@@ -13,9 +15,9 @@
 
       # GENERAL
       general = {
-        no_fade_in = true;
-        no_fade_out = true;
-        hide_cursor = false;
+        no_fade_in = false;
+        no_fade_out = false;
+        hide_cursor = true;
         grace = 0;
         disable_loading_bar = true;
       };
@@ -30,11 +32,11 @@
         dots_center = true;
         outer_color = "rgba(0, 0, 0, 0)";
         inner_color = "rgba(0, 0, 0, 0.2)";
-        font_color = "$foreground";
+        font_color = colors.gruvbox.fg1;
         fade_on_empty = false;
         rounding = -1;
-        check_color = "rgb(204, 136, 34)";
-        placeholder_text = "<i><span foreground=\"##cdd6f4\">Input Password...</span></i>";
+        check_color = colors.gruvbox.yellow;
+        placeholder_text = "<i><span foreground=\"${colors.gruvbox.fg3}\">Input Password...</span></i>";
         hide_input = false;
         position = "0, -200";
         halign = "center";
@@ -45,10 +47,9 @@
       label = [
         {
           monitor = "";
-          text = "cmd[update:1000] echo \"$(date +\"%A, %B %d\")\"";
-          color = "rgba(242, 243, 244, 0.75)";
-          font_size = 22;
-          font_family = "JetBrains Mono";
+          text = "cmd[update:10000] $(date +\"%A, %B %d\")";
+          color = colors.gruvbox.fg2;
+          font_size = 34;
           position = "0, 300";
           halign = "center";
           valign = "center";
@@ -57,84 +58,12 @@
         # TIME
         {
           monitor = "";
-          text = "cmd[update:1000] echo \"$(date +\"%-I:%M\")\"";
-          color = "rgba(242, 243, 244, 0.75)";
-          font_size = 95;
-          font_family = "JetBrains Mono Extrabold";
+          text = "cmd[update:2000] $(date +\"%-I:%M\")";
+          color = colors.gruvbox.fg1;
+          font_size = 94;
           position = "0, 200";
           halign = "center";
           valign = "center";
-        }
-
-        # CURRENT SONG
-        {
-          monitor = "";
-          text = "cmd[update:1000] echo \"$(/home/justin/Documents/Scripts/whatsong.sh)\"";
-          color = "$foreground";
-          font_size = 18;
-          font_family = "Metropolis Light, Font Awesome 6 Free Solid";
-          position = "0, 50";
-          halign = "center";
-          valign = "bottom";
-        }
-
-        {
-          monitor = "";
-          text = "cmd[update:1000] echo \"$(/home/justin/Documents/Scripts/whoami.sh)\"";
-          color = "$foreground";
-          font_size = 14;
-          font_family = "JetBrains Mono";
-          position = "0, -10";
-          halign = "center";
-          valign = "top";
-        }
-
-        {
-          monitor = "";
-          text = "cmd[update:1000] echo \"$(/home/justin/Documents/Scripts/battery.sh)\"";
-          color = "$foreground";
-          font_size = 24;
-          font_family = "JetBrains Mono";
-          position = "-90, -10";
-          halign = "right";
-          valign = "top";
-        }
-
-        {
-          monitor = "";
-          text = "cmd[update:1000] echo \"$(/home/justin/Documents/Scripts/network-status.sh)\"";
-          color = "$foreground";
-          font_size = 24;
-          font_family = "JetBrains Mono";
-          position = "-20, -10";
-          halign = "right";
-          valign = "top";
-        }
-      ];
-
-      # Profile Picture
-      image = [
-        {
-          monitor = "";
-          path = "/home/justin/Pictures/profile_pictures/justin_square.png";
-          size = 100;
-          border_size = 2;
-          border_color = "$foreground";
-          position = "0, -100";
-          halign = "center";
-          valign = "center";
-        }
-
-        # Desktop Environment
-        {
-          monitor = "";
-          path = "/home/justin/Pictures/profile_pictures/hypr.png";
-          size = 75;
-          border_size = 2;
-          border_color = "$foreground";
-          position = "-50, 50";
-          halign = "right";
-          valign = "bottom";
         }
       ];
     };
