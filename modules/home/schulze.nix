@@ -8,11 +8,33 @@
   # Hyprland settings
   wayland.windowManager.hyprland.enable = true;
   wayland.windowManager.hyprland.settings = {
+    input = {
+      kb_layout = "se";
+    };
     "$mod" = "SUPER";
     "$terminal" = "ghostty";
     "$filemanager" = "nautilus";
     "$menu" = "rofi -show drun";
 
+    general = {
+      gaps_in = 4;
+      gaps_out = 4;
+      border_size = 2;
+      "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
+      "col.inactive_border" = "rgba(595959aa)";
+    };
+    decoration = {
+      rounding = "8";
+      rounding_power = "4";
+      blur = {
+        enabled = "true";
+        xray = "true";
+        size = "3";
+        passes = "4";
+      };
+    };
+
+    # Bindings
     bind =
       [
         "$mod, RETURN, exec, $terminal"
@@ -34,15 +56,5 @@
           )
           9)
       );
-    decoration = {
-      rounding = "15";
-      rounding_power = "4";
-      blur = {
-        enabled = "true";
-        xray = "true";
-        size = "3";
-        passes = "4";
-      };
-    };
   };
 }
