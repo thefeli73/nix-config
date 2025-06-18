@@ -30,12 +30,13 @@ in {
         dots_size = 0.2; # Scale of input-field height, 0.2 - 0.8
         dots_spacing = 0.35; # Scale of dots' absolute size, 0.0 - 1.0
         dots_center = true;
-        outer_color = colors.gruvbox.blue;
-        inner_color = colors.gruvbox.bg0;
-        font_color = colors.gruvbox.fg1;
+        outer_color = "rgba(${colors.gruvbox-rgb.blue}, 0.8)";
+        inner_color = "rgba(${colors.gruvbox-rgb.bg0}, 0.4)";
+        font_color = "rgba(${colors.gruvbox-rgb.fg1}, 1.0)";
+        placeholder_text = "Welcome $USER";
         fade_on_empty = false;
         rounding = -1;
-        check_color = colors.gruvbox.yellow;
+        check_color = "rgba(${colors.gruvbox-rgb.yellow}, 1.0)";
         hide_input = false;
         position = "0, -200";
         halign = "center";
@@ -47,7 +48,7 @@ in {
         {
           monitor = "";
           text = "cmd[update:10000] echo \"$(date +\"%A, %B %d\")\"";
-          color = colors.gruvbox.fg2;
+          color = "rgba(${colors.gruvbox-rgb.fg2}, 1.0)";
           font_size = 34;
           font_family = "Intel One Mono";
           position = "0, 300";
@@ -59,7 +60,7 @@ in {
         {
           monitor = "";
           text = "cmd[update:2000] echo \"$(date +\"%H:%M\")\"";
-          color = colors.gruvbox.fg1;
+          color = "rgba(${colors.gruvbox-rgb.fg1}, 1.0)";
           font_size = 94;
           font_family = "Intel One Mono Bold";
           position = "0, 200";
