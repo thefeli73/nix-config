@@ -3,6 +3,21 @@
   inputs,
   ...
 }: {
+  imports = [
+    inputs.home-manager.nixosModules.home-manager
+  ];
+
+  # Home Manager configuration
+  home-manager = {
+    backupFileExtension = "backupHM";
+    useGlobalPkgs = true;
+    useUserPackages = true;
+    users.schulze.imports = [
+      ./home/hyprland.nix
+      ./home/home-manager.nix
+    ];
+  };
+
   # Define the main user account
   users = {
     users.schulze = {

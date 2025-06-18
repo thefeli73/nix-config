@@ -1,6 +1,27 @@
 {
   description = "Felix's NixOS configurations";
 
+  outputs = inputs @ {
+    nixpkgs,
+    home-manager,
+    ...
+  }: {
+    nixosConfigurations = {
+      wildfire = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs;};
+        modules = [
+          ./hosts/wildfire/configuration.nix
+        ];
+      };
+      hurricane = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs;};
+        modules = [
+          ./hosts/hurricane/configuration.nix
+        ];
+      };
+    };
+  };
+
   inputs = {
     # NixOS
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
@@ -53,41 +74,6 @@
         hyprutils.follows = "hyprland/hyprutils";
         nixpkgs.follows = "hyprland/nixpkgs";
         systems.follows = "hyprland/systems";
-      };
-    };
-  };
-
-  outputs = inputs @ {
-    nixpkgs,
-    home-manager,
-    ...
-  }: {
-    nixosConfigurations = {
-      wildfire = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs;};
-        modules = [
-          ./hosts/wildfire/configuration.nix
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.backupFileExtension = "backupHM";
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.schulze = import ./modules/home/schulze.nix;
-          }
-        ];
-      };
-      hurricane = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs;};
-        modules = [
-          ./hosts/hurricane/configuration.nix
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.backupFileExtension = "backupHM";
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.schulze = import ./modules/home/schulze.nix;
-          }
-        ];
       };
     };
   };

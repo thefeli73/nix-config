@@ -1,10 +1,4 @@
 {
-  config,
-  pkgs,
-  ...
-}: {
-  home.stateVersion = "25.05"; # Dont change
-
   # Hyprland settings
   wayland.windowManager.hyprland.enable = true;
   wayland.windowManager.hyprland.settings = {
@@ -57,8 +51,4 @@
           9)
       );
   };
-  wayland.windowManager.hyprland.extraConfig = ''
-    monitor = DP-3, 2560x1440@143.97, 1920x-360, auto;
-    monitor = HDMI-A-1, 1920x1080@60, 0x0, auto;
-  '';
 }

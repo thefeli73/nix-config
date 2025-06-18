@@ -1,6 +1,6 @@
 {
-  config,
   pkgs,
+  inputs,
   ...
 }: {
   imports = [
@@ -9,6 +9,8 @@
     ../../modules/desktops/hyprland-desktop.nix
     ../../modules/programs.nix
   ];
+  # Extend home-manager configuration with host-specific monitor settings
+  home-manager.users.schulze.imports = [./hyprland-monitors.nix];
 
   networking.hostName = "hurricane";
 

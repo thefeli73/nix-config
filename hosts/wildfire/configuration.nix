@@ -1,10 +1,16 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  inputs,
+  ...
+}: {
   imports = [
     ./hardware-configuration.nix
     ../../modules/common.nix
     ../../modules/desktops/hyprland-desktop.nix
     ../../modules/programs.nix
   ];
+  # Extend home-manager configuration with host-specific monitor settings
+  home-manager.users.schulze.imports = [./hyprland-monitors.nix];
 
   # Encrypted drive
   boot.initrd.luks.devices."luks-1728f038-43a6-4e0d-b7dd-19a4c1083605".device = "/dev/disk/by-uuid/1728f038-43a6-4e0d-b7dd-19a4c1083605";
