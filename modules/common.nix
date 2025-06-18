@@ -24,6 +24,7 @@
     users.schulze.imports = [
       ./home/hyprland.nix # Hyprland window manager user config
       ./home/home-manager.nix # Base user environment
+      ./home/hyprlock.nix # Hyprlock screen lock user config
     ];
   };
 
