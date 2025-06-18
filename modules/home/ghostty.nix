@@ -3,8 +3,9 @@
     enable = true;
     enableFishIntegration = true;
     settings = {
-      "font" = "Intel One Mono";
-      "theme" = "gruvbox-dark";
+      "font-family" = "Intel One Mono";
+      "theme" = "GruvboxDark";
+      "background-opacity" = 0.2;
     };
   };
 }
