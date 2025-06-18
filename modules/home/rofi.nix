@@ -1,18 +1,17 @@
-{pkgs, ...}: {
+{
   programs.rofi = {
     enable = true;
     theme = "gruvbox-dark";
     font = "Intel One Mono";
     modes = [
-      "window"
-      "drun"
-      "calc"
-      "emoji"
+      "combi"
     ];
-    plugins = [
-      pkgs.rofi-emoji
-      pkgs.rofi-calc
-    ];
+    extraConfig = {
+      "combi-modes" = [
+        "drun"
+        "window"
+      ];
+    };
     terminal = "\${pkgs.ghostty}/bin/ghostty";
   };
 }
