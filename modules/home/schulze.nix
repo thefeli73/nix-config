@@ -20,7 +20,7 @@
       gaps_in = 4;
       gaps_out = 4;
       border_size = 1;
-      "col.active_border" = "rgba(fe8019ee) rgba(ebdbb2ee) 45deg";
+      "col.active_border" = "rgba(ebdbb2ee) rgba(fe8019ee) 45deg";
       "col.inactive_border" = "rgba(7c6f64aa)";
     };
     decoration = {
@@ -58,7 +58,7 @@
       );
   };
   wayland.windowManager.hyprland.extraConfig = ''
-    monitor = DP-3, 2560x1440@143.97301, 1920x0, 1;
-    monitor = HDMI-A-1, 1920x1080@60, 0x0, 1;
+    monitor = DP-3, 2560x1440@143.97301, 1920x0, 1.00;
+    monitor = HDMI-A-1, 1920x1080@60, 0x0, 1.00;
   '';
 }
