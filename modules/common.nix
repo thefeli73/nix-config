@@ -26,6 +26,7 @@
       ./home/home-manager.nix # Base user environment
       ./home/hyprlock.nix # Hyprlock screen lock user config
       ./home/rofi.nix # Rofi user config
+      ./home/ghostty.nix # Ghostty user config
     ];
   };
 
