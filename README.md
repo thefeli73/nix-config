@@ -5,7 +5,7 @@ A modular, flake-based NixOS configuration supporting multiple hosts with shared
 ## 🏗️ Structure Overview
 
 ```
-nixos/
+nix-config/
 ├── flake.nix                 # Main flake definition with inputs and outputs
 ├── hosts/                    # Host-specific configurations
 │   ├── wildfire/            # Desktop workstation (AMD GPU)

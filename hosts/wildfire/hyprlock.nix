@@ -1,3 +1,3 @@
 {
-  programs.hyprlock.settings.background.path = "$HOME/git/nixos/modules/home/images/sky.png";
+  programs.hyprlock.settings.background.path = "$HOME/git/nix-config/modules/home/images/sky.png";
 }
