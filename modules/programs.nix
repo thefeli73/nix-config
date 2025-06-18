@@ -27,6 +27,7 @@
     code-cursor
     gitkraken
     git-filter-repo
+    git-secrets
     python3
     hugo
     nodejs_22
