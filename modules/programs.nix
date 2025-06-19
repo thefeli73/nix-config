@@ -35,17 +35,21 @@ in {
     btop
     alejandra
     fzf
+    fastfetch
 
     # Development
     pkgs-unstable.code-cursor
     gitkraken
     git-filter-repo
     git-secrets
+
     python3
     hugo
     nodejs_22
     pnpm
     cypress
+    erlang
+    rebar3
     gnumake
     gcc
     libgcc
