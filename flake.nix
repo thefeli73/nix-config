@@ -3,18 +3,31 @@
 
   outputs = inputs @ {
     nixpkgs,
+    nixpkgs-unstable,
     home-manager,
     ...
   }: {
     nixosConfigurations = {
       wildfire = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs;};
+        specialArgs = {
+          inherit inputs;
+          pkgs-unstable = import nixpkgs-unstable {
+            system = "x86_64-linux";
+            config.allowUnfree = true;
+          };
+        };
         modules = [
           ./hosts/wildfire/configuration.nix
         ];
       };
       hurricane = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs;};
+        specialArgs = {
+          inherit inputs;
+          pkgs-unstable = import nixpkgs-unstable {
+            system = "x86_64-linux";
+            config.allowUnfree = true;
+          };
+        };
         modules = [
           ./hosts/hurricane/configuration.nix
         ];
@@ -25,6 +38,7 @@
   inputs = {
     # NixOS
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
+    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     # Home Manager
     home-manager = {

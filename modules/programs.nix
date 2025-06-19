@@ -1,4 +1,8 @@
-{pkgs, ...}: let
+{
+  pkgs,
+  pkgs-unstable,
+  ...
+}: let
   lock-false = {
     Value = false;
     Status = "locked";
@@ -33,7 +37,7 @@ in {
     fzf
 
     # Development
-    code-cursor
+    pkgs-unstable.code-cursor
     gitkraken
     git-filter-repo
     git-secrets
