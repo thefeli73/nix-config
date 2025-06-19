@@ -27,6 +27,7 @@
       ./home/hyprlock.nix # Hyprlock screen lock user config
       ./home/rofi.nix # Rofi user config
       ./home/ghostty.nix # Ghostty user config
+      ./home/gtk.nix # GTK user config
     ];
   };
 

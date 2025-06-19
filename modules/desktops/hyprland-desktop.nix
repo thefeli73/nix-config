@@ -58,25 +58,6 @@
         binPath = "/run/current-system/sw/bin/Hyprland";
       };
     };
-
-    # ================================
-    # GTK THEMING CONFIGURATION
-    # ================================
-    # dconf: Configure GTK applications and GNOME settings
-    dconf = {
-      enable = true;
-      profiles.user.databases = [
-        {
-          settings."org/gnome/desktop/interface" = {
-            gtk-theme = "Gruvbox-Dark-B"; # Dark theme for GTK apps
-            icon-theme = "Flat-Remix-Red-Dark"; # Icon theme
-            font-name = "Noto Sans Medium 11"; # UI font
-            document-font-name = "Noto Sans Medium 11"; # Document font
-            monospace-font-name = "Intel One Mono Medium 11"; # Terminal/code font
-          };
-        }
-      ];
-    };
   };
 
   # ================================
