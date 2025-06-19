@@ -25,9 +25,10 @@
       ./home/hyprland.nix # Hyprland window manager user config
       ./home/home-manager.nix # Base user environment
       ./home/hyprlock.nix # Hyprlock screen lock user config
-      ./home/rofi.nix # Rofi user config
-      ./home/ghostty.nix # Ghostty user config
-      ./home/gtk.nix # GTK user config
+      ./home/rofi.nix # Rofi theme/config
+      ./home/ghostty.nix # Ghostty config
+      ./home/gtk.nix # GTK theme
+      ./home/nextcloud.nix # Nextcloud autostart
     ];
   };
 
