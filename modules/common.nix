@@ -2,6 +2,7 @@
 # This module contains the base settings that every system should have
 {
   pkgs,
+  pkgs-unstable,
   inputs,
   ...
 }: {
@@ -20,6 +21,10 @@
     # Use system packages instead of separate user packages (saves space)
     useGlobalPkgs = true;
     useUserPackages = true;
+    # Pass unstable packages to home-manager modules
+    extraSpecialArgs = {
+      pkgs-unstable = pkgs-unstable;
+    };
     # User-specific Home Manager configurations
     users.schulze.imports = [
       ./home/hyprland.nix # Hyprland window manager user config
@@ -29,6 +34,7 @@
       ./home/ghostty.nix # Ghostty config
       ./home/gtk.nix # GTK theme
       ./home/nextcloud.nix # Nextcloud autostart
+      ./home/code-cursor.nix # Cursor config
     ];
   };
 
