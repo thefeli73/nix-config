@@ -77,15 +77,19 @@ in {
   ];
 
   programs = {
+    # CLI tools
     command-not-found = {
       enable = true;
       dbPath = "/run/current-system/sw/bin/sqlite3";
     };
-    # CLI
+
+    # Zoxide for quick directory navigation
     zoxide = {
       enable = true;
       flags = ["--cmd cd"];
     };
+
+    # Friendly shell
     fish = {
       enable = true;
       interactiveShellInit = ''
@@ -104,6 +108,8 @@ in {
         "rm" = "rm -v";
       };
     };
+
+    # Starship shell prompt
     starship = {
       enable = true;
       presets = ["nerd-font-symbols" "gruvbox-rainbow"];
@@ -111,6 +117,13 @@ in {
         add_newline = false;
       };
     };
+    # Direnv for automatic environment loading
+    direnv = {
+      enable = true;
+      enableFishIntegration = true;
+    };
+
+    # Vim editor
     vim = {
       enable = true;
       defaultEditor = true;
