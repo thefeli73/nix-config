@@ -50,6 +50,7 @@ in {
     gcc
     libgcc
     nil
+    sqlite
 
     # Common programs
     ghostty
@@ -69,6 +70,10 @@ in {
   ];
 
   programs = {
+    command-not-found = {
+      enable = true;
+      dbPath = "/run/current-system/sw/bin/sqlite3";
+    };
     # CLI
     zoxide = {
       enable = true;
