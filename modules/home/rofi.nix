@@ -7,6 +7,6 @@
       "drun"
       "window"
     ];
-    terminal = "\${pkgs.ghostty}/bin/ghostty";
+    terminal = "ghostty";
   };
 }
