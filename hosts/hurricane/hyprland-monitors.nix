@@ -1,7 +1,8 @@
 {
   # Home Manager Hyprland monitors
   wayland.windowManager.hyprland.extraConfig = ''
-    #monitor = DP-3, 2560x1440@143.97, 1920x-360, auto;
-    #monitor = HDMI-A-1, 1920x1080@60, 0x0, auto;
+    monitor = DP-3, 3440x1440@99.98, 0x0, auto; # Philips Ultrawide left
+    monitor = HDMI-A-1, 3440x1440@99.98, 3440x0, auto; # Philips Ultrawide right
+    monitor = eDP-1, 1920x1200@60.00, auto, auto # internal display
   '';
 }
