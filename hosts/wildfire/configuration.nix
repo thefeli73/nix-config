@@ -37,6 +37,7 @@
     prismlauncher
     davinci-resolve
     ardour
+    btop-rocm
   ];
 
   # host-specific Systemd services
