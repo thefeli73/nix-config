@@ -5,7 +5,7 @@
     settings = {
       "font-family" = "Intel One Mono";
       "theme" = "GruvboxDark";
-      "background-opacity" = 0.4;
+      "background-opacity" = 0.6;
     };
   };
 }
