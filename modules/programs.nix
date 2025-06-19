@@ -30,6 +30,7 @@ in {
 
     # cli tools
     jq
+    yq-go
     pciutils
     glxinfo
     btop
