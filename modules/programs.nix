@@ -94,7 +94,6 @@ in {
       presets = ["nerd-font-symbols" "gruvbox-rainbow"];
       settings = {
         add_newline = false;
-        directory.truncation_length = 10;
       };
     };
     vim = {
