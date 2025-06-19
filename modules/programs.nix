@@ -75,7 +75,10 @@ in {
       flags = ["--cmd cd"];
     };
     fish.enable = true;
-    starship.enable = true;
+    starship = {
+      enable = true;
+      presets = ["nerd-font-symbols" "gruvbox-rainbow"];
+    };
     vim = {
       enable = true;
       defaultEditor = true;
