@@ -48,8 +48,10 @@ in {
     nodejs_22
     pnpm
     cypress
-    erlang
-    rebar3
+    beam26Packages.erlang
+    beam26Packages.erlfmt
+    beam26Packages.erlang-ls
+    beam26Packages.rebar3
     gnumake
     gcc
     libgcc
