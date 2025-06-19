@@ -74,10 +74,28 @@ in {
       enable = true;
       flags = ["--cmd cd"];
     };
-    fish.enable = true;
+    fish = {
+      enable = true;
+      shellAliases = {
+        ".." = "cd ..";
+        "..." = "cd ../..";
+        "...." = "cd ../../../";
+        "....." = "cd ../../../../";
+
+        "cp" = "cp -v";
+        "ls" = "ls -lah";
+        "mkdir" = "mkdir -p";
+        "mv" = "mv -v";
+        "rm" = "rm -v";
+      };
+    };
     starship = {
       enable = true;
       presets = ["nerd-font-symbols" "gruvbox-rainbow"];
+      settings = {
+        add_newline = false;
+        directory.truncation_length = 10;
+      };
     };
     vim = {
       enable = true;
