@@ -29,8 +29,8 @@ in {
         gaps_in = 5;
         gaps_out = 15;
         border_size = 1;
-        "col.active_border" = "rgb(${colors.gruvbox-rgb.bright_orange}) rgb(${colors.gruvbox-rgb.red}) 45deg";
-        "col.inactive_border" = "rgba(${colors.gruvbox-rgb.bg4}, 0.66)";
+        "col.active_border" = "rgba(${colors.gruvbox-rgb.bright_orange},1.0) rgba(${colors.gruvbox-rgb.red},1.0) 45deg";
+        "col.inactive_border" = "rgba(${colors.gruvbox-rgb.bg4},0.66)";
         layout = "dwindle";
         allow_tearing = false;
       };
