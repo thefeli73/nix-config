@@ -1,4 +1,6 @@
-{
+let
+  colors = import ../gruvbox-theme.nix;
+in {
   # Hyprland settings
   wayland.windowManager.hyprland = {
     enable = true;
@@ -21,14 +23,14 @@
       "$mod" = "SUPER";
       "$terminal" = "ghostty";
       "$filemanager" = "nautilus";
-      "$menu" = "rofi -show drun";
+      "$menu" = "rofi -show-icons -show drun";
 
       general = {
         gaps_in = 5;
         gaps_out = 15;
         border_size = 1;
-        "col.active_border" = "rgba(fe8019ff) rgba(cc241dff) 45deg";
-        "col.inactive_border" = "rgba(7c6f64aa)";
+        "col.active_border" = "rgba(${colors.gruvbox-rgb.bright_orange}, 1.0) rgba(${colors.gruvbox-rgb.red}, 1.0) 45deg";
+        "col.inactive_border" = "rgba(${colors.gruvbox-rgb.bg4}, 0.66)";
         layout = "dwindle";
         allow_tearing = false;
       };
@@ -65,10 +67,14 @@
 
       # Window rules
       windowrulev2 = [
+        # Nice transparency for some apps
         "opacity 0.9,class:^(cursor)$"
         "opacity 0.9,class:^(firefox)$"
         "opacity 0.9,class:^(GitKraken)$"
         "opacity 0.9,class:^(obsidian)$"
+
+        # Keep Rofi focused
+        "stayfocused, class:^(Rofi)$"
       ];
 
       # Bindings
