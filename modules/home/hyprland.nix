@@ -8,6 +8,8 @@ in {
       exec-once = [
         "hyprpaper"
         "hypridle"
+        "wl-paste --type text --watch cliphist store" # Stores only text data
+        "wl-paste --type image --watch cliphist store" # Stores only image data
       ];
       input = {
         kb_layout = "se";
@@ -85,8 +87,9 @@ in {
           "$mod, C, killactive"
           "$mod, E, exec, $filemanager"
           "$mod, SPACE, exec, $menu"
+          "$mod, V, exec, cliphist list | dmenu | cliphist decode | wl-copy"
           ", Print, exec, grimblast copy area"
-          "$mod, V, togglefloating"
+          "$mod, F, togglefloating"
           "$mod, J, togglesplit, " # dwindle
           "$mod, L, exec, hyprlock"
 
