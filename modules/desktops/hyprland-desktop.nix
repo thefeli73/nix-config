@@ -93,10 +93,11 @@
   environment.systemPackages = with pkgs; [
     # ---- CORE HYPRLAND WORKFLOW ----
     waybar # Status bar/panel
-    rofi-wayland # Application launcher and dmenu replacement
+    rofi # Application launcher and dmenu replacement (rofi has native wayland support)
     mako # Notification daemon
     hyprpaper # Wallpaper daemon
     hyprlock # Screen lock utility
+    hyprpicker # Color picker
 
     # ---- CLIPBOARD & INPUT ----
     wl-clipboard # Clipboard utilities for Wayland
