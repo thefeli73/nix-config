@@ -63,6 +63,14 @@
         smart_split = true;
       };
 
+      # Window rules
+      windowrulev2 = [
+        "opacity 0.9,class:^(cursor)$"
+        "opacity 0.9,class:^(firefox)$"
+        "opacity 0.9,class:^(GitKraken)$"
+        "opacity 0.9,class:^(obsidian)$"
+      ];
+
       # Bindings
       bind =
         [
