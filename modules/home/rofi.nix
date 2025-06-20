@@ -18,20 +18,21 @@ in {
         padding = 0;
         spacing = 0;
 
-        bg0 = mkLiteral "#2828289A";
-        bg1 = mkLiteral "#3c3836";
-        bg2 = mkLiteral "#50494580";
-        bg3 = mkLiteral "#665c549A";
+        bg0 = mkLiteral "${colors.gruvbox.bg0}9A";
+        bg1 = mkLiteral "${colors.gruvbox.bg1}";
+        bg2 = mkLiteral "${colors.gruvbox.bg2}9A";
+        bg3 = mkLiteral "${colors.gruvbox.bg3}9A";
 
-        fg0 = mkLiteral "#fbf1c7";
-        fg1 = mkLiteral "#ebdbb2";
-        fg2 = mkLiteral "#d5c4a1";
-        fg3 = mkLiteral "#bdae93";
+        fg0 = mkLiteral "${colors.gruvbox.fg0}";
+        fg1 = mkLiteral "${colors.gruvbox.fg1}";
+        fg2 = mkLiteral "${colors.gruvbox.fg2}";
+        fg3 = mkLiteral "${colors.gruvbox.fg3}";
 
-        blue = mkLiteral "#83a598";
-        orange = mkLiteral "#d65d0e";
-        blue-alt = mkLiteral "#458588";
-        orange-alt = mkLiteral "#fe8019";
+        blue = mkLiteral "${colors.gruvbox.blue}";
+        orange = mkLiteral "${colors.gruvbox.orange}";
+        brightOrange = mkLiteral "${colors.gruvbox.bright_orange}";
+        brightBlue = mkLiteral "${colors.gruvbox.bright_blue}9A";
+        red = mkLiteral "${colors.gruvbox.red}";
 
         background-color = mkLiteral "transparent";
         text-color = mkLiteral "@fg0";
@@ -43,7 +44,8 @@ in {
 
         width = mkLiteral "480";
         border-radius = mkLiteral "8px";
-        border = mkLiteral "1px solid @bg3";
+        border = mkLiteral "1px";
+        border-color = mkLiteral "@red";
       };
 
       "mainbox" = {
@@ -53,7 +55,7 @@ in {
 
       "inputbar" = {
         background-color = mkLiteral "@bg1";
-        border-color = mkLiteral "@bg3";
+        border-color = mkLiteral "@orange";
 
         border = mkLiteral "2px";
         border-radius = mkLiteral "4px";
@@ -64,7 +66,7 @@ in {
       };
 
       "prompt" = {
-        text-color = mkLiteral "@fg2";
+        text-color = mkLiteral "@brightOrange";
       };
 
       "entry" = {
@@ -94,7 +96,6 @@ in {
         padding = mkLiteral "8px 16px";
         spacing = mkLiteral "8px";
         border-radius = mkLiteral "4px";
-        #border = mkLiteral "0 0 0 2px";
         #spacing = mkLiteral "8px";
       };
 
@@ -107,7 +108,9 @@ in {
       };
 
       "element selected normal, element selected active" = {
-        background-color = mkLiteral "@bg3";
+        background-color = mkLiteral "@brightBlue";
+        border = mkLiteral "2px";
+        border-color = mkLiteral "@blue";
       };
 
       "element-icon" = {
