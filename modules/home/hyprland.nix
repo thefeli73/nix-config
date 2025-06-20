@@ -40,7 +40,7 @@ in {
         blur = {
           enabled = true;
           xray = true;
-          size = 3;
+          size = 4;
           passes = 4;
         };
       };
