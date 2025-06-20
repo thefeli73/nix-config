@@ -27,9 +27,10 @@
     };
     # User-specific Home Manager configurations
     users.schulze.imports = [
-      ./home/hyprland.nix # Hyprland window manager user config
       ./home/home-manager.nix # Base user environment
+      ./home/hyprland.nix # Hyprland window manager user config
       ./home/hyprlock.nix # Hyprlock screen lock user config
+      ./home/hypridle.nix # Hypridle idle daemon user config
       ./home/rofi.nix # Rofi theme/config
       ./home/ghostty.nix # Ghostty config
       ./home/gtk.nix # GTK theme

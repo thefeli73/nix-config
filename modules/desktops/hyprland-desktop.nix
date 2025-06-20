@@ -21,6 +21,9 @@
     # Power management services for laptops and desktops
     upower.enable = true; # Battery and power device monitoring
     power-profiles-daemon.enable = true; # CPU frequency scaling
+
+    # Hypridle, idle daemon
+    hypridle.enable = true;
   };
 
   # ================================

@@ -7,6 +7,7 @@ in {
     settings = {
       exec-once = [
         "hyprpaper"
+        "hypridle"
       ];
       input = {
         kb_layout = "se";
