@@ -24,8 +24,8 @@
       "$menu" = "rofi -show drun";
 
       general = {
-        gaps_in = 4;
-        gaps_out = 4;
+        gaps_in = 5;
+        gaps_out = 15;
         border_size = 1;
         "col.active_border" = "rgba(fe8019ff) rgba(cc241dff) 45deg";
         "col.inactive_border" = "rgba(7c6f64aa)";
@@ -60,6 +60,7 @@
       dwindle = {
         pseudotile = true;
         preserve_split = true;
+        smart_split = true;
       };
 
       # Bindings
