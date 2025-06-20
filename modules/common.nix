@@ -35,6 +35,7 @@
       ./home/gtk.nix # GTK theme
       ./home/nextcloud.nix # Nextcloud autostart
       ./home/code-cursor.nix # Cursor config
+      ./home/vim.nix # Vim config
     ];
   };
 
