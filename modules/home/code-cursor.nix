@@ -18,7 +18,6 @@
       esbenp.prettier-vscode # Prettier code formatting
       bradlc.vscode-tailwindcss # Tailwind IntelliSense
       unifiedjs.vscode-mdx # MDX language
-      # csstools.postcss # PostCSS language # not available
 
       waderyan.gitblame # Git blame
 
@@ -31,10 +30,11 @@
 
       jnoortheen.nix-ide # Nix language
 
-      # pgourlain.erlang # Erlang language # not available
-
       redhat.vscode-yaml # YAML
       ms-vscode.hexeditor # Hex editor
+      # Manually install these (not available as nixpkgs)
+      # pgourlain.erlang # Erlang language # not available
+      # csstools.postcss # PostCSS language # not available
     ];
     profiles.default.userSettings = {
       "terminal.external.linuxExec" = "ghostty";
