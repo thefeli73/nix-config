@@ -112,6 +112,7 @@ in {
     # Starship shell prompt
     starship = {
       enable = true;
+      transientPrompt.enable = true;
       presets = ["nerd-font-symbols" "gruvbox-rainbow"];
       settings = {
         add_newline = false;
