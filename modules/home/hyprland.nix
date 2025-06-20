@@ -8,6 +8,7 @@ in {
       exec-once = [
         "hyprpaper"
         "hypridle"
+        "hyprctl setcursor capitaine-cursors-white 28" # Set mouse cursor
         "wl-paste --type text --watch cliphist store" # Stores only text data
         "wl-paste --type image --watch cliphist store" # Stores only image data
       ];

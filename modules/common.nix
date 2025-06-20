@@ -31,6 +31,7 @@
       ./home/hyprland.nix # Hyprland window manager user config
       ./home/hyprlock.nix # Hyprlock screen lock user config
       ./home/hypridle.nix # Hypridle idle daemon user config
+      ./home/cursor.nix # Mouse cursor config
       ./home/rofi.nix # Rofi theme/config
       ./home/ghostty.nix # Ghostty config
       ./home/gtk.nix # GTK theme
