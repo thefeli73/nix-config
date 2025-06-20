@@ -2,6 +2,13 @@
 
 set -e
 
+# Days of nix generations to keep
+KEEP_DAYS=60
+# extra buffer before we trigger a GC
+BUFFER_DAYS=30
+# minimum number of generations to keep
+KEEP_MIN=5
+
 # Check for force flag
 FORCE_REBUILD=false
 if [[ "$1" == "-f" || "$1" == "--force" ]]; then
@@ -61,7 +68,17 @@ current=$(nixos-rebuild list-generations | grep current)
 # Commit all changes witih the generation metadata
 git commit -am "$NIXOS_HOST: $current"
 
-# Clean up old generations older than 180 days
-sudo nix-collect-garbage --delete-older-than 180d &>logs/nixos-gc.log || (cat logs/nixos-gc.log | grep --color error && exit 1)
+# Clean up old generations if conditions are met
+gens=$(nixos-rebuild list-generations | tail -n +2)
+# If there are less than KEEP_MIN generations, exit
+(( $(wc -l <<<"$gens") <= KEEP_MIN )) && exit 0
+
+# Get the oldest generation
+old=$(awk 'END{print $2" "$3}' <<<"$gens")
+# Calculate the age of the oldest generation in days
+age=$(( ( $(date +%s) - $(date -d "$old" +%s) )/86400 ))
+# If the age is greater than KEEP_DAYS+BUFFER_DAYS, delete the oldest generation
+(( age > KEEP_DAYS+BUFFER_DAYS )) || exit 0
+sudo nix-collect-garbage --delete-older-than ${KEEP_DAYS}d &>logs/nixos-gc.log || (cat logs/nixos-gc.log | grep --color error && exit 1)
 
 
