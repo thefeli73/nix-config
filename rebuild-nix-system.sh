@@ -56,7 +56,7 @@ git diff -U0 '*.nix'
 echo "NixOS Rebuilding configuration for host: $NIXOS_HOST..."
 
 # First, run a check to see if the flake is valid
-nix flake check 2>&1 | grep -i --color error && exit 1
+# nix flake check 2>&1 | grep -i --color error && exit 1 # This just takes too long
 
 # Rebuild the system
 mkdir -p logs
