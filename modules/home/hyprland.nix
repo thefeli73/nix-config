@@ -71,11 +71,11 @@ in {
 
       # Window rules
       windowrulev2 = [
-        # Nice transparency for some apps
-        "opacity 0.9,class:^(cursor)$"
-        "opacity 0.9,class:^(firefox)$"
-        "opacity 0.9,class:^(GitKraken)$"
-        "opacity 0.9,class:^(obsidian)$"
+        # Nice transparency for some apps (unless in fullscreen)
+        "opacity 0.9,fullscreen:0,class:^(cursor)$"
+        "opacity 0.9,fullscreen:0,class:^(firefox)$"
+        "opacity 0.9,fullscreen:0,class:^(GitKraken)$"
+        "opacity 0.9,fullscreen:0,class:^(obsidian)$"
 
         # Keep Rofi focused
         "stayfocused, class:^(Rofi)$"
