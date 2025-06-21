@@ -134,6 +134,9 @@
       daemon.enable = true; # Background virus scanning
       updater.enable = true; # Automatic signature updates
     };
+
+    # Enable GNOME keyring for password management
+    gnome.gnome-keyring.enable = true;
   };
 
   # ================================
