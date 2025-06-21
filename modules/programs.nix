@@ -73,10 +73,12 @@ in {
     remmina
 
     # Visual
-    inkscape
-    krita
-    darktable
-    imagemagick
+    loupe # Image viewer
+    inkscape # Vector editor
+    krita # Image editor
+    kdePackages.kolourpaint # Simple Image editor
+    darktable # Raw editor
+    imagemagick # Image processing
   ];
 
   programs = {
