@@ -79,6 +79,7 @@ in {
     kdePackages.kolourpaint # Simple Image editor
     darktable # Raw editor
     imagemagick # Image processing
+    mpv # Video player
   ];
 
   programs = {
@@ -148,6 +149,7 @@ in {
     # programs
     firefox = {
       enable = true;
+      nativeMessagingHosts.packages = [pkgs.ff2mpv];
       policies = {
         /*
         ---- POLICIES ----
