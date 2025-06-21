@@ -39,8 +39,8 @@ in {
         allow_tearing = false;
       };
       decoration = {
-        rounding = 8;
-        rounding_power = 3.5;
+        rounding = 10;
+        rounding_power = 4;
         blur = {
           enabled = true;
           xray = true;
