@@ -14,6 +14,9 @@
 in {
   # Common packages for ALL systems
   environment.systemPackages = with pkgs; [
+    # misc
+    xdg-user-dirs
+
     # networking
     wget
     whois

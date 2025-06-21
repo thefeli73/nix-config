@@ -84,15 +84,16 @@ in {
       # Bindings
       bind =
         [
-          "$mod, RETURN, exec, $terminal"
-          "$mod, C, killactive"
-          "$mod, E, exec, $filemanager"
-          "$mod, SPACE, exec, $menu"
-          "$mod, V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy"
-          ", Print, exec, grimblast copy area"
-          "$mod, F, togglefloating"
+          "$mod, RETURN, exec, $terminal" # Open terminal
+          "$mod, C, killactive" # Kill active window
+          "$mod, E, exec, $filemanager" # Open file manager
+          "$mod, SPACE, exec, $menu" # Show menu (rofi)
+          "$mod, V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy" # Show Clipboard history
+          ", PRINT, exec, hyprshot -m region" # Screenshot region
+          "$mod, PRINT, exec, hyprshot -m window" # Screenshot window
+          "$mod, F, togglefloating" # Make active window floating
           "$mod, J, togglesplit, " # dwindle
-          "$mod, L, exec, hyprlock"
+          "$mod, L, exec, hyprlock" # Lock screen
 
           # Move focus with mainMod + arrow keys
           "$mod, left, movefocus, l"

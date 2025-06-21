@@ -116,6 +116,7 @@
     # ---- SCREENSHOT & RECORDING ----
     grim # Screenshot tool for Wayland
     slurp # Screen area selection for screenshots
+    hyprshot # Screenshot tool for Hyprland
     swappy # Screenshot editing and annotation
     wf-recorder # Screen recording for Wayland
 
