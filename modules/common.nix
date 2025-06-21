@@ -209,8 +209,6 @@
           "--ignore=private-dev"
           # Enable desktop notifications
           "--dbus-user.talk=org.freedesktop.Notifications"
-          # Allow access to downloads
-          "--whitelist=/home/schulze/Nextcloud/Home-sync/Downloads"
         ];
       };
       chromium = {
@@ -218,6 +216,21 @@
         profile = "${pkgs.firejail}/etc/firejail/chromium.profile";
       };
     };
+  };
+  environment.etc = {
+    "firejail/firefox.local".text = ''
+      # Custom Firejail profile for firefox
+      # Allow access to downloads
+      noblacklist ''${HOME}/Nextcloud
+      whitelist ''${HOME}/Nextcloud
+
+      # Enable native notifications.
+      dbus-user.talk org.freedesktop.Notifications
+      # Allow inhibiting screensavers.
+      dbus-user.talk org.freedesktop.ScreenSaver
+      # Allow screensharing under Wayland.
+      dbus-user.talk org.freedesktop.portal.Desktop
+    '';
   };
 
   # ================================
