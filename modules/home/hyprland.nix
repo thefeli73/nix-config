@@ -88,7 +88,7 @@ in {
           "$mod, C, killactive"
           "$mod, E, exec, $filemanager"
           "$mod, SPACE, exec, $menu"
-          "$mod, V, exec, cliphist list | dmenu | cliphist decode | wl-copy"
+          "$mod, V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy"
           ", Print, exec, grimblast copy area"
           "$mod, F, togglefloating"
           "$mod, J, togglesplit, " # dwindle
