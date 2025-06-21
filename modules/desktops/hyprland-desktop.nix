@@ -101,6 +101,7 @@
     hyprpaper # Wallpaper daemon
     hyprlock # Screen lock utility
     hyprpicker # Color picker
+    hyprsunset # Night mode
 
     # ---- CLIPBOARD & INPUT ----
     wl-clipboard # Clipboard utilities for Wayland
