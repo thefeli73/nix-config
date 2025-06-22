@@ -24,6 +24,9 @@ in {
         follow_mouse = 1;
 
         sensitivity = 0;
+
+        repeat_delay = 200;
+        repeat_rate = 30;
       };
       "$mod" = "SUPER";
       "$terminal" = "ghostty";
@@ -119,6 +122,22 @@ in {
       bindm = [
         "$mod, mouse:272, movewindow"
         "$mod, mouse:273, resizewindow"
+      ];
+
+      # l -> do stuff even when locked
+      # e -> repeats when key is held
+      bindle = [
+        ", XF86AudioRaiseVolume, exec, vol --up"
+        ", XF86AudioLowerVolume, exec, vol --down"
+        ", XF86MonBrightnessUp, exec, bri --up"
+        ", XF86MonBrightnessDown, exec, bri --down"
+        ", XF86Search, exec, launchpad"
+      ];
+      bindl = [
+        ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+        ", XF86AudioPlay, exec, playerctl play-pause" # the stupid key is called play , but it toggles
+        ", XF86AudioNext, exec, playerctl next"
+        ", XF86AudioPrev, exec, playerctl previous"
       ];
     };
   };
