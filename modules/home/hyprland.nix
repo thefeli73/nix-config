@@ -140,17 +140,13 @@ in {
       # l -> do stuff even when locked
       # e -> repeats when key is held
       bindle = [
-        ", XF86AudioRaiseVolume, exec, vol --up"
-        ", XF86AudioLowerVolume, exec, vol --down"
-        ", XF86MonBrightnessUp, exec, bri --up"
-        ", XF86MonBrightnessDown, exec, bri --down"
-        ", XF86Search, exec, launchpad"
+        ", XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%+ --limit 1"
+        ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%-"
+        ", XF86MonBrightnessUp, exec, brightnessctl set +10%"
+        ", XF86MonBrightnessDown, exec, brightnessctl set 10%-"
       ];
       bindl = [
         ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
-        ", XF86AudioPlay, exec, playerctl play-pause" # the stupid key is called play , but it toggles
-        ", XF86AudioNext, exec, playerctl next"
-        ", XF86AudioPrev, exec, playerctl previous"
       ];
     };
   };
