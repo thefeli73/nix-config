@@ -13,6 +13,7 @@
     xserver = {
       enable = true;
       displayManager.gdm.enable = false; # Disable GDM in favor of regreet
+      excludePackages = [pkgs.xterm]; # Exclude xterm from the list of packages to install
     };
 
     # Lightweight Wayland-native display manager
