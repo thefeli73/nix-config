@@ -34,6 +34,13 @@ in {
           clickfinger_behavior = true;
         };
       };
+
+      gestures = {
+        workspace_swipe = true;
+        workspace_swipe_forever = true;
+        workspace_swipe_direction_lock = false;
+      };
+
       "$mod" = "SUPER";
       "$terminal" = "ghostty";
       "$filemanager" = "nautilus";
