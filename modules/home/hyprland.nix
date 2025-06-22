@@ -24,9 +24,15 @@ in {
         follow_mouse = 1;
 
         sensitivity = 0;
+        accel_profile = "flat";
 
-        repeat_delay = 200;
-        repeat_rate = 30;
+        repeat_delay = 250;
+        repeat_rate = 40;
+
+        touchpad = {
+          natural_scroll = true;
+          clickfinger_behavior = true;
+        };
       };
       "$mod" = "SUPER";
       "$terminal" = "ghostty";
