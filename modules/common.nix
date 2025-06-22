@@ -39,6 +39,7 @@
       ./home/code-cursor.nix # Cursor config
       ./home/vim.nix # Vim config
       ./home/hyprsunset.nix # Hyprsunset night mode
+      ./home/btop.nix # Btop config
     ];
   };
 
