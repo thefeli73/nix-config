@@ -14,10 +14,6 @@
 
   networking.hostName = "hurricane";
 
-  hardware = {
-    graphics.enable = true;
-  };
-
   # Network security specific to host
   networking.firewall.allowedTCPPorts = [];
   networking.firewall.allowedUDPPorts = [];
@@ -25,8 +21,27 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
+  # Intel GPU support
+  hardware = {
+    graphics.extraPackages = with pkgs; [
+      vaapiIntel
+      intel-media-driver
+    ];
+    opengl = {
+      enable = true;
+      extraPackages = with pkgs; [
+        vpl-gpu-rt # Intel GPU support
+
+        intel-media-driver # LIBVA_DRIVER_NAME=iHD
+        intel-vaapi-driver # LIBVA_DRIVER_NAME=i965 (older but works better for Firefox/Chromium)
+        libvdpau-va-gl
+      ];
+    };
+  };
+
   # host-specific packages
   environment.systemPackages = with pkgs; [
+    btop
   ];
 
   # host-specific Systemd services

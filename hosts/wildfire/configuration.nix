@@ -17,13 +17,12 @@
 
   networking.hostName = "wildfire";
 
-  hardware = {
-    steam-hardware.enable = true;
-    graphics.enable = true;
-  };
-
-  # AMD GPU kernel module
-  boot.initrd.kernelModules = ["amdgpu"];
+  # AMD GPU support
+  boot.initrd.kernelModules = ["amdgpu"]; # AMD GPU kernel module
+  hardware.graphics.extraPackages = with pkgs; [
+    rocmPackages.clr.icd # OpenCL
+    amdvlk # AMDVLK drivers can be used in addition to the Mesa RADV drivers
+  ];
 
   # Network security specific to host
   networking.firewall.allowedTCPPorts = [];
@@ -41,14 +40,17 @@
   ];
 
   # host-specific Systemd services
-  systemd.services.lact = {
-    description = "AMDGPU Control Daemon";
-    after = ["multi-user.target"];
-    wantedBy = ["multi-user.target"];
-    serviceConfig = {
-      ExecStart = "${pkgs.lact}/bin/lact daemon";
+  systemd = {
+    packages = with pkgs; [lact];
+    services.lact = {
+      description = "AMDGPU Control Daemon";
+      after = ["multi-user.target"];
+      wantedBy = ["multi-user.target"];
+      serviceConfig = {
+        ExecStart = "${pkgs.lact}/bin/lact daemon";
+      };
+      enable = true;
     };
-    enable = true;
   };
 
   # This value determines the NixOS release from which the default
