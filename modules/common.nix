@@ -40,6 +40,7 @@
       ./home/vim.nix # Vim config
       ./home/hyprsunset.nix # Hyprsunset night mode
       ./home/btop.nix # Btop config
+      ./home/ssh.nix # SSH config
     ];
   };
 
@@ -79,13 +80,6 @@
     # Host-specific ports are opened in individual host configurations
     firewall.enable = true;
   };
-
-  # ================================
-  # SECURITY HARDENING
-  # ================================
-  # Disable core dumps to prevent potential security exploits
-  # and improve system performance during crashes
-  systemd.coredump.enable = false;
 
   # ================================
   # LOCALIZATION
@@ -141,7 +135,7 @@
   };
 
   # ================================
-  # SECURITY & PERMISSIONS
+  # PERMISSIONS
   # ================================
   # Enable real-time scheduling for audio applications (low-latency audio)
   security.rtkit.enable = true;
@@ -198,8 +192,27 @@
   };
 
   # ================================
-  # SANDBOXED APPLICATIONS
+  # SECURITY HARDENING
   # ================================
+  # Enable fail2ban for brute force protection
+  services.fail2ban = {
+    enable = true;
+    # Ban IP after 3 failures
+    maxretry = 3;
+    bantime = "1h"; # Ban IPs for one hour on the first ban
+    bantime-increment = {
+      enable = true; # Enable increment of bantime after each violation
+      multipliers = "1 2 4 8 16 32 64";
+      maxtime = "168h"; # Do not ban for more than 1 week
+      overalljails = true; # Calculate the bantime based on all the violations
+    };
+  };
+
+  # Disable core dumps to prevent potential security exploits
+  # and improve system performance during crashes
+  systemd.coredump.enable = false;
+
+  # SANDBOXED APPLICATIONS
   # Enable Firejail for application sandboxing (security)
   programs.firejail = {
     enable = true;
@@ -237,9 +250,7 @@
     '';
   };
 
-  # ================================
   # HARDWARE SECURITY (YUBIKEY)
-  # ================================
   # Enable Yubikey support for SSH and GPG
   services.yubikey-agent.enable = true;
   # Enable U2F authentication for login
