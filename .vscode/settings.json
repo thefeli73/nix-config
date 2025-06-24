@@ -1,4 +1,7 @@
 {
+  "[nix]": {
+    "editor.defaultFormatter": "jnoortheen.nix-ide"
+  },
   "nix.enableLanguageServer": true,
   "nix.serverPath": "nil",
   "nix.formatterPath": "alejandra",
@@ -6,10 +9,11 @@
     "nil": {
       "formatting": {
         "command": ["alejandra"]
+      },
+      "flake": {
+        "autoArchive": true,
+        "autoEvalInputs": true
       }
     }
-  },
-  "[nix]": {
-    "editor.defaultFormatter": "jnoortheen.nix-ide"
   }
 }

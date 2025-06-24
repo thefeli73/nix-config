@@ -45,21 +45,17 @@
       "editor.fontFamily" = "'Intel One Mono', 'Droid Sans Mono', 'monospace', monospace";
       "editor.tabSize" = 2;
       "editor.wordWrap" = "on";
-      "workbench.colorTheme" = "Gruvbox Dark Medium";
-      "workbench.iconTheme" = "vscode-icons";
-      "editor.defaultFormatter" = "esbenp.prettier-vscode";
       "editor.fontLigatures" = "'ss01'";
       "editor.formatOnSave" = true;
+      "editor.minimap.enabled" = true;
+      "editor.defaultFormatter" = "esbenp.prettier-vscode";
       "prettier.printWidth" = 120;
       "prettier.proseWrap" = "always";
+      "workbench.colorTheme" = "Gruvbox Dark Medium";
+      "workbench.iconTheme" = "vscode-icons";
       "vsicons.dontShowNewVersionMessage" = true;
-      "editor.minimap.enabled" = true;
       "cursor.cpp.enablePartialAccepts" = true;
       "cursor.diffs.useCharacterLevelDiffs" = true;
-      "nix.enableLanguageServer" = true;
-      "[nix]" = {
-        "editor.defaultFormatter" = "jnoortheen.nix-ide";
-      };
     };
   };
 }
