@@ -76,7 +76,7 @@ in {
           "border, 1, 10, default"
           "borderangle, 1, 8, default"
           "fade, 1, 7, default"
-          "workspaces, 1, 6, default"
+          "workspaces, 1, 6, default, slidevert"
         ];
       };
 
@@ -109,7 +109,6 @@ in {
           ", PRINT, exec, hyprshot -m region" # Screenshot region
           "$mod, PRINT, exec, hyprshot -m window" # Screenshot window
           "$mod, F, togglefloating" # Make active window floating
-          "$mod, J, togglesplit, " # dwindle
           "$mod, L, exec, hyprlock" # Lock screen
 
           # Move focus with mainMod + arrow keys
@@ -117,6 +116,10 @@ in {
           "$mod, right, movefocus, r"
           "$mod, up, movefocus, u"
           "$mod, down, movefocus, d"
+
+          # Workspace navigation
+          "$mod, J, workspace, r+1" # vim motions Down
+          "$mod, K, workspace, r-1" # vim motions Up
         ]
         ++ (
           # workspaces
