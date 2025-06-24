@@ -13,7 +13,7 @@ nix-config/
 ├── modules/                  # Shared configuration modules
 │   ├── common.nix           # Base system configuration
 │   ├── programs.nix         # System-wide packages and programs
-│   ├── home/                # Home Manager configurations
+│   ├── hm/                  # Home Manager configurations
 │   └── desktops/            # Desktop environment configurations
 └── rebuild-nix-system.sh    # Helper script for system rebuilds
 ```
@@ -73,7 +73,7 @@ Hyprland desktop environment setup:
 - **Theming**: Gruvbox theme with consistent fonts
 - **Tools**: Screenshot tools, clipboard manager, file manager
 
-### `modules/home/`
+### `modules/hm/`
 
 Home Manager configurations:
 
@@ -135,7 +135,7 @@ nix flake update
 ### User Packages
 
 - Managed through Home Manager
-- Per-user configurations in `modules/home/`
+- Per-user configurations in `modules/hm/`
 
 ## 🔄 Development Workflow
 

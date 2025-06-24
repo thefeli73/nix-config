@@ -27,20 +27,20 @@
     };
     # User-specific Home Manager configurations
     users.schulze.imports = [
-      ./home/home-manager.nix # Base user environment
-      ./home/hyprland.nix # Hyprland window manager user config
-      ./home/hyprlock.nix # Hyprlock screen lock user config
-      ./home/hypridle.nix # Hypridle idle daemon user config
-      ./home/cursor.nix # Mouse cursor config
-      ./home/rofi.nix # Rofi theme/config
-      ./home/ghostty.nix # Ghostty config
-      ./home/gtk.nix # GTK theme
-      ./home/nextcloud.nix # Nextcloud autostart
-      ./home/code-cursor.nix # Cursor config
-      ./home/vim.nix # Vim config
-      ./home/hyprsunset.nix # Hyprsunset night mode
-      ./home/btop.nix # Btop config
-      ./home/ssh.nix # SSH config
+      ./hm/home-manager.nix # Base user environment
+      ./hm/hyprland.nix # Hyprland window manager user config
+      ./hm/hyprlock.nix # Hyprlock screen lock user config
+      ./hm/hypridle.nix # Hypridle idle daemon user config
+      ./hm/cursor.nix # Mouse cursor config
+      ./hm/rofi.nix # Rofi theme/config
+      ./hm/ghostty.nix # Ghostty config
+      ./hm/gtk.nix # GTK theme
+      ./hm/nextcloud.nix # Nextcloud autostart
+      ./hm/code-cursor.nix # Cursor config
+      ./hm/vim.nix # Vim config
+      ./hm/hyprsunset.nix # Hyprsunset night mode
+      ./hm/btop.nix # Btop config
+      ./hm/ssh.nix # SSH config
     ];
   };
 

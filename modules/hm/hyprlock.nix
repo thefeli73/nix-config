@@ -6,7 +6,7 @@ in {
     settings = {
       background = {
         # Background image is set in host specific configuration
-        #path = "$HOME/git/nixos/modules/home/images/sky.png";
+        #path = "$HOME/git/nixos/modules/hm/images/sky.png";
         blur_size = 3;
         blur_passes = 4;
         contrast = 1;
