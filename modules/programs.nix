@@ -111,7 +111,7 @@ in {
         "jumpc" = "ssh prod-admin-jump1.infra.csbnet.se";
         "proxc" = "ssh -L1337:172.18.200.21:8006 prod-admin-jump1.infra.csbnet.se";
         "jumpn" = "ssh prod-jump-got1.infra.brainmill.com";
-        "proxmoxn" = "ssh -L1338:[2a09:2681:ffff:13::104]:8006 prod-jump-got1.infra.brainmill.com";
+        "proxn" = "ssh -L1338:[2a09:2681:ffff:13::104]:8006 prod-jump-got1.infra.brainmill.com";
         "ups1c" = "ssh -L1339:172.18.79.1:80 prod-admin-jump1.infra.csbnet.se";
         "ups2c" = "ssh -L1340:172.18.79.3:80 prod-admin-jump1.infra.csbnet.se";
       };
