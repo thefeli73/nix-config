@@ -83,6 +83,10 @@
   # ================================
   # ENVIRONMENT VARIABLES
   # ================================
+  # global variables set on shell initialization
+  environment.variables = {
+  };
+  # session variables
   environment.sessionVariables = {
     # Set Firefox as default browser
     BROWSER = "${pkgs.lib.getBin pkgs.firefox}";
