@@ -107,6 +107,15 @@ in {
         "...." = "cd ../../../";
         "....." = "cd ../../../../";
 
+        # Work aliases
+        "csb_jump" = "ssh -A prod-admin-jump1.infra.csbnet.se";
+        "csb_proxmox" = "ssh -A -L1337:172.18.200.21:8006 prod-admin-jump1.infra.csbnet.se";
+        "csb_ups1" = "ssh -A -L1338:172.18.79.1:80 prod-admin-jump1.infra.csbnet.se";
+        "csb_ups2" = "ssh -A -L1339:172.18.79.3:80 prod-admin-jump1.infra.csbnet.se";
+        "neanet_jump" = "ssh -A prod-jump-got1.infra.brainmill.com";
+        "neanet_proxmox" = "ssh -A -L1338:[2a09:2681:ffff:13::104]:8006 prod-jump-got1.infra.brainmill.com";
+      };
+      shellAbbrs = {
         "cp" = "cp -v";
         "ls" = "ls -lah";
         "mkdir" = "mkdir -p";
@@ -122,6 +131,12 @@ in {
       presets = ["nerd-font-symbols" "gruvbox-rainbow"];
       settings = {
         add_newline = false;
+        directory = {
+          fish_style_pwd_dir_length = 1;
+          substitutions = {
+            "git" = "";
+          };
+        };
       };
     };
     # Direnv for automatic environment loading
