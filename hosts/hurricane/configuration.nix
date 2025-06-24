@@ -4,6 +4,7 @@
     ../../modules/common.nix
     ../../modules/desktops/hyprland-desktop.nix
     ../../modules/programs.nix
+    ./vpn.nix
   ];
   # Extend home-manager configuration with host-specific monitor settings
   home-manager.users.schulze.imports = [
