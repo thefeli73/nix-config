@@ -7,23 +7,18 @@
     matchBlocks = {
       "d10.csb.brainmill.com" = {
         forwardAgent = true;
-        port = 22;
       };
       "prod-admin-jump1.infra.csbnet.se" = {
         forwardAgent = true;
-        port = 22;
       };
       "prod-jump-got1.infra.brainmill.com" = {
         forwardAgent = true;
-        port = 22;
       };
       "gw1.net.chsfg.se" = {
         forwardAgent = true;
-        hostname = "2a02:9a0:fffe:4::3";
       };
       "gw2.net.chsfg.se" = {
         forwardAgent = true;
-        hostname = "2a02:9a0:fffe:4::5";
       };
       "cv11-stor-gw.net.chsfg.se" = {
         proxyCommand = "ssh prod-admin-jump1.infra.csbnet.se /bin/nc %h 22";
