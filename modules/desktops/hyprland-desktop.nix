@@ -62,6 +62,9 @@
         binPath = "/run/current-system/sw/bin/Hyprland";
       };
     };
+
+    # Waybar status bar & panel
+    waybar.enable = true;
   };
 
   # ================================
@@ -100,7 +103,6 @@
   # Essential tools for a functional Hyprland desktop
   environment.systemPackages = with pkgs; [
     # ---- CORE HYPRLAND WORKFLOW ----
-    waybar # Status bar/panel
     rofi # Application launcher and dmenu replacement (rofi has native wayland support)
     mako # Notification daemon
     hyprlock # Screen lock utility
