@@ -133,9 +133,6 @@ in {
         add_newline = false;
         directory = {
           fish_style_pwd_dir_length = 1;
-          substitutions = {
-            "git" = "";
-          };
         };
       };
     };
