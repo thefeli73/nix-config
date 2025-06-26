@@ -103,10 +103,8 @@
     waybar # Status bar/panel
     rofi # Application launcher and dmenu replacement (rofi has native wayland support)
     mako # Notification daemon
-    hyprpaper # Wallpaper daemon
     hyprlock # Screen lock utility
     hyprpicker # Color picker
-    hyprsunset # Night mode
 
     # ---- CLIPBOARD & INPUT ----
     wl-clipboard # Clipboard utilities for Wayland
@@ -117,7 +115,6 @@
     blueman # Bluetooth manager with system tray
     networkmanagerapplet # Network management system tray
     brightnessctl # Screen brightness control (laptops)
-    wlsunset # Blue light filter/night mode
 
     # ---- SCREENSHOT & RECORDING ----
     grim # Screenshot tool for Wayland
