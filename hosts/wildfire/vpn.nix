@@ -8,7 +8,7 @@
         {
           publicKey = "a35ZSWhBNzPFkf1RCkg4E7cNnUdGGOr4CsA0EM65H0g=";
           presharedKeyFile = "/home/schulze/Nextcloud/secrets/wireguard/Felix-Wildfire-psk";
-          allowedIPs = ["0.0.0.0/0"];
+          allowedIPs = ["192.168.0.0/24"];
           endpoint = "vpn.schulze.network:51820";
           persistentKeepalive = 25;
         }
@@ -21,7 +21,7 @@
       peers = [
         {
           publicKey = "mTORKHkPcp9+c7VXqVfVseIOQZuJftoUYA0pBe87bDQ=";
-          allowedIPs = ["172.18.0.0/16" "192.168.3.0/24" "192.168.108.0/22" "2a02:9a0:102:108::/64" "2a02:9a0:ffff::/48"];
+          allowedIPs = ["172.18.0.0/16" "192.168.3.0/24" "2a02:9a0:ffff::/48" "2a02:9a0:fffe::/48"];
           endpoint = "prod-net-vpn1.infra.brainmill.com:51819";
           persistentKeepalive = 25;
         }
