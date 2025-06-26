@@ -10,6 +10,12 @@ in {
         "wl-paste --type text --watch cliphist store" # Stores only text data
         "wl-paste --type image --watch cliphist store" # Stores only image data
       ];
+
+      misc = {
+        disable_hyprland_logo = true; # disables the random Hyprland logo / anime girl background. :(
+        disable_splash_rendering = true;
+      };
+
       input = {
         kb_layout = "se";
         kb_variant = "";
@@ -52,6 +58,7 @@ in {
         layout = "dwindle";
         allow_tearing = false;
       };
+
       decoration = {
         rounding = 10;
         rounding_power = 4;
