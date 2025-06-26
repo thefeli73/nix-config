@@ -155,6 +155,13 @@ in {
     git = {
       enable = true;
       lfs.enable = true;
+      config = {
+        user.name = "Felix Schulze";
+        user.email = "admin@schulze.network";
+        init.defaultBranch = "main";
+        pull.rebase = true;
+        push.autoSetupRemote = true;
+      };
     };
     java.enable = true;
 

@@ -41,6 +41,7 @@
       ./hm/hyprsunset.nix # Hyprsunset night mode
       ./hm/btop.nix # Btop config
       ./hm/ssh.nix # SSH config
+      ./hm/gitkraken.nix # GitKraken config
     ];
   };
 
