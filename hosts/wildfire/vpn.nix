@@ -21,7 +21,7 @@
       peers = [
         {
           publicKey = "mTORKHkPcp9+c7VXqVfVseIOQZuJftoUYA0pBe87bDQ=";
-          allowedIPs = ["95.80.0.0/18" "45.134.56.0/22" "172.18.0.0/16" "192.168.3.0/24" "192.168.108.0/22" "2a02:9a0::/32"];
+          allowedIPs = ["172.18.0.0/16" "192.168.3.0/24" "192.168.108.0/22" "2a02:9a0:102:108::/64" "2a02:9a0:ffff::/48"];
           endpoint = "prod-net-vpn1.infra.brainmill.com:51819";
           persistentKeepalive = 25;
         }
@@ -47,7 +47,7 @@
     #      peers = [
     #        {
     #          publicKey = "nz1m0crkdarW7y+/p6hKCGncMVHlVhbz0URA6Z71RmM=";
-    #          allowedIPs = ["185.239.220.0/22" "172.18.255.0/24" "2a09:2681::/32"];
+    #          allowedIPs = ["2a09:2681:204:1::/64" "2a09:2681:ffff:13::/64" "2a09:2681:ffff:14::/64" "2a09:2681:ffff:15::/64" "2a09:2681:ffff:16::/64" "172.18.255.0/24"];
     #          endpoint = "prod-jump-got1.infra.brainmill.com:51820";
     #          persistentKeepalive = 25;
     #        }
