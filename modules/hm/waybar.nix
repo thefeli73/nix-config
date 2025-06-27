@@ -3,148 +3,30 @@
     enable = true;
     settings = [
       {
-        output = ["DP-3"];
-        spacing = 5;
-        "modules-left" = ["sway/workspaces" "sway/window" "sway/mode" "sway/scratchpad"];
-        "modules-center" = [];
-        "modules-right" = ["cava" "mpris" "custom/audio_idle_inhibitor" "idle_inhibitor" "wireplumber" "custom/weather" "clock" "tray"];
-        "sway/workspaces" = {
+        output = ["eDP-1"];
+        spacing = 8;
+        "modules-left" = ["hyprland/workspaces"];
+        "modules-center" = ["mpris" "cava" "hyprland/window"];
+        "modules-right" = ["idle_inhibitor" "custom/audio_idle_inhibitor" "wireplumber" "backlight" "battery" "clock" "tray"];
+        "hyprland/workspaces" = {
           "all-outputs" = false;
-          "warp-on-scroll" = false;
+          "warp-on-scroll" = true;
           "enable-bar-scroll" = true;
-          "disable-scroll-wraparound" = true;
-          format = "{icon}";
-          "format-icons" = {
-            "1" = "";
-            "2" = "";
-            "3" = "";
-            "4" = "";
-            "5" = "";
-            "9" = "";
-            "10" = "";
-          };
         };
-        "sway/window" = {
+        "hyprland/window" = {
           format = "{title}";
           "max-length" = 60;
           "all-outputs" = true;
         };
-        cava = {
-          framerate = 30;
-          autosens = 1;
-          bars = 12;
-          "lower_cutoff_freq" = 50;
-          "higher_cutoff_freq" = 10000;
-          method = "pulse";
-          source = "auto";
-          stereo = true;
-          "bar_delimiter" = 0;
-          "noise_reduction" = 0.77;
-          "input_delay" = 2;
-          "hide_on_silence" = true;
-          "format-icons" = [" " "▂" "▃" "▄" "▅" "▆" "▇" "█"];
-          actions = {"on-click-right" = "mode";};
-        };
-        mpris = {
-          format = "{status_icon} {dynamic}";
-          interval = 1;
-          "dynamic-len" = 60;
-          "status-icons" = {
-            playing = "▶";
-            paused = "⏸";
-            stopped = "";
-          };
-          "dynamic-order" = ["title" "artist"];
-        };
-        "custom/audio_idle_inhibitor" = {
-          format = "{icon}";
-          exec = "sway-audio-idle-inhibit --dry-print-both-waybar --ignore-source-outputs cava";
-          "exec-if" = "which sway-audio-idle-inhibit";
-          "return-type" = "json";
-          "format-icons" = {
-            output = "";
-            input = "";
-            "output-input" = "  ";
-            none = "";
-          };
-        };
-        "idle_inhibitor" = {
-          format = "{icon}";
-          "format-icons" = {
-            activated = "";
-            deactivated = "";
-          };
-        };
-        "sway/mode" = {format = "{}";};
-        "sway/scratchpad" = {
-          format = "{icon} {count}";
-          "show-empty" = false;
-          "format-icons" = ["" ""];
-          tooltip = true;
-          "tooltip-format" = "{app}: {title}";
-        };
-        tray = {
-          "icon-size" = 14;
-          spacing = 10;
-        };
         load = {format = " {}";};
+        backlight = {
+          format = "{icon} {percent}%";
+          "format-icons" = ["" "" "" "" "" "" "" "" ""];
+        };
         clock = {
           "tooltip-format" = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
           format = " {:%H:%M}";
           "format-alt" = " {:%a %F}";
-        };
-        "custom/weather" = {
-          format = "{}°";
-          tooltip = true;
-          interval = 3600;
-          exec = "/home/origincode/.local/bin/wttrbar -l zh-tw --icon-family nerd --location Seattle";
-          "return-type" = "json";
-        };
-        wireplumber = {
-          "scroll-step" = 5;
-          format = "{icon} {volume}%";
-          "format-bluetooth" = "{icon} {volume}% ";
-          "format-bluetooth-muted" = "󰆪 {icon}";
-          "format-muted" = "󰆪";
-          "format-icons" = {
-            headphone = "";
-            "hands-free" = "󰂑";
-            headset = "󰂑";
-            phone = "";
-            portable = "";
-            car = "";
-            default = ["" "" ""];
-          };
-          "on-click" = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
-          "on-click-right" = "pavucontrol";
-        };
-      }
-      {
-        output = ["HDMI-A-1"];
-        spacing = 4;
-        "modules-left" = ["sway/workspaces" "sway/window" "sway/mode" "sway/scratchpad"];
-        "modules-center" = [];
-        "modules-right" = ["cava" "mpris" "custom/audio_idle_inhibitor" "idle_inhibitor" "wireplumber" "backlight" "custom/weather" "clock" "battery" "tray"];
-        "sway/workspaces" = {
-          "all-outputs" = false;
-          "warp-on-scroll" = false;
-          "enable-bar-scroll" = true;
-          "disable-scroll-wraparound" = true;
-          format = "{icon}";
-          "format-icons" = {
-            "1" = "";
-            "2" = "";
-            "3" = "";
-            "4" = "";
-            "5" = "";
-            "9" = "";
-            "10" = "";
-          };
-        };
-        "sway/window" = {
-          format = "{title}";
-          "max-length" = 60;
-          "all-outputs" = true;
         };
         cava = {
           framerate = 30;
@@ -162,30 +44,6 @@
           "format-icons" = [" " "▂" "▃" "▄" "▅" "▆" "▇" "█"];
           actions = {"on-click-right" = "mode";};
         };
-        mpris = {
-          player = "Feishin";
-          format = " {status_icon} {dynamic}";
-          interval = 1;
-          "dynamic-len" = 60;
-          "status-icons" = {
-            playing = "▶";
-            paused = "⏸";
-            stopped = "";
-          };
-          "dynamic-order" = ["title" "artist"];
-        };
-        "custom/audio_idle_inhibitor" = {
-          format = "{icon}";
-          exec = "sway-audio-idle-inhibit --dry-print-both-waybar --ignore-source-outputs cava";
-          "exec-if" = "which sway-audio-idle-inhibit";
-          "return-type" = "json";
-          "format-icons" = {
-            output = "";
-            input = "";
-            "output-input" = "  ";
-            none = "";
-          };
-        };
         "idle_inhibitor" = {
           format = "{icon}";
           "format-icons" = {
@@ -193,34 +51,9 @@
             deactivated = "";
           };
         };
-        "sway/mode" = {format = "{}";};
-        "sway/scratchpad" = {
-          format = "{icon} {count}";
-          "show-empty" = false;
-          "format-icons" = ["" ""];
-          tooltip = true;
-          "tooltip-format" = "{app}: {title}";
-        };
         tray = {
           "icon-size" = 14;
           spacing = 10;
-        };
-        load = {format = " {}";};
-        clock = {
-          "tooltip-format" = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
-          format = " {:%H:%M}";
-          "format-alt" = " {:%a %F}";
-        };
-        "custom/weather" = {
-          format = "{}°";
-          tooltip = true;
-          interval = 3600;
-          exec = "wttrbar -l zh-tw --icon-family nerd";
-          "return-type" = "json";
-        };
-        backlight = {
-          format = "{icon} {percent}%";
-          "format-icons" = ["" "" "" "" "" "" "" "" ""];
         };
         battery = {
           states = {
@@ -234,8 +67,32 @@
           "format-alt" = "{icon} {time}";
           "format-icons" = ["" "" "" "" ""];
         };
+        mpris = {
+          format = "{status_icon} {dynamic}";
+          interval = 1;
+          "dynamic-len" = 60;
+          "status-icons" = {
+            playing = "▶";
+            paused = "⏸";
+            stopped = "";
+          };
+          "dynamic-order" = ["title" "artist"];
+        };
+
+        "custom/audio_idle_inhibitor" = {
+          format = "{icon}";
+          exec = "sway-audio-idle-inhibit --dry-print-both-waybar --ignore-source-outputs cava";
+          "exec-if" = "which sway-audio-idle-inhibit";
+          "return-type" = "json";
+          "format-icons" = {
+            output = "";
+            input = "";
+            "output-input" = "  ";
+            none = "";
+          };
+        };
         wireplumber = {
-          "scroll-step" = 5;
+          "scroll-step" = 1;
           format = "{icon} {volume}%";
           "format-bluetooth" = "{icon} {volume}% ";
           "format-bluetooth-muted" = "󰆪 {icon}";
@@ -251,46 +108,6 @@
           };
           "on-click" = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
           "on-click-right" = "pavucontrol";
-        };
-      }
-      {
-        output = [];
-        spacing = 4;
-        "modules-left" = ["sway/workspaces" "sway/mode" "sway/scratchpad"];
-        "modules-center" = [];
-        "modules-right" = ["sway/window" "clock"];
-        "sway/workspaces" = {
-          "all-outputs" = false;
-          "warp-on-scroll" = true;
-          "enable-bar-scroll" = true;
-          format = "{icon}";
-          "format-icons" = {
-            "1" = "";
-            "2" = "";
-            "3" = "";
-            "4" = "";
-            "5" = "";
-            "9" = "";
-            "10" = "";
-          };
-        };
-        "sway/window" = {
-          format = "{title}";
-          "max-length" = 40;
-          "all-outputs" = true;
-        };
-        "sway/mode" = {format = "{}";};
-        "sway/scratchpad" = {
-          format = "{icon} {count}";
-          "show-empty" = false;
-          "format-icons" = ["" ""];
-          tooltip = true;
-          "tooltip-format" = "{app}: {title}";
-        };
-        clock = {
-          "tooltip-format" = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
-          format = " {:%H:%M}";
-          "format-alt" = " {:%a %F}";
         };
       }
     ];
