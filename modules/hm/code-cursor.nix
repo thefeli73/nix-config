@@ -40,9 +40,9 @@
       "terminal.external.linuxExec" = "ghostty";
       "terminal.explorerKind" = "external";
       "terminal.integrated.rescaleOverlappingGlyphs" = false;
-      "terminal.integrated.fontFamily" = "'Symbols Nerd Font Mono'";
+      "terminal.integrated.fontFamily" = "'Intel One Mono', 'Symbols Nerd Font Mono'";
       "files.autoSave" = "onFocusChange";
-      "editor.fontFamily" = "'Intel One Mono', 'Droid Sans Mono', 'monospace', monospace";
+      "editor.fontFamily" = "'Intel One Mono', 'Symbols Nerd Font Mono', 'monospace', monospace";
       "editor.tabSize" = 2;
       "editor.wordWrap" = "on";
       "editor.fontLigatures" = "'ss01'";
