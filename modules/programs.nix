@@ -80,6 +80,7 @@ in {
     darktable # Raw editor
     imagemagick # Image processing
     mpv # Video player
+    cava # Audio visualizer
   ];
 
   programs = {

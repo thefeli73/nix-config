@@ -125,6 +125,7 @@
       pulse.enable = true; # PulseAudio compatibility
       wireplumber.enable = true; # Session manager
     };
+    playerctld.enable = true; # Playerctl daemon for media controls
 
     # Antivirus protection with automatic updates
     clamav = {

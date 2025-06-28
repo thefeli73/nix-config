@@ -107,6 +107,7 @@
     mako # Notification daemon
     hyprlock # Screen lock utility
     hyprpicker # Color picker
+    waybar-mpris # MPRIS support for waybar
 
     # ---- CLIPBOARD & INPUT ----
     wl-clipboard # Clipboard utilities for Wayland
