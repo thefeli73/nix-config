@@ -72,7 +72,7 @@ in {
     plexamp
     remmina
 
-    # Visual
+    # Audio / Visual
     loupe # Image viewer
     inkscape # Vector editor
     krita # Image editor
@@ -81,6 +81,8 @@ in {
     imagemagick # Image processing
     mpv # Video player
     cava # Audio visualizer
+    wireplumber # Audio server
+    pavucontrol # Audio control
   ];
 
   programs = {
