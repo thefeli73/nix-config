@@ -1,6 +1,7 @@
 {
   programs.waybar = {
     enable = true;
+    systemd.target = "graphical-session.target";
     settings = [
       {
         output = ["DP-3" "eDP-1"];
@@ -90,7 +91,6 @@
           };
           "dynamic-order" = ["title" "artist"];
         };
-
         wireplumber = {
           "scroll-step" = 1;
           format = "{icon} {volume}%";
@@ -126,11 +126,6 @@
           "all-outputs" = true;
           "separate-outputs" = true;
         };
-        load = {format = " {load1}";};
-        backlight = {
-          format = "{icon} {percent}%";
-          "format-icons" = ["" "" "" "" "" "" "" "" ""];
-        };
         clock = {
           "tooltip-format" = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
           format = " {:%H:%M}";
@@ -153,40 +148,6 @@
           "format-icons" = ["▁" "▂" "▃" "▄" "▅" "▆" "▇" "█"];
           actions = {"on-click-right" = "mode";};
         };
-        "idle_inhibitor" = {
-          format = "{icon}";
-          "format-icons" = {
-            activated = "";
-            deactivated = "";
-          };
-        };
-        tray = {
-          "icon-size" = 14;
-          spacing = 10;
-        };
-        "power-profiles-daemon" = {
-          "format" = "{icon}";
-          "tooltip-format" = "Power profile: {profile}\nDriver: {driver}";
-          "tooltip" = true;
-          "format-icons" = {
-            "default" = "";
-            "performance" = "";
-            "balanced" = "";
-            "power-saver" = "";
-          };
-        };
-        battery = {
-          states = {
-            warning = 30;
-            critical = 15;
-          };
-          format = "{icon} {capacity}%";
-          "format-full" = "{icon} {capacity}%";
-          "format-charging" = "󰃨 {capacity}%";
-          "format-plugged" = " {capacity}%";
-          "format-alt" = "{icon} {time}";
-          "format-icons" = ["" "" "" "" ""];
-        };
         mpris = {
           format = "{status_icon} {dynamic}";
           interval = 1;
@@ -197,25 +158,6 @@
             stopped = "";
           };
           "dynamic-order" = ["title" "artist"];
-        };
-
-        wireplumber = {
-          "scroll-step" = 1;
-          format = "{icon} {volume}%";
-          "format-bluetooth" = "{icon} {volume}% ";
-          "format-bluetooth-muted" = "󰆪 {icon}";
-          "format-muted" = "󰆪";
-          "format-icons" = {
-            headphone = "";
-            "hands-free" = "󰂑";
-            headset = "󰂑";
-            phone = "";
-            portable = "";
-            car = "";
-            default = ["" "" ""];
-          };
-          "on-click" = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
-          "on-click-right" = "pavucontrol";
         };
       }
     ];
