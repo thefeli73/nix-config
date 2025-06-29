@@ -19,7 +19,7 @@
           "all-outputs" = true;
           "separate-outputs" = true;
         };
-        load = {format = " {load1}";};
+        load = {format = " {load1}";};
         backlight = {
           format = "{icon} {percent}%";
           "format-icons" = ["" "" "" "" "" "" "" "" ""];
@@ -32,18 +32,19 @@
         cava = {
           framerate = 60;
           autosens = 1;
-          bars = 8;
+          sensitivity = 2;
+          bars = 12;
           "lower_cutoff_freq" = 50;
           "higher_cutoff_freq" = 10000;
           method = "pipewire";
           source = "auto";
           stereo = false;
           "bar_delimiter" = 0;
-          "noise_reduction" = 0.77;
+          "noise_reduction" = 0.7;
           "input_delay" = 2;
           "hide_on_silence" = true;
           "sleep_timer" = 3;
-          "format-icons" = ["▁" "▂" "▃" "▄" "▅" "▆" "▇" "█"];
+          "format-icons" = [" " "▁" "▂" "▃" "▄" "▅" "▆" "▇" "█"];
           actions = {"on-click-right" = "mode";};
         };
         "idle_inhibitor" = {

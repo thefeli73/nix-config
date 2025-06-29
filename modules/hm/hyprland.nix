@@ -14,6 +14,7 @@ in {
       misc = {
         disable_hyprland_logo = true; # disables the random Hyprland logo / anime girl background. :(
         disable_splash_rendering = true;
+        focus_on_activate = true;
       };
 
       input = {
@@ -42,6 +43,8 @@ in {
         workspace_swipe = true;
         workspace_swipe_forever = true;
         workspace_swipe_direction_lock = false;
+        workspace_swipe_distance = 200;
+        workspace_swipe_min_speed_to_force = 0;
       };
 
       "$mod" = "SUPER";
@@ -61,26 +64,37 @@ in {
 
       decoration = {
         rounding = 10;
-        rounding_power = 4;
+        rounding_power = 3.5;
         blur = {
           enabled = true;
-          xray = true;
-          size = 4;
-          passes = 4;
+          new_optimizations = true;
+          ignore_opacity = true;
+          xray = false;
+          size = 3;
+          passes = 5;
+          popups = true;
+        };
+        shadow = {
+          enabled = true;
+          range = 15;
+          render_power = 5;
+          color = "rgba(0,0,0,.5)";
         };
       };
 
       animations = {
         enabled = true;
-        bezier = "myBezier, 0.05, 0.9, 0.1, 1.05";
+        bezier = [
+          "fluid, 0.15, 0.85, 0.25, 1"
+          "snappy, 0.3, 1, 0.4, 1"
+        ];
 
         animation = [
-          "windows, 1, 7, myBezier"
-          "windowsOut, 1, 7, default, popin 80%"
-          "border, 1, 10, default"
-          "borderangle, 1, 8, default"
-          "fade, 1, 7, default"
-          "workspaces, 1, 6, default, slidevert"
+          "windows, 1, 3, fluid, popin 5%"
+          "windowsOut, 1, 2.5, snappy"
+          "fade, 1, 4, snappy"
+          "workspaces, 1, 1.7, snappy, slidevert"
+          "layers, 1, 2, snappy, popin 70%"
         ];
       };
 

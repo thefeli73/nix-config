@@ -43,6 +43,7 @@
       ./hm/ssh.nix # SSH config
       ./hm/gitkraken.nix # GitKraken config
       ./hm/waybar.nix # Waybar config
+      ./hm/cava.nix # Audio visualizer config
     ];
   };
 
