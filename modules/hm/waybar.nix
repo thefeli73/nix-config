@@ -32,10 +32,10 @@
         cava = {
           framerate = 60;
           autosens = 1;
-          bars = 10;
+          bars = 8;
           "lower_cutoff_freq" = 50;
           "higher_cutoff_freq" = 10000;
-          method = "pulse";
+          method = "pipewire";
           source = "auto";
           stereo = false;
           "bar_delimiter" = 0;
