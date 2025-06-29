@@ -75,7 +75,8 @@
         battery = {
           interval = 60;
           states = {
-            good = 95;
+            good = 100;
+            normal = 90;
             warning = 30;
             critical = 15;
           };
@@ -91,8 +92,8 @@
           interval = 1;
           "dynamic-len" = 60;
           "status-icons" = {
-            playing = "▶";
-            paused = "⏸";
+            playing = "";
+            paused = "";
             stopped = "";
           };
           "dynamic-order" = ["title" "artist"];
@@ -388,8 +389,8 @@
       }
 
       #mpris.playing {
-          background: alpha(@yellow,.6);
-          color: @fglight;
+          background: alpha(@blue,.6);
+          color: @fg;
       }
 
       #tray menu {
