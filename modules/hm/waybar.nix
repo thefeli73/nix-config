@@ -19,7 +19,10 @@
           "all-outputs" = true;
           "separate-outputs" = true;
         };
-        load = {format = " {load1}";};
+        load = {
+          format = " {load1}";
+          "on-click" = "btop";
+        };
         backlight = {
           format = "{icon} {percent}%";
           "format-icons" = ["" "" "" "" "" "" "" "" ""];
@@ -70,16 +73,18 @@
           };
         };
         battery = {
+          interval = 60;
           states = {
+            good = 95;
             warning = 30;
             critical = 15;
           };
           format = "{icon} {capacity}%";
           "format-full" = "{icon} {capacity}%";
-          "format-charging" = "󰃨 {capacity}%";
+          "format-charging" = "󰂄 {capacity}%";
           "format-plugged" = " {capacity}%";
           "format-alt" = "{icon} {time}";
-          "format-icons" = ["" "" "" "" ""];
+          "format-icons" = ["󰁻" "󰁼" "󰁾" "󰂀" "󰂂" "󰁹"];
         };
         mpris = {
           format = "{status_icon} {dynamic}";
@@ -96,8 +101,8 @@
           "scroll-step" = 1;
           format = "{icon} {volume}%";
           "format-bluetooth" = "{icon} {volume}% ";
-          "format-bluetooth-muted" = "󰆪 {icon}";
-          "format-muted" = "󰆪";
+          "format-bluetooth-muted" = " {icon}";
+          "format-muted" = "";
           "format-icons" = {
             headphone = "";
             "hands-free" = "󰂑";
@@ -135,18 +140,19 @@
         cava = {
           framerate = 60;
           autosens = 1;
-          bars = 10;
+          sensitivity = 2;
+          bars = 12;
           "lower_cutoff_freq" = 50;
           "higher_cutoff_freq" = 10000;
-          method = "pulse";
+          method = "pipewire";
           source = "auto";
           stereo = false;
           "bar_delimiter" = 0;
-          "noise_reduction" = 0.77;
+          "noise_reduction" = 0.7;
           "input_delay" = 2;
           "hide_on_silence" = true;
           "sleep_timer" = 3;
-          "format-icons" = ["▁" "▂" "▃" "▄" "▅" "▆" "▇" "█"];
+          "format-icons" = [" " "▁" "▂" "▃" "▄" "▅" "▆" "▇" "█"];
           actions = {"on-click-right" = "mode";};
         };
         mpris = {
@@ -189,17 +195,17 @@
       @define-color braqua    #8ec07c;
       @define-color orange    #d65d0e;
       @define-color brorange  #fe8019;
-      @define-color tooltipbg rgba(40, 40, 40, 0.8);
+      @define-color tooltipbg rgba(40, 40, 40, 0.9);
 
       * {
           font-size: 14px;
-          border-radius: 5px;
+          border-radius: 6px;
       }
 
       tooltip {
-          font-family: Intel One Mono, monospace;
+          font-family: Intel One Mono, Symbols Nerd Font Mono,monospace;
           background-color: @tooltipbg;
-          border-radius: 5px;
+          border-radius: 6px;
           border: 1px solid @bg3;
       }
 
@@ -214,7 +220,7 @@
           border-bottom: 0px;
           color: @fg;
           transition-property: background-color;
-          transition-duration: .4s;
+          transition-duration: .2s;
       }
 
       window#waybar.hidden {
@@ -226,69 +232,57 @@
           padding: 0;
       }
 
-      /*
-      window#waybar.empty {
-          background-color: transparent;
-      }
-      window#waybar.solo {
-          background-color: #FFFFFF;
-      }
-      */
-
       .modules-left,
       .modules-center,
       .modules-right {
-          margin: 15px 15px 0;
+          margin: 10px 16px 0;
       }
 
       button {
-          /* Use box-shadow instead of border so the text isn't offset */
-          /* box-shadow: inset 0 -3px transparent; */
           border: none;
       }
 
-      /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
-      /*
-      button:hover {
-          background: inherit;
-          box-shadow: inset 0 -3px @fg;
-      } */
-
       #workspaces {
-          background-color: @bg;
+          background-color: transparent;
+          border: 1px solid alpha(@bg4,.6);
+
       }
 
       #workspaces button {
-          padding: 0 5px;
-          background-color: transparent;
+          padding: 0 6px;
+          background: alpha(@bg,.6);
           color: @fg;
           border-radius: 0;
+          transition-property: background-color;
+          transition-duration: .2s;
       }
 
       #workspaces button:first-child {
-          border-radius: 5px 0 0 5px;
+          border-radius: 6px 0 0 6px;
       }
 
       #workspaces button:last-child {
-          border-radius: 0 5px 5px 0;
+          border-radius: 0 6px 6px 0;
       }
 
       #workspaces button:first-child:last-child {
-          border-radius: 5px;
+          border-radius: 6px;
       }
 
-      #workspaces button:hover {
-          color: @orange;
+      #workspaces button:hover, #workspaces button.active:hover {
+          color: @yellow;
+          background: alpha(@bg4,.6);
+          box-shadow: inherit;
+          text-shadow: inherit;
       }
 
       #workspaces button.active {
-          color: @yellow;
-          background-color: @bg3;
-          /* box-shadow: inset 0 -3px #ffffff; */
+          color: @orange;
+          background: alpha(@fg,.6);
       }
 
       #workspaces button.urgent {
-          background-color: @purple;
+          background: alpha(@purple,.6);
       }
 
       #idle_inhibitor,
@@ -305,21 +299,17 @@
       #mpris,
       #power-profiles-daemon,
       #load {
-          padding: 0 10px;
-          background-color: @bg;
           color: @fg;
+          padding: 0 15px;
+          background: alpha(@bg,.6);
+          border: 1px solid alpha(@bg4,.6);
       }
 
       #window {
-          padding: 0 10px;
-          background-color: @fg;
+          padding: 0 15px;
           color: @bg1;
-      }
-
-      #mode {
-          background-color: @aqua;
-          color: @fglight;
-          /* box-shadow: inset 0 -3px #ffffff; */
+          background: alpha(@fg,.6);
+          border: 1px solid alpha(@bg4,.6);
       }
 
       /* If workspaces is the leftmost module, omit left margin */
@@ -333,7 +323,7 @@
       }
 
       #cava {
-          padding: 0 5px;
+          padding: 0 6px;
       }
 
       #cava.silent {
@@ -342,36 +332,41 @@
           padding: 0;
       }
 
-      #battery.charging, #battery.plugged {
-          background-color: @green;
-          color: @fglight;
-      }
-
       #power-profiles-daemon.performance {
-          background-color: @red;
-          color: @fglight;
+          background: alpha(@red,.6);
+          color: @fg;
       }
 
       #power-profiles-daemon.balanced {
-          background-color: @blue;
-          color: @fglight;
+          background: alpha(@blue,.6);
+          color: @fg;
       }
 
       #power-profiles-daemon.power-saver {
-          background-color: @green;
+          background: alpha(@green,.6);
+          color: @fg;
+      }
+
+      #battery.charging, #battery.plugged, #battery.good {
+          background: alpha(@green,.6);
+          color: @fg;
+      }
+
+      #battery.warning {
+          background: alpha(@yellow,.6);
           color: @fglight;
       }
 
       @keyframes blink {
           to {
-              background-color: @bg;
+              background: alpha(@bg,.6);
               color: @fg;
           }
       }
 
       /* Using steps() instead of linear as a timing function to limit cpu usage */
       #battery.critical:not(.charging) {
-          background-color: @red;
+          background: alpha(@red,.6);
           color: @fg;
           animation-name: blink;
           animation-duration: 0.5s;
@@ -381,7 +376,7 @@
       }
 
       #wireplumber.muted {
-          background-color: @blue;
+          background: alpha(@blue,.6);
       }
 
       #tray > .passive {
@@ -393,17 +388,12 @@
       }
 
       #mpris.playing {
-          background-color: @yellow;
+          background: alpha(@yellow,.6);
           color: @fglight;
       }
 
       #tray menu {
           font-family: sans-serif;
-      }
-
-      #scratchpad.empty {
-          background: transparent;
-          padding: 0;
       }
     '';
   };

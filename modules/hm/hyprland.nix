@@ -53,8 +53,8 @@ in {
       "$menu" = "rofi -show-icons -show drun";
 
       general = {
-        gaps_in = 5;
-        gaps_out = 15;
+        gaps_in = 6;
+        gaps_out = "10,15,15,15";
         border_size = 1;
         "col.active_border" = "rgba(${colors.gruvbox-rgb.bright_orange},1.0) rgba(${colors.gruvbox-rgb.red},1.0) 45deg";
         "col.inactive_border" = "rgba(${colors.gruvbox-rgb.bg4},0.66)";
@@ -76,8 +76,8 @@ in {
         };
         shadow = {
           enabled = true;
-          range = 15;
-          render_power = 5;
+          range = 8;
+          render_power = 4;
           color = "rgba(0,0,0,.5)";
         };
       };
@@ -103,6 +103,13 @@ in {
         preserve_split = true;
         smart_split = true;
       };
+
+      # Layer rules
+      layerrule = [
+        "blur, waybar" # Blur waybar
+        "ignorezero, waybar"
+        "ignorealpha 0.5, waybar"
+      ];
 
       # Window rules
       windowrulev2 = [
