@@ -6,7 +6,7 @@
       {
         output = ["DP-3" "eDP-1"];
         spacing = 8;
-        "modules-left" = ["hyprland/workspaces" "cava" "mpris"];
+        "modules-left" = ["hyprland/workspaces" "mpris" "cava"];
         "modules-center" = ["hyprland/window"];
         "modules-right" = ["idle_inhibitor" "wireplumber" "backlight" "load" "power-profiles-daemon" "battery" "clock" "tray"];
 
@@ -231,6 +231,7 @@
       window#waybar.empty #window {
           background-color: transparent;
           padding: 0;
+          border: none;
       }
 
       .modules-left,
