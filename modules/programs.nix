@@ -52,6 +52,7 @@ in {
     nodejs_22
     pnpm
     cypress
+    pgadmin4
     postgresql_15
     beam26Packages.erlang
     beam26Packages.erlfmt

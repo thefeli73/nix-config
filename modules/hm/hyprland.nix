@@ -70,8 +70,8 @@ in {
           new_optimizations = true;
           ignore_opacity = true;
           xray = false;
-          size = 2;
-          passes = 5;
+          size = 3;
+          passes = 3;
           popups = true;
         };
         shadow = {

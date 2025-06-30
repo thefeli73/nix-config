@@ -7,8 +7,8 @@ in {
       background = {
         # Background image is set in host specific configuration
         #path = "$HOME/git/nixos/modules/hm/images/sky.png";
-        blur_size = 3;
-        blur_passes = 4;
+        blur_size = 2;
+        blur_passes = 3;
         contrast = 1;
         brightness = 0.5;
         vibrancy = 0.2;
