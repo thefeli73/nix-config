@@ -125,7 +125,6 @@
 
     # ---- SYSTEM CONTROL ----
     pavucontrol # GUI audio mixer and control
-    blueman # Bluetooth manager with system tray
     networkmanagerapplet # Network management system tray
     brightnessctl # Screen brightness control (laptops)
 

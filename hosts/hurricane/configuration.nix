@@ -19,9 +19,6 @@
   networking.firewall.allowedTCPPorts = [];
   networking.firewall.allowedUDPPorts = [];
 
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
-
   # Intel GPU support
   hardware.graphics = {
     enable = true;

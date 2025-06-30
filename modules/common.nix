@@ -136,7 +136,13 @@
 
     # Enable GNOME keyring for password management
     gnome.gnome-keyring.enable = true;
+
+    # Bluetooth support
+    blueman.enable = true;
   };
+
+  # Bluetooth support
+  hardware.bluetooth.enable = true;
 
   # ================================
   # PERMISSIONS
