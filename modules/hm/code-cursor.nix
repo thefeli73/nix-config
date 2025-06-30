@@ -56,6 +56,7 @@
       "vsicons.dontShowNewVersionMessage" = true;
       "cursor.cpp.enablePartialAccepts" = true;
       "cursor.diffs.useCharacterLevelDiffs" = true;
+      "redhat.telemetry.enabled" = false;
     };
   };
 }
