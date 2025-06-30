@@ -37,7 +37,11 @@
     btop
   ];
 
-  # host-specific Systemd services
+  # host-specific services
+  services = {
+    # Intel CPU overheating support
+    thermald.enable = true;
+  };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

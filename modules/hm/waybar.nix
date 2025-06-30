@@ -120,7 +120,7 @@
       {
         output = ["HDMI-A-1"];
         spacing = 8;
-        "modules-left" = ["hyprland/workspaces" "mpris" "cava"];
+        "modules-left" = ["hyprland/workspaces"];
         "modules-center" = ["hyprland/window"];
         "modules-right" = ["clock"];
 

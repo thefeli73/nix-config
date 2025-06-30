@@ -144,6 +144,9 @@
   # Bluetooth support
   hardware.bluetooth.enable = true;
 
+  # power management tool which allows for managing hibernate and suspend states
+  powerManagement.enable = true;
+
   # ================================
   # PERMISSIONS
   # ================================
