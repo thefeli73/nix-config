@@ -164,11 +164,19 @@
   nix = {
     settings.experimental-features = ["nix-command" "flakes"]; # Enable modern Nix features (flakes and new CLI)
 
+    # Optimise the Nix store automatically to recover space
     optimise = {
-      # Optimise the Nix store automatically to recover space
       automatic = true;
-      dates = ["03:45"]; # Optional; allows customizing optimisation schedule
+      dates = ["03:45"];
       persistent = true; # Run missed optimisations
+    };
+
+    # Garbage collect the Nix store automatically to recover space
+    gc = {
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than 60d";
+      persistent = true; # Run missed GC
     };
   };
 
