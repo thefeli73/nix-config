@@ -161,8 +161,16 @@
   # Allow installation of proprietary/unfree software
   nixpkgs.config.allowUnfree = true;
 
-  # Enable modern Nix features (flakes and new CLI)
-  nix.settings.experimental-features = ["nix-command" "flakes"];
+  nix = {
+    settings.experimental-features = ["nix-command" "flakes"]; # Enable modern Nix features (flakes and new CLI)
+
+    optimise = {
+      # Optimise the Nix store automatically to recover space
+      automatic = true;
+      dates = ["03:45"]; # Optional; allows customizing optimisation schedule
+      persistent = true; # Run missed optimisations
+    };
+  };
 
   # ================================
   # AUTOMATIC MAINTENANCE
