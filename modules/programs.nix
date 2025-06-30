@@ -66,6 +66,7 @@ in {
     ghostty
     obsidian
     nextcloud-client
+    slack
     libreoffice-fresh
     tor-browser
     ungoogled-chromium
