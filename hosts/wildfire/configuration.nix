@@ -13,9 +13,6 @@
     ./hm/hyprpaper.nix
   ];
 
-  # Encrypted drive
-  boot.initrd.luks.devices."luks-1728f038-43a6-4e0d-b7dd-19a4c1083605".device = "/dev/disk/by-uuid/1728f038-43a6-4e0d-b7dd-19a4c1083605";
-
   networking.hostName = "wildfire";
 
   # AMD GPU support

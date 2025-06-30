@@ -5,7 +5,9 @@
   pkgs-unstable,
   inputs,
   ...
-}: {
+}: let
+  colors = import ./gruvbox-theme.nix;
+in {
   imports = [
     # Import Home Manager as a NixOS module for user-specific configurations
     inputs.home-manager.nixosModules.home-manager
@@ -65,9 +67,24 @@
   # BOOT CONFIGURATION
   # ================================
   boot = {
-    # Use systemd-boot (modern UEFI bootloader)
-    loader.systemd-boot.enable = true;
-    loader.efi.canTouchEfiVariables = true;
+    loader = {
+      efi = {
+        canTouchEfiVariables = true;
+        efiSysMountPoint = "/boot";
+      };
+      # Use GRUB (modern UEFI bootloader)
+      grub = {
+        enable = true;
+        efiSupport = true;
+        device = "nodev";
+        enableCryptodisk = false; # ← GRUB lives on the unencrypted ESP
+        memtest86.enable = true; # Enable memtest86 for hardware testing
+
+        # Styling
+        backgroundColor = "${colors.gruvbox.bg0}";
+        #splashImage = "";
+      };
+    };
     # Always use the latest kernel for best hardware support
     kernelPackages = pkgs.linuxPackages_latest;
   };

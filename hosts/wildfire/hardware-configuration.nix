@@ -22,7 +22,9 @@
     fsType = "ext4";
   };
 
-  boot.initrd.luks.devices."luks-be9995ed-6b36-4f4d-a374-28a85fc50ed8".device = "/dev/disk/by-uuid/be9995ed-6b36-4f4d-a374-28a85fc50ed8";
+  # Encrypted drive
+  boot.initrd.luks.devices."luks-1728f038-43a6-4e0d-b7dd-19a4c1083605".device = "/dev/disk/by-uuid/1728f038-43a6-4e0d-b7dd-19a4c1083605"; # SWAP partition
+  boot.initrd.luks.devices."luks-be9995ed-6b36-4f4d-a374-28a85fc50ed8".device = "/dev/disk/by-uuid/be9995ed-6b36-4f4d-a374-28a85fc50ed8"; # main partition
 
   fileSystems."/boot" = {
     device = "/dev/disk/by-uuid/B7CE-982B";
