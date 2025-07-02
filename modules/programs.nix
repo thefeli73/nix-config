@@ -68,6 +68,7 @@ in {
     ghostty
     obsidian
     nextcloud-client
+    signal-desktop
     slack
     libreoffice-fresh
     tor-browser
