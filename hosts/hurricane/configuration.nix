@@ -16,7 +16,7 @@
   networking.hostName = "hurricane";
 
   # Network security specific to host
-  networking.firewall.allowedTCPPorts = [3000];
+  networking.firewall.allowedTCPPorts = [];
   networking.firewall.allowedUDPPorts = [];
 
   # Intel GPU support
