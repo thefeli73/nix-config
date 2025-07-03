@@ -109,6 +109,8 @@ in {
         "blur, waybar" # Blur waybar
         "ignorezero, waybar"
         "ignorealpha 0.5, waybar"
+        "noanim, hyprpicker" # fix screenshot border visible
+        "noanim, selection" # fix screenshot border visible
       ];
 
       # Window rules
