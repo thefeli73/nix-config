@@ -47,6 +47,7 @@ in {
       ./hm/waybar.nix # Waybar config
       ./hm/cava.nix # Audio visualizer config
       ./hm/fastfetch.nix # Fastfetch config
+      ./hm/eza.nix # Eza config (ls alternative)
     ];
   };
 

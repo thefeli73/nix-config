@@ -108,6 +108,9 @@ in {
       interactiveShellInit = ''
         set fish_greeting # Disable greeting
       '';
+      shellAliases = {
+        "eza" = "eza --icons=always --color-scale";
+      };
       shellAbbrs = {
         # Common abbreviations
         ".." = "cd ..";
@@ -115,8 +118,10 @@ in {
         "...." = "cd ../../../";
         "....." = "cd ../../../../";
         "cp" = "cp -v";
-        "ll" = "ls -lh";
-        "l" = "ls -lah";
+        "la" = "eza -la";
+        "l" = "eza -l";
+        "cat" = "bat -pp";
+        "tree" = "eza -lT";
         "mkdir" = "mkdir -p";
         "mv" = "mv -v";
         "rm" = "rm -v";
@@ -147,6 +152,13 @@ in {
     direnv = {
       enable = true;
       enableFishIntegration = true;
+    };
+
+    bat = {
+      enable = true;
+      settings = {
+        theme = "gruvbox-dark";
+      };
     };
 
     # Vim editor
