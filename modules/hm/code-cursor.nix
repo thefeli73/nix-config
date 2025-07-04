@@ -37,11 +37,15 @@
       # csstools.postcss # PostCSS language # not available
     ];
     profiles.default.userSettings = {
+      # IDE
       "terminal.external.linuxExec" = "ghostty";
       "terminal.explorerKind" = "external";
       "terminal.integrated.rescaleOverlappingGlyphs" = false;
       "terminal.integrated.fontFamily" = "'Intel One Mono', 'Symbols Nerd Font Mono'";
       "files.autoSave" = "onFocusChange";
+      "explorer.confirmDragAndDrop" = false;
+      "workbench.colorTheme" = "Gruvbox Dark Medium";
+      "workbench.iconTheme" = "vscode-icons";
       "editor.fontFamily" = "'Intel One Mono', 'Symbols Nerd Font Mono', 'monospace', monospace";
       "editor.tabSize" = 2;
       "editor.wordWrap" = "on";
@@ -49,14 +53,16 @@
       "editor.formatOnSave" = true;
       "editor.minimap.enabled" = true;
       "editor.defaultFormatter" = "esbenp.prettier-vscode";
+
+      # Extensions
       "prettier.printWidth" = 120;
       "prettier.proseWrap" = "always";
-      "workbench.colorTheme" = "Gruvbox Dark Medium";
-      "workbench.iconTheme" = "vscode-icons";
       "vsicons.dontShowNewVersionMessage" = true;
+      "redhat.telemetry.enabled" = false;
+
+      # Cursor
       "cursor.cpp.enablePartialAccepts" = true;
       "cursor.diffs.useCharacterLevelDiffs" = true;
-      "redhat.telemetry.enabled" = false;
     };
   };
 }
