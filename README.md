@@ -2,6 +2,8 @@
 
 A modular, flake-based NixOS configuration supporting multiple hosts with shared and host-specific configurations.
 
+![fastfetch screenshot](screenshots/fastfetch.png)
+
 ## 🏗️ Structure Overview
 
 ```
