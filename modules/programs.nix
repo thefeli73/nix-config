@@ -109,7 +109,7 @@ in {
         set fish_greeting # Disable greeting
       '';
       shellAliases = {
-        "eza" = "eza --icons=always --color-scale";
+        "eza" = "eza --icons=always --color-scale --hyperlink";
       };
       shellAbbrs = {
         # Common abbreviations
