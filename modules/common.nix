@@ -46,6 +46,7 @@ in {
       ./hm/gitkraken.nix # GitKraken config
       ./hm/waybar.nix # Waybar config
       ./hm/cava.nix # Audio visualizer config
+      ./hm/fastfetch.nix # Fastfetch config
     ];
   };
 
