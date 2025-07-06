@@ -235,7 +235,34 @@ in {
         };
       };
     };
-    thunderbird.enable = true;
+    thunderbird = {
+      enable = true;
+      policies = {
+        DisableTelemetry = true;
+        DisableFirefoxStudies = true;
+        DisablePocket = true;
+        DNSOverHTTPS = {
+          Enable = true;
+          Provider = "dns.schulze.network";
+          Locked = false;
+          Fallback = true;
+        };
+        ExtensionSettings = {
+          "cloud@johannes-endres.de" = {
+            installation_mode = "force_installed";
+            install_url = "https://addons.thunderbird.net/thunderbird/downloads/latest/filelink-nextcloud-owncloud/addon-987761-latest.xpi";
+          };
+          "dkim_verifier@pl" = {
+            installation_mode = "force_installed";
+            install_url = "https://addons.thunderbird.net/thunderbird/downloads/latest/dkim-verifier/addon-438634-latest.xpi";
+          };
+          "gruvbox-dark@calch.themes.thunderbird.net" = {
+            installation_mode = "force_installed";
+            install_url = "https://addons.thunderbird.net/thunderbird/downloads/latest/gruvbox-dark-thunderbird/addon-987835-latest.xpi";
+          };
+        };
+      };
+    };
     steam = {
       enable = true;
       remotePlay.openFirewall = true;
