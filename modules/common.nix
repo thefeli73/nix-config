@@ -83,8 +83,17 @@ in {
         memtest86.enable = true; # Enable memtest86 for hardware testing
 
         # Styling
-        backgroundColor = "${colors.gruvbox.bg0}";
-        #splashImage = "";
+        theme = pkgs.stdenv.mkDerivation {
+          pname = "nix-gruv-grub";
+          version = "1";
+          src = pkgs.fetchFromGitHub {
+            owner = "Atif-Mahmud";
+            repo = "nix-gruv-grub";
+            rev = "269507de98ecd4fd9c57aa06bf5d8132d6949a06";
+            hash = "sha256-UEPZxyT09Z0PiOka/Dh4m8VvqF4l+01eZVbRkPJduDk=";
+          };
+          installPhase = "cp -r tartarus/ $out";
+        };
       };
     };
     # Always use the latest kernel for best hardware support
