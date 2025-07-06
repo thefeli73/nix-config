@@ -200,22 +200,6 @@ in {
   };
 
   # ================================
-  # AUTOMATIC MAINTENANCE
-  # ================================
-  # Configure automatic system updates for security
-  system.autoUpgrade = {
-    enable = true;
-    flake = inputs.self.outPath; # Use this flake for updates
-    flags = [
-      "--update-input"
-      "nixpkgs" # Update nixpkgs input
-      "-L" # Print build logs for transparency
-    ];
-    dates = "02:00"; # Run at 2 AM
-    randomizedDelaySec = "45min"; # Random delay to avoid server load
-  };
-
-  # ================================
   # FONTS
   # ================================
   # System-wide fonts for consistent typography
