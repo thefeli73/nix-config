@@ -23,7 +23,9 @@
   ];
 
   # Network security specific to host
-  networking.firewall.allowedTCPPorts = [3000];
+  networking.firewall.allowedTCPPorts = [
+    3773 # OpenWebUI
+  ];
   networking.firewall.allowedUDPPorts = [];
 
   # host-specific packages
