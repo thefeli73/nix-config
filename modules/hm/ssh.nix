@@ -5,6 +5,12 @@
     serverAliveCountMax = 2;
 
     matchBlocks = {
+      "*" = {
+        sendEnv = ["TERM"];
+        setEnv = {
+          TERM = "xterm-256color"; # Fix ghostty issue
+        };
+      };
       "d10.csb.brainmill.com" = {
         forwardAgent = true;
       };
