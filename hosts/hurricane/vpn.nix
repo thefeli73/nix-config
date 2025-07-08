@@ -35,7 +35,7 @@
         {
           publicKey = "h/BUyzXy0Xo4KJKS/U5V4C9rDJT3fWjjiZoy0I7P+H4=";
           allowedIPs = ["10.0.0.0/8" "192.168.10.0/24" "2a02:9a0:300:fff0::/64"];
-          endpoint = "gw1.net.chsfg.se:51831";
+          endpoint = "gw1.net.chsfg.se:51821";
           persistentKeepalive = 25;
         }
       ];
