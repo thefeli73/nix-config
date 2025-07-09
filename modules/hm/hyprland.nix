@@ -15,7 +15,6 @@ in {
       misc = {
         disable_hyprland_logo = true; # disables the random Hyprland logo / anime girl background. :(
         disable_splash_rendering = true;
-        focus_on_activate = true;
       };
 
       input = {
@@ -31,8 +30,8 @@ in {
         sensitivity = 0;
         accel_profile = "flat";
 
-        repeat_delay = 250;
-        repeat_rate = 40;
+        repeat_delay = 300;
+        repeat_rate = 30;
 
         touchpad = {
           natural_scroll = true;
