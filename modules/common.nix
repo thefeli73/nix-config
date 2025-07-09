@@ -170,8 +170,19 @@ in {
     blueman.enable = true;
   };
 
-  # Bluetooth support
-  hardware.bluetooth.enable = true;
+  # ================================
+  # HARDWARE
+  # ================================
+  hardware = {
+    # Bluetooth support
+    bluetooth.enable = true;
+
+    # Logitech Unifying Receiver support
+    logitech.wireless = {
+      enable = true;
+      enableGraphical = true;
+    };
+  };
 
   # power management tool which allows for managing hibernate and suspend states
   powerManagement.enable = true;
