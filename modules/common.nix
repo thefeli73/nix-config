@@ -48,6 +48,7 @@ in {
       ./hm/cava.nix # Audio visualizer config
       ./hm/fastfetch.nix # Fastfetch config
       ./hm/eza.nix # Eza config (ls alternative)
+      ./hm/user-dirs.nix # XDG User directories config
     ];
   };
 
