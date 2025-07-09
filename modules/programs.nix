@@ -192,7 +192,6 @@ in {
         /*
         ---- POLICIES ----
         */
-
         DisableTelemetry = true;
         DisableFirefoxStudies = true;
         EnableTrackingProtection = {
@@ -201,14 +200,45 @@ in {
           Cryptomining = true;
           Fingerprinting = true;
         };
-
         DisablePocket = true;
+        FirefoxHome = {
+          Snippets = false;
+          TopSites = false;
+          SponsoredTopSites = false;
+          SponsoredPocket = false;
+        };
+        HttpsOnlyMode = "force_enabled";
+        DNSOverHTTPS = {
+          Enabled = true;
+          ProviderURL = "https://dns.schulze.network/dns-query";
+          Locked = true;
+          Fallback = true;
+        };
+        PasswordManagerEnabled = false;
+        /*
+        ---- PREFERENCES ----
+        */
+        Preferences = {
+          "extensions.activeThemeID" = {
+            Value = "{21ab01a8-2464-4824-bccb-6db15659347e}";
+            Status = "locked";
+          };
+          "sidebar.animation.duration-ms" = {
+            Value = 50;
+            Status = "locked";
+          };
+          "sidebar.animation.expand-on-hover.duration-ms" = {
+            Value = 50;
+            Status = "locked";
+          };
+          "sidebar.verticalTabs" = lock-true;
+          "sidebar.position_start" = lock-false;
+        };
         /*
         ---- EXTENSIONS ----
         */
         # Check about:support for extension/add-on ID strings.
-        # Valid strings for installation_mode are "allowed", "blocked",
-        # "force_installed" and "normal_installed".
+        # Valid strings for installation_mode are "allowed", "blocked", "force_installed" and "normal_installed".
         ExtensionSettings = {
           "*".installation_mode = "normal_installed";
           # uBlock Origin:
@@ -220,17 +250,6 @@ in {
           "jid1-MnnxcxisBPnSXQ@jetpack" = {
             install_url = "https://addons.mozilla.org/firefox/downloads/latest/privacy-badger17/latest.xpi";
             installation_mode = "force_installed";
-          };
-        };
-
-        /*
-        ---- PREFERENCES ----
-        */
-        Preferences = {
-          "browser.newtabpage.activity-stream.showSponsoredTopSites" = lock-false;
-          "extensions.activeThemeID" = {
-            Value = "{21ab01a8-2464-4824-bccb-6db15659347e}";
-            Status = "locked";
           };
         };
       };
