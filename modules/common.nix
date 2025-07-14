@@ -60,7 +60,7 @@ in {
     users.schulze = {
       isNormalUser = true;
       description = "Felix Schulze";
-      extraGroups = ["networkmanager" "wheel" "docker" "plugdev"];
+      extraGroups = ["networkmanager" "wheel" "docker" "plugdev" "wireshark"];
       shell = pkgs.fish;
     };
     groups.libvirtd.members = ["schulze"];

@@ -154,6 +154,7 @@ in {
       enableFishIntegration = true;
     };
 
+    # Cat replacement
     bat = {
       enable = true;
       settings = {
@@ -286,6 +287,10 @@ in {
       enable = true;
       remotePlay.openFirewall = true;
       dedicatedServer.openFirewall = true;
+    };
+    wireshark = {
+      enable = true;
+      package = pkgs.wireshark;
     };
   };
 
