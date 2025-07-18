@@ -18,6 +18,7 @@
         forwardAgent = true;
       };
       "prod-jump-got1.infra.brainmill.com" = {
+        user = "schulze-local";
         forwardAgent = true;
       };
       "gw1.net.chsfg.se" = {
