@@ -49,6 +49,7 @@ in {
       ./hm/fastfetch.nix # Fastfetch config
       ./hm/eza.nix # Eza config (ls alternative)
       ./hm/user-dirs.nix # XDG User directories config
+      ./hm/discord.nix # Discord config
     ];
   };
 
