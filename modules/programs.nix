@@ -128,6 +128,9 @@ in {
         "mv" = "mv -v";
         "rm" = "rm -v";
 
+        # Specific program abbreviations
+        "astroterm" = "astroterm --fps 60 --speed 60 --metadata --unicode --color --city Göteborg --label-thresh 1 --threshold 4";
+
         # Work abbreviations
         "jumpc" = "ssh prod-admin-jump1.infra.csbnet.se";
         "jumpn" = "ssh prod-jump-got1.infra.brainmill.com";
