@@ -40,6 +40,7 @@ in {
     alejandra
     fzf
     fastfetch
+    astroterm # Star map/planetarium
 
     # Development
     pkgs-unstable.code-cursor
@@ -78,6 +79,7 @@ in {
 
     # Audio / Visual
     loupe # Image viewer
+    pastel # generate, analyze, convert and manipulate colors
     inkscape # Vector editor
     krita # Image editor
     kdePackages.kolourpaint # Simple Image editor
