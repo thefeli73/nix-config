@@ -59,6 +59,7 @@
       "prettier.proseWrap" = "always";
       "vsicons.dontShowNewVersionMessage" = true;
       "redhat.telemetry.enabled" = false;
+      "sonarlint.pathToNodeExecutable" = "/run/current-system/sw/bin/node";
 
       # Cursor
       "cursor.cpp.enablePartialAccepts" = true;
