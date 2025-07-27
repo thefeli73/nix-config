@@ -24,7 +24,7 @@
 
   # Network security specific to host
   networking.firewall.allowedTCPPorts = [
-    3773 # OpenWebUI
+    8081 # Expo
   ];
   networking.firewall.allowedUDPPorts = [];
 
