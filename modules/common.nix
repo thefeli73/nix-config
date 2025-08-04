@@ -146,8 +146,8 @@ in {
   # SYSTEM SERVICES
   # ================================
   services = {
-    # Disable CUPS printing (enable per-host if needed)
-    printing.enable = false;
+    # Disable CUPS printing (by default) (enable per-host if needed)
+    # printing.enable = false;
 
     # Modern audio stack: PipeWire replaces PulseAudio
     pulseaudio.enable = false; # Disable old PulseAudio

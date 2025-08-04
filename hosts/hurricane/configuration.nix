@@ -41,6 +41,18 @@
   services = {
     # Intel CPU overheating support
     thermald.enable = true;
+
+    # Enable CUPS
+    printing = {
+      enable = true;
+      drivers = [pkgs.hplip];
+    };
+    # Enable Avahi for mDNS automatic network discovery
+    avahi = {
+      enable = true;
+      nssmdns4 = true;
+      openFirewall = true;
+    };
   };
 
   # This value determines the NixOS release from which the default
