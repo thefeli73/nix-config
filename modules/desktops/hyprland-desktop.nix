@@ -25,6 +25,9 @@
 
     # Hypridle, idle daemon
     hypridle.enable = true;
+
+    # Eye protection
+    safeeyes.enable = true;
   };
 
   # ================================
