@@ -134,8 +134,6 @@ in {
       LC_PAPER = "sv_SE.UTF-8";
       LC_TELEPHONE = "sv_SE.UTF-8";
       LC_TIME = "sv_SE.UTF-8";
-      LC_ALL = "sv_SE.UTF-8";
-      LC_CTYPE = "sv_SE.UTF-8";
     };
   };
 
