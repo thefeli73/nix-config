@@ -44,6 +44,7 @@
       "terminal.integrated.fontFamily" = "'Intel One Mono', 'Symbols Nerd Font Mono'";
       "files.autoSave" = "onFocusChange";
       "explorer.confirmDragAndDrop" = false;
+      "explorer.confirmDelete" = false;
       "workbench.colorTheme" = "Gruvbox Dark Medium";
       "workbench.iconTheme" = "vscode-icons";
       "editor.fontFamily" = "'Intel One Mono', 'Symbols Nerd Font Mono', 'monospace', monospace";
