@@ -2,10 +2,10 @@
   gtk = {
     enable = true;
     theme = {
-      name = "Colloid-Blue-Dark-Gruvbox";
+      name = "Colloid-Green-Dark-Gruvbox";
       package = pkgs.colloid-gtk-theme.override {
         colorVariants = ["dark"];
-        themeVariants = ["default"]; # Blue
+        themeVariants = ["green"];
         tweaks = [
           "gruvbox"
           "rimless"
@@ -26,7 +26,6 @@
     enable = true;
     settings = {
       "org/gnome/desktop/interface" = {
-        gtk-theme = "Colloid-Blue-Dark-Gruvbox";
         color-scheme = "prefer-dark";
       };
     };
