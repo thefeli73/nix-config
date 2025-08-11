@@ -10,6 +10,12 @@ in {
     terminal = "ghostty";
     font = "Intel One Mono 14";
     location = "center";
+    extraConfig = {
+      "sorting-method" = "fzf";
+      "icon-theme" = "Papirus-dark";
+      "display-drun" = " Apps ";
+      "display-window" = " Window ";
+    };
     theme = let
       inherit (config.lib.formats.rasi) mkLiteral;
     in {

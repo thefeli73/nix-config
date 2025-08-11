@@ -1,21 +1,23 @@
 {pkgs, ...}: {
-  home.packages = with pkgs; [
-    dconf
-    gruvbox-dark-gtk
-  ];
-
   gtk = {
     enable = true;
     theme = {
-      name = "Gruvbox-Dark-B";
-      package = pkgs.gruvbox-dark-gtk;
+      name = "Colloid-Blue-Dark-Gruvbox";
+      package = pkgs.colloid-gtk-theme.override {
+        colorVariants = ["dark"];
+        themeVariants = ["default"]; # Blue
+        tweaks = [
+          "gruvbox"
+          "rimless"
+          "float"
+        ];
+      };
     };
     iconTheme = {
-      name = "Adwaita";
-      package = pkgs.adwaita-icon-theme;
+      name = "Papirus-Dark";
+      package = pkgs.papirus-icon-theme.override {color = "black";};
     };
   };
-
   # ================================
   # GTK THEMING CONFIGURATION
   # ================================
@@ -24,8 +26,7 @@
     enable = true;
     settings = {
       "org/gnome/desktop/interface" = {
-        gtk-theme = "Gruvbox-Dark-B";
-
+        gtk-theme = "Colloid-Blue-Dark-Gruvbox";
         color-scheme = "prefer-dark";
       };
     };

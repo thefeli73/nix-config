@@ -5,6 +5,14 @@
       display = {
         separator = " ";
       };
+      logo = {
+        source = "\${../../images/nixos-logo.png}";
+        type = "kitty-direct";
+        width = 33;
+        padding = {
+          top = 2;
+        };
+      };
       modules = [
         {
           type = "title";

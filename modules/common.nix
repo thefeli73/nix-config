@@ -243,6 +243,7 @@ in {
     MOZ_USE_XINPUT2 = "1";
     # Screenshot directory for Hyprshot
     HYPRSHOT_DIR = "$HOME/Nextcloud/Home-sync/Pictures/Screenshots";
+    GTK_THEME = "Colloid-Blue-Dark-Gruvbox";
   };
 
   # ================================
