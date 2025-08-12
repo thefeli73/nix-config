@@ -297,6 +297,7 @@ in {
       enable = true;
       package = pkgs.wireshark;
     };
+    evince.enable = true; # PDF viewer
   };
 
   # enable and configure Docker
