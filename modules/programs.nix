@@ -298,6 +298,7 @@ in {
       package = pkgs.wireshark;
     };
     evince.enable = true; # PDF viewer
+    mtr.enable = true; # traceroute + ping tool
   };
 
   # enable and configure Docker
