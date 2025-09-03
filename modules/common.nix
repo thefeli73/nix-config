@@ -50,6 +50,7 @@ in {
       ./hm/eza.nix # Eza config (ls alternative)
       ./hm/user-dirs.nix # XDG User directories config
       ./hm/discord.nix # Discord config
+      ./hm/mako.nix # Mako config (Notification daemon)
     ];
   };
 
