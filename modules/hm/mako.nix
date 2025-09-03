@@ -11,7 +11,7 @@ in {
       text-color = "${colors.gruvbox.fg0}";
       border-color = "${colors.gruvbox.yellow}";
       border-radius = 5;
-      default-timeout = 15000;
+      default-timeout = 60000;
       height = 100;
       width = 300;
       icons = true;
