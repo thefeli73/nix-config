@@ -51,7 +51,29 @@
     };
 
     # regreet: Modern, customizable greeter for greetd
-    regreet.enable = true;
+    regreet = {
+      enable = true;
+      theme = {
+        name = "Colloid-Green-Dark-Gruvbox";
+        package = pkgs.colloid-gtk-theme.override {
+          colorVariants = ["dark"];
+          themeVariants = ["green"];
+          tweaks = [
+            "gruvbox"
+            "rimless"
+            "float"
+          ];
+        };
+      };
+      iconTheme = {
+        name = "Papirus-Dark";
+        package = pkgs.papirus-icon-theme.override {color = "black";};
+      };
+      cursorTheme = {
+        name = "capitaine-cursors";
+        package = pkgs.capitaine-cursors;
+      };
+    };
 
     # UWSM: Universal Wayland Session Manager
     uwsm = {
