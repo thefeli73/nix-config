@@ -89,6 +89,9 @@ in {
     cava # Audio visualizer
     wireplumber # Audio server
     pavucontrol # Audio control
+
+    # Health
+    stretchly # Break reminder
   ];
 
   programs = {

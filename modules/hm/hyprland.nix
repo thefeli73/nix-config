@@ -10,6 +10,7 @@ in {
         "hyprctl setcursor capitaine-cursors 32" # Set mouse cursor
         "wl-paste --type text --watch cliphist store" # Stores only text data
         "wl-paste --type image --watch cliphist store" # Stores only image data
+        "stretchly" # Launch Break reminder
       ];
 
       misc = {
