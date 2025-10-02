@@ -6,7 +6,7 @@ in {
     settings = {
       font = "Intel One Mono 10";
       actions = true;
-      anchor = "bottom-right";
+      anchor = "bottom-center";
       background-color = "${colors.gruvbox.bg0}";
       text-color = "${colors.gruvbox.fg0}";
       border-color = "${colors.gruvbox.yellow}";
