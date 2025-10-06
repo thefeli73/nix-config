@@ -61,6 +61,9 @@
       "vsicons.dontShowNewVersionMessage" = true;
       "redhat.telemetry.enabled" = false;
       "sonarlint.pathToNodeExecutable" = "/run/current-system/sw/bin/node";
+      "[python]" = {
+        "editor.defaultFormatter" = "ms-python.black-formatter";
+      };
 
       # Cursor
       "cursor.cpp.enablePartialAccepts" = true;
