@@ -59,7 +59,7 @@ in {
         "col.active_border" = "rgba(${colors.gruvbox-rgb.fg0},1.0) rgba(${colors.gruvbox-rgb.bg3},1.0) rgba(${colors.gruvbox-rgb.fg1},1.0) 45deg";
         "col.inactive_border" = "rgba(${colors.gruvbox-rgb.bg2},1.0)";
         layout = "dwindle";
-        allow_tearing = false;
+        allow_tearing = true;
       };
 
       decoration = {
