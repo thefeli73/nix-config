@@ -56,7 +56,7 @@ in {
         gaps_in = 6;
         gaps_out = "10,15,15,15";
         border_size = 1;
-        "col.active_border" = "rgba(${colors.gruvbox-rgb.fg0},1.0) rgba(${colors.gruvbox-rgb.bg3},1.0) rgba(${colors.gruvbox-rgb.fg1},1.0) 15deg";
+        "col.active_border" = "rgba(${colors.gruvbox-rgb.fg0},1.0) rgba(${colors.gruvbox-rgb.bg4},1.0) rgba(${colors.gruvbox-rgb.bg2},1.0) 30deg";
         "col.inactive_border" = "rgba(${colors.gruvbox-rgb.bg2},1.0)";
         layout = "dwindle";
         allow_tearing = true;
