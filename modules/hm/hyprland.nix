@@ -67,19 +67,12 @@ in {
         rounding_power = 3.5;
         blur = {
           enabled = true;
-          new_optimizations = true;
-          ignore_opacity = true;
-          xray = false;
-          size = 3;
-          passes = 3;
+          xray = true;
+          size = 4;
+          passes = 1;
           popups = true;
         };
-        shadow = {
-          enabled = true;
-          range = 8;
-          render_power = 4;
-          color = "rgba(0,0,0,.5)";
-        };
+        shadow.enabled = false;
       };
 
       animations = {
