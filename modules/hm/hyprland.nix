@@ -116,6 +116,9 @@ in {
         "opacity 0.9,fullscreen:0,class:^(GitKraken)$"
         "opacity 0.9,fullscreen:0,class:^(obsidian)$"
 
+        # Ensure hyprland tearing on games
+        "immediate,class:^(steam_app)$"
+
         # Keep Rofi focused
         "stayfocused, class:^(Rofi)$"
       ];
