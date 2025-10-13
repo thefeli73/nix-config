@@ -56,7 +56,7 @@ in {
         gaps_in = 6;
         gaps_out = "10,15,15,15";
         border_size = 1;
-        "col.active_border" = "rgba(${colors.gruvbox-rgb.fg0},1.0) rgba(${colors.gruvbox-rgb.bg3},1.0) rgba(${colors.gruvbox-rgb.fg1},1.0) 45deg";
+        "col.active_border" = "rgba(${colors.gruvbox-rgb.fg0},1.0) rgba(${colors.gruvbox-rgb.bg3},1.0) rgba(${colors.gruvbox-rgb.fg1},1.0) 15deg";
         "col.inactive_border" = "rgba(${colors.gruvbox-rgb.bg2},1.0)";
         layout = "dwindle";
         allow_tearing = true;
@@ -86,8 +86,10 @@ in {
           "windows, 1, 3, fluid, popin 5%"
           "windowsOut, 1, 2.5, snappy"
           "fade, 1, 4, snappy"
-          "workspaces, 1, 1.7, snappy, slidevert"
+          "workspaces, 1, 2, snappy, slidevert"
           "layers, 1, 2, snappy, popin 70%"
+          "border, 1, 4, fluid"
+          "borderangle, 1, 8, fluid"
         ];
       };
 
