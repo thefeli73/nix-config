@@ -308,7 +308,7 @@ in {
 
   # HARDWARE SECURITY (YUBIKEY)
   # Enable Yubikey support for SSH and GPG
-  services.yubikey-agent.enable = true;
+  #services.yubikey-agent.enable = true; # Disabled as this interferes with ssh agent
   # Enable U2F authentication for login
   security.pam.u2f.enable = true;
 }
