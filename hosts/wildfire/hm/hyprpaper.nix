@@ -10,7 +10,7 @@
       wallpaper = [
         ", $HOME/git/nix-config/modules/hm/images/nix.png"
         "DP-3, $HOME/git/nix-config/modules/hm/images/mountains.png"
-        "HDMI-A-1, $HOME/git/nix-config/modules/hm/images/sunset-rocks.png"
+        "DP-1, $HOME/git/nix-config/modules/hm/images/sunset-rocks.png"
       ];
     };
   };
