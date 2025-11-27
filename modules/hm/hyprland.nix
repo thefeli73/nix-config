@@ -101,26 +101,25 @@ in {
 
       # Layer rules
       layerrule = [
-        "blur, waybar" # Blur waybar
-        "ignorezero, waybar"
-        "ignorealpha 0.5, waybar"
-        "noanim, hyprpicker" # fix screenshot border visible
-        "noanim, selection" # fix screenshot border visible
+        "match:namespace waybar, blur on" # Blur waybar
+        "match:namespace waybar, ignore_alpha 0.5"
+        "match:namespace hyprpicker, no_anim on" # fix screenshot border visible
+        "match:namespace selection, no_anim on" # fix screenshot border visible
       ];
 
       # Window rules
-      windowrulev2 = [
+      windowrule = [
         # Nice transparency for some apps (unless in fullscreen)
-        "opacity 0.9,fullscreen:0,class:^(cursor)$"
-        "opacity 0.9,fullscreen:0,class:^(firefox)$"
-        "opacity 0.9,fullscreen:0,class:^(GitKraken)$"
-        "opacity 0.9,fullscreen:0,class:^(obsidian)$"
+        "match:class ^(cursor)$, match:fullscreen false, opacity 0.9"
+        "match:class ^(firefox)$, match:fullscreen false, opacity 0.9"
+        "match:class ^(GitKraken)$, match:fullscreen false, opacity 0.9"
+        "match:class ^(obsidian)$, match:fullscreen false, opacity 0.9"
 
         # Ensure hyprland tearing on games
-        "immediate,class:^(steam_app)$"
+        "match:class ^(steam_app)$, immediate on"
 
         # Keep Rofi focused
-        "stayfocused, class:^(Rofi)$"
+        "match:class ^(Rofi)$, stay_focused on"
       ];
 
       # Bindings
