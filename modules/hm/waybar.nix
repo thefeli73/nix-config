@@ -118,7 +118,7 @@
         };
       }
       {
-        output = ["HDMI-A-1"];
+        output = ["HDMI-A-1" "DP-1"];
         spacing = 8;
         "modules-left" = ["hyprland/workspaces"];
         "modules-center" = ["hyprland/window"];
