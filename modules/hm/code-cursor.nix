@@ -61,6 +61,7 @@
       "vsicons.dontShowNewVersionMessage" = true;
       "redhat.telemetry.enabled" = false;
       "sonarlint.pathToNodeExecutable" = "/run/current-system/sw/bin/node";
+      "sonarlint.ls.javaHome" = "${pkgs.jdk}/lib/openjdk";
       "[python]" = {
         "editor.defaultFormatter" = "ms-python.black-formatter";
       };
