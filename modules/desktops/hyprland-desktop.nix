@@ -46,8 +46,8 @@
       enable = true;
       withUWSM = true; # Enable Universal Wayland Session Manager
       # Use cutting-edge Hyprland from flake input (latest features)
-      package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-      portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+      package = pkgs.hyprland;
+      portalPackage = pkgs.xdg-desktop-portal-hyprland;
     };
 
     # regreet: Modern, customizable greeter for greetd
