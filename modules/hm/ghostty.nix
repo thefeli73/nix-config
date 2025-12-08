@@ -4,7 +4,7 @@
     enableFishIntegration = true;
     settings = {
       "font-family" = "Intel One Mono";
-      "theme" = "GruvboxDark";
+      "theme" = "Gruvbox Dark";
       "background-opacity" = 0.6;
     };
   };
