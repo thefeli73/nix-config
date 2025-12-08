@@ -19,7 +19,6 @@
   boot.initrd.kernelModules = ["amdgpu"]; # AMD GPU kernel module
   hardware.graphics.extraPackages = with pkgs; [
     rocmPackages.clr.icd # OpenCL
-    amdvlk # AMDVLK drivers can be used in addition to the Mesa RADV drivers
   ];
 
   # Network security specific to host

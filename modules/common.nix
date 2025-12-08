@@ -230,7 +230,7 @@ in {
     intel-one-mono # Monospace font for coding
     noto-fonts # Comprehensive Unicode support
     noto-fonts-cjk-sans # CJK support
-    noto-fonts-emoji # Emoji support
+    noto-fonts-color-emoji # Emoji support
     nerd-fonts.symbols-only # Symbols
     fira-code # Monospace font for coding
     fira-code-symbols # Symbols

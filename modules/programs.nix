@@ -35,7 +35,7 @@ in {
     jq
     yq-go
     pciutils
-    glxinfo
+    mesa-demos
     btop
     alejandra
     fzf
@@ -57,7 +57,6 @@ in {
     postgresql_15
     beam26Packages.erlang
     beam26Packages.erlfmt
-    beam26Packages.erlang-ls
     beam26Packages.rebar3
     gnumake
     gcc
@@ -315,8 +314,6 @@ in {
       enable = true;
       qemu = {
         swtpm.enable = true;
-        ovmf.enable = true;
-        ovmf.packages = [pkgs.OVMFFull.fd];
       };
     };
     spiceUSBRedirection.enable = true;
