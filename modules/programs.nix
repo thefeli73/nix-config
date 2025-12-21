@@ -48,9 +48,10 @@ in {
     git-filter-repo
     git-secrets
 
+    bun
     python3
     hugo
-    nodejs_22
+    nodejs_24
     pnpm
     cypress
     pgadmin4-desktopmode
