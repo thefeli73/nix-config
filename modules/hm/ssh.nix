@@ -1,11 +1,11 @@
 {
   programs.ssh = {
     enable = true;
-    serverAliveInterval = 60;
-    serverAliveCountMax = 2;
-
+    enableDefaultConfig = false;
     matchBlocks = {
       "*" = {
+        serverAliveInterval = 60;
+        serverAliveCountMax = 2;
         sendEnv = ["TERM"];
         setEnv = {
           TERM = "xterm-256color"; # Fix ghostty issue
