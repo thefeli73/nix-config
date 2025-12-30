@@ -56,7 +56,8 @@ mkdir -p logs
 sudo nixos-rebuild switch --flake ./#$NIXOS_HOST &>logs/nixos-switch.log || (cat logs/nixos-switch.log | grep --color error && exit 1)
 
 # Get current generation metadata
-current=$(nixos-rebuild list-generations | grep True)
+#current=$(nixos-rebuild list-generations | grep True)
+current=$(nixos-rebuild list-generations | awk '/True/ { printf "%s - %s (%s)\n", $1, $5, $4 }')
 
 # Commit all changes witih the generation metadata
 git commit -am "$NIXOS_HOST: $current"
