@@ -134,6 +134,7 @@ in {
 
         # Specific program abbreviations
         "astroterm" = "astroterm --fps 60 --speed 60 --metadata --unicode --color --city Göteborg --label-thresh 1 --threshold 4";
+        "oc" = "opencode";
 
         # Work abbreviations
         "jumpc" = "ssh prod-admin-jump1.infra.csbnet.se";
