@@ -131,8 +131,8 @@ in {
           "$mod, E, exec, $filemanager" # Open file manager
           "$mod, SPACE, exec, $menu" # Show menu (rofi)
           "$mod, V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy" # Show Clipboard history
-          ", PRINT, exec, hyprshot -m region" # Screenshot region
-          "$mod, PRINT, exec, hyprshot -m window" # Screenshot window
+          ", PRINT, exec, hyprshot-sdr -m region" # Screenshot region (HDR-safe)
+          "$mod, PRINT, exec, hyprshot-sdr -m window" # Screenshot window (HDR-safe)
           "$mod, F, togglefloating" # Make active window floating
           "$mod, L, exec, hyprlock" # Lock screen
 

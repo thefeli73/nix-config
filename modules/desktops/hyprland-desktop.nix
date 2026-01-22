@@ -4,7 +4,64 @@
   inputs,
   pkgs,
   ...
-}: {
+}: let
+  hyprshot-sdr = pkgs.writeShellScriptBin "hyprshot-sdr" ''
+    set -euo pipefail
+
+    # Wrapper around hyprshot that temporarily disables HDR/wide-gamut capture.
+    # In Hyprland HDR mode, grim/hyprshot screenshots look oversaturated in SDR apps.
+    # This script:
+    # - Detects monitors with "colorManagementPreset": "hdr"
+    # - Temporarily switches those monitors to SDR (drops HDR-related tokens)
+    # - Runs hyprshot with the original arguments (keeps clipboard behavior)
+    # - Restores the original monitor strings afterwards
+
+    hyprctl_bin="${pkgs.hyprland}/bin/hyprctl"
+    jq_bin="${pkgs.jq}/bin/jq"
+    hyprshot_bin="${pkgs.hyprshot}/bin/hyprshot"
+
+    monitors_json="$($hyprctl_bin monitors -j)"
+
+    # Gather HDR monitors and build restore/sdr commands.
+    mapfile -t hdr_monitors < <(printf '%s' "$monitors_json" | $jq_bin -r '.[] | select(.colorManagementPreset == "hdr") | .name')
+
+    restore_batch=""
+    sdr_batch=""
+
+    for name in "''${hdr_monitors[@]}"; do
+      # This matches the user-provided monitor string format in this repo:
+      # "DP-1, 2560x1440@210.00, 0x0, 1, vrr, 1, bitdepth, 10, cm, hdr, sdrbrightness, 1.2"
+      restore_line=$(printf '%s' "$monitors_json" | $jq_bin -r --arg name "$name" '.[] | select(.name==$name) |
+        "\(.name), \(.width)x\(.height)@\(.refreshRate), \(.x)x\(.y), \(.scale), vrr, \(.vrr | if . then 1 else 0 end), bitdepth, \(
+          if (.currentFormat | test("2101010")) then 10 else 8 end
+        ), cm, hdr, sdrbrightness, \(.sdrBrightness)"')
+
+      # SDR line: same base fields, omit HDR tokens. (Hyprland default is SDR/8-bit.)
+      sdr_line=$(printf '%s' "$monitors_json" | $jq_bin -r --arg name "$name" '.[] | select(.name==$name) | "\(.name), \(.width)x\(.height)@\(.refreshRate), \(.x)x\(.y), \(.scale), vrr, \(.vrr | if . then 1 else 0 end)"')
+
+      restore_batch+="keyword monitor ''${restore_line}; "
+      sdr_batch+="keyword monitor ''${sdr_line}; "
+    done
+
+    restore() {
+      if [[ -n "$restore_batch" ]]; then
+        $hyprctl_bin --batch "$restore_batch" >/dev/null
+      fi
+    }
+
+    # Don't use `exec` here: it would replace this process with `hyprshot`
+    # and skip running the EXIT trap, leaving monitors stuck in SDR.
+    trap restore EXIT INT TERM
+
+    if [[ -n "$sdr_batch" ]]; then
+      $hyprctl_bin --batch "$sdr_batch" >/dev/null
+      # Small delay to let outputs reconfigure.
+      sleep 0.2
+    fi
+
+    $hyprshot_bin "$@"
+  '';
+in {
   # ================================
   # DISPLAY SERVER CONFIGURATION
   # ================================
@@ -120,6 +177,7 @@
   # ================================
   # global variables set on shell initialization
   environment.variables = {
+    HYPRSHOT_DIR = "$HOME/Nextcloud/Home-sync/Pictures/Screenshots";
   };
   # session variables
   environment.sessionVariables = {
@@ -154,6 +212,7 @@
     grim # Screenshot tool for Wayland
     slurp # Screen area selection for screenshots
     hyprshot # Screenshot tool for Hyprland
+    hyprshot-sdr # HDR-safe hyprshot wrapper (toggle SDR for capture)
     swappy # Screenshot editing and annotation
     wf-recorder # Screen recording for Wayland
 
