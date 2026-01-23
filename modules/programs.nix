@@ -51,6 +51,7 @@ in {
 
     bun
     python3
+    ansible
     hugo
     nodejs_24
     pnpm
