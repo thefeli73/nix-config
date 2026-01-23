@@ -53,7 +53,16 @@ echo "NixOS Rebuilding configuration for host: $NIXOS_HOST..."
 
 # Rebuild the system
 mkdir -p logs
-sudo nixos-rebuild switch --flake ./#$NIXOS_HOST &>logs/nixos-switch.log || (cat logs/nixos-switch.log | grep --color error && exit 1)
+if ! sudo nixos-rebuild switch --flake ./#$NIXOS_HOST &>logs/nixos-switch.log; then
+    echo "NixOS rebuild failed!"
+    # Try to show relevant error lines (error, non-zero exit, failed)
+    if ! grep -E --color=always -i 'error|non-zero exit|failed' logs/nixos-switch.log; then
+        # If no matches, show last 50 lines for context
+        echo "No obvious error pattern found. Last 50 lines of log:"
+        tail -50 logs/nixos-switch.log
+    fi
+    exit 1
+fi
 
 # Get current generation metadata
 #current=$(nixos-rebuild list-generations | grep True)
