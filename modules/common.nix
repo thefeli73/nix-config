@@ -84,6 +84,7 @@ in {
         device = "nodev";
         enableCryptodisk = false; # ← GRUB lives on the unencrypted ESP
         memtest86.enable = true; # Enable memtest86 for hardware testing
+        configurationLimit = 10;
 
         # Styling
         theme = pkgs.stdenv.mkDerivation {
