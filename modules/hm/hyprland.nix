@@ -20,7 +20,7 @@ in {
 
       input = {
         kb_layout = "se";
-        kb_variant = "";
+        kb_variant = "nodeadkeys";
         kb_model = "";
         kb_options = "";
         kb_rules = "";
