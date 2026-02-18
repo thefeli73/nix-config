@@ -55,6 +55,7 @@ in {
     nodejs_24
     pnpm
     cypress
+    docker-buildx
     pgadmin4-desktopmode
     postgresql_15
     beam26Packages.erlang
