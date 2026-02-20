@@ -37,6 +37,7 @@ in {
     pciutils
     mesa-demos
     btop
+    lazygit
     alejandra
     fzf
     fastfetch
@@ -44,7 +45,6 @@ in {
 
     # Development
     pkgs-unstable.code-cursor
-    gitkraken
     git-filter-repo
     git-secrets
 
@@ -135,6 +135,7 @@ in {
 
         # Specific program abbreviations
         "astroterm" = "astroterm --fps 60 --speed 60 --metadata --unicode --color --city Göteborg --label-thresh 1 --threshold 4";
+        "lg" = "lazygit";
         "oc" = "opencode";
 
         # Work abbreviations
