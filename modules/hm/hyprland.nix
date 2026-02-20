@@ -134,17 +134,21 @@ in {
           ", PRINT, exec, hyprshot-sdr -m region" # Screenshot region (HDR-safe)
           "$mod, PRINT, exec, hyprshot-sdr -m window" # Screenshot window (HDR-safe)
           "$mod, F, togglefloating" # Make active window floating
-          "$mod, L, exec, hyprlock" # Lock screen
+          "$mod ALT, L, exec, hyprlock" # Lock screen
 
-          # Move focus with mainMod + arrow keys
+          # Move focus with mainMod + arrow keys or vim keys
           "$mod, left, movefocus, l"
           "$mod, right, movefocus, r"
           "$mod, up, movefocus, u"
           "$mod, down, movefocus, d"
+          "$mod, H, movefocus, l"
+          "$mod, J, movefocus, d"
+          "$mod, K, movefocus, u"
+          "$mod, L, movefocus, r"
 
           # Workspace navigation
-          "$mod, J, workspace, r+1" # vim motions Down
-          "$mod, K, workspace, r-1" # vim motions Up
+          "$mod ALT, J, workspace, r+1" # vim motions Down
+          "$mod ALT, K, workspace, r-1" # vim motions Up
         ]
         ++ (
           # workspaces
@@ -154,7 +158,7 @@ in {
                 ws = i + 1;
               in [
                 "$mod, code:1${toString i}, workspace, ${toString ws}"
-                "$mod SHIFT, code:1${toString i}, movetoworkspace, ${toString ws}"
+                "$mod ALT, code:1${toString i}, movetoworkspace, ${toString ws}"
               ]
             )
             9)
