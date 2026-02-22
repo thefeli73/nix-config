@@ -35,6 +35,7 @@ in {
     jq
     yq-go
     pciutils
+    lm_sensors
     mesa-demos
     btop
     lazygit
@@ -128,6 +129,13 @@ in {
         "la" = "eza -la";
         "l" = "eza -l";
         "cat" = "bat -pp";
+        "ps" = "ps au | bat -ppl conf";
+        "lsmod" = "lsmod | bat -ppl conf";
+        "sensors" = "sensors | bat -ppl cpuinfo";
+        "lscpu" = "lscpu | bat -ppl cpuinfo";
+        "c" = "clear";
+        "lsblk" = "lsblk | bat -ppl conf";
+        "free" = "free -h | bat -ppl cpuinfo";
         "tree" = "eza -lT";
         "mkdir" = "mkdir -p";
         "mv" = "mv -v";
