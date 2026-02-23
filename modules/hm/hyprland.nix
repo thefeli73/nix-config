@@ -112,8 +112,6 @@ in {
       windowrule = [
         # Nice transparency for some apps (unless in fullscreen)
         "opacity 0.9,fullscreen:0,class:^(cursor)$"
-        "opacity 0.9,fullscreen:0,class:^(firefox)$"
-        "opacity 0.9,fullscreen:0,class:^(GitKraken)$"
         "opacity 0.9,fullscreen:0,class:^(obsidian)$"
 
         # Ensure hyprland tearing on games
