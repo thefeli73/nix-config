@@ -46,6 +46,7 @@ in {
 
     # Development
     pkgs-unstable.code-cursor
+    gitkraken
     git-filter-repo
     git-secrets
 
