@@ -1,6 +1,7 @@
 {
   pkgs,
   pkgs-unstable,
+  inputs,
   ...
 }: let
   lock-false = {
@@ -49,6 +50,7 @@ in {
     gitkraken
     git-filter-repo
     git-secrets
+    inputs.worktrunk.packages.${pkgs.system}.default
 
     bun
     python3
