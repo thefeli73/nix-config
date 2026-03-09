@@ -25,7 +25,7 @@ in {
     useUserPackages = true;
     # Pass unstable packages to home-manager modules
     extraSpecialArgs = {
-      pkgs-unstable = pkgs-unstable;
+      inherit pkgs-unstable inputs;
     };
     # User-specific Home Manager configurations
     users.schulze.imports = [

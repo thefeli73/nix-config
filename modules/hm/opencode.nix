@@ -1,7 +1,11 @@
-{pkgs-unstable, ...}: {
+{
+  pkgs,
+  inputs,
+  ...
+}: {
   programs.opencode = {
     enable = true;
-    package = pkgs-unstable.opencode;
+    package = inputs.opencode.packages.${pkgs.system}.default;
     settings = {
       theme = "gruvbox";
       tui = {

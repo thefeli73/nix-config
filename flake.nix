@@ -32,6 +32,9 @@
   };
 
   inputs = {
+    # OpenCode directly from repo
+    opencode.url = "github:anomalyco/opencode/dev";
+
     # NixOS
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
