@@ -30,11 +30,11 @@
   # host-specific packages
   environment.systemPackages = with pkgs; [
     lact
-    multiviewer-for-f1
+    #multiviewer-for-f1
     wasabiwallet
     prismlauncher
-    davinci-resolve
-    ardour
+    #davinci-resolve
+    #ardour
     btop-rocm
   ];
 
