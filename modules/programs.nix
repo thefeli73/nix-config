@@ -58,6 +58,8 @@ in {
     nodejs_24
     pnpm
     cypress
+    playwright
+    playwright-driver.browsers
     docker-buildx
     pgadmin4-desktopmode
     postgresql_15
