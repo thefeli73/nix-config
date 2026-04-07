@@ -122,7 +122,7 @@ in {
       '';
       shellAliases = {
         "eza" = "eza --icons=always --color-scale --hyperlink";
-        "omo" = "OPENCODE_CONFIG_DIR=$HOME/git/opencode/.config/oh-my-opencode opencode";
+        "omo" = "OPENCODE_CONFIG_DIR=$HOME/git/opencode/.config/oh-my-openagent opencode";
       };
       shellAbbrs = {
         # Common abbreviations
