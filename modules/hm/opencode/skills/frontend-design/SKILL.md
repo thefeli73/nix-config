@@ -1,0 +1,100 @@
+---
+name: frontend-design
+description: Create distinctive, production-grade frontend interfaces with high design quality. Use this skill when the user asks to build web components, pages, artifacts, posters, or applications (examples include websites, landing pages, dashboards, React components, HTML/CSS layouts, or when styling/beautifying any web UI). Generates creative, polished code and UI design that avoids generic AI aesthetics.
+license: Complete terms in LICENSE.txt
+---
+
+This skill guides creation of distinctive, production-grade frontend interfaces that avoid generic "AI slop" aesthetics. Implement real working code with exceptional attention to aesthetic details and creative choices.
+
+## Role
+
+Act as a World-Class Senior Creative Technologist and Lead Frontend Engineer. You build high-fidelity, cinematic "1:1 Pixel Perfect" landing pages. Every site you produce should feel like a digital instrument — every scroll intentional, every animation weighted and professional. Eradicate all generic AI patterns.
+
+## Skill
+
+This skill guides creation of distinctive, production-grade frontend interfaces that avoid generic "AI slop" aesthetics.
+Implement real working code with exceptional attention to aesthetic details and creative choices.
+
+The user provides frontend requirements: a component, page, application, or interface to build. They may include context about the purpose, audience, or technical constraints.
+
+## Design Thinking
+
+Before coding, understand the context and commit to a BOLD aesthetic direction:
+- **Purpose**: What problem does this interface solve? Who uses it?
+- **Tone**: Pick an extreme: brutally minimal, maximalist chaos, retro-futuristic, organic/natural, luxury/refined, playful/toy-like, editorial/magazine, brutalist/raw, art deco/geometric, soft/pastel, industrial/utilitarian, etc. There are so many flavors to choose from. Use these for inspiration but design one that is true to the aesthetic direction.
+- **Constraints**: Technical requirements (framework, performance, accessibility).
+- **Differentiation**: What makes this UNFORGETTABLE? What's the one thing someone will remember?
+
+**CRITICAL**: Choose a clear conceptual direction and execute it with precision. Bold maximalism and refined minimalism both work - the key is intentionality, not intensity.
+
+Then implement working code (HTML/CSS/JS, React, Vue, etc.) that is:
+- Production-grade and functional
+- Visually striking and memorable
+- Cohesive with a clear aesthetic point-of-view
+- Meticulously refined in every detail
+
+### Images
+For unsplash images use keywords that match the mood of the page, such as any of these:
+`dark forest, organic textures, moss, ferns, laboratory glassware, dark marble, gold accents, architectural shadows, luxury interiors, concrete, brutalist architecture, raw materials, industrial, bioluminescence, dark water, neon reflections, microscopy`.
+
+## Frontend Aesthetics Guidelines
+
+Focus on:
+- **Typography**: Choose fonts that are beautiful, unique, and interesting. Avoid generic fonts like Arial and Inter; opt instead for distinctive choices that elevate the frontend's aesthetics; unexpected, characterful font choices. Pair a distinctive display font with a refined body font.
+- **Color & Theme**: Commit to a cohesive aesthetic. Use CSS variables for consistency. Dominant colors with sharp accents outperform timid, evenly-distributed palettes.
+- **Motion**: Use animations for effects and micro-interactions. Prioritize CSS-only solutions for HTML. Use Motion library for React when available. Focus on high-impact moments: one well-orchestrated page load with staggered reveals (animation-delay) creates more delight than scattered micro-interactions. Use scroll-triggering and hover states that surprise.
+- **Spatial Composition**: Unexpected layouts. Asymmetry. Overlap. Diagonal flow. Grid-breaking elements. Generous negative space OR controlled density.
+- **Backgrounds & Visual Details**: Create atmosphere and depth rather than defaulting to solid colors. Add contextual effects and textures that match the overall aesthetic. Apply creative forms like gradient meshes, noise textures, geometric patterns, layered transparencies, dramatic shadows, decorative borders, custom cursors, and grain overlays.
+
+- **Images:** Use real Unsplash URLs. Select images matching the preset's `imageMood`. Never use placeholder URLs.
+- **No placeholders.** Every card, every label, every animation must be fully implemented and functional.
+- **Responsive:** Mobile-first. Stack cards vertically on mobile. Reduce hero font sizes. Collapse navbar into a minimal version.
+NEVER use generic AI-generated aesthetics like overused font families (Inter, Roboto, Arial, system fonts), cliched color schemes (particularly purple gradients on white backgrounds), predictable layouts and component patterns, and cookie-cutter design that lacks context-specific character.
+
+NEVER use generic AI-generated aesthetics like overused font families (Inter, Roboto, Arial, system fonts), cliched
+color schemes (particularly purple gradients on white backgrounds), predictable layouts and component patterns, and
+cookie-cutter design that lacks context-specific character.
+Interpret creatively and make unexpected choices that feel genuinely designed for the context. No design should be the same. Vary between light and dark themes, different fonts, different aesthetics. NEVER converge on common choices (Space Grotesk, for example) across generations.
+
+Interpret creatively and make unexpected choices that feel genuinely designed for the context. No design should be the
+same. Vary between light and dark themes, different fonts, different aesthetics. NEVER converge on common choices (Space
+Grotesk, for example) across generations.
+**IMPORTANT**: Match implementation complexity to the aesthetic vision. Maximalist designs need elaborate code with extensive animations and effects. Minimalist or refined designs need restraint, precision, and careful attention to spacing, typography, and subtle details. Elegance comes from executing the vision well.
+
+**IMPORTANT**: Match implementation complexity to the aesthetic vision. Maximalist designs need elaborate code with
+extensive animations and effects. Minimalist or refined designs need restraint, precision, and careful attention to
+spacing, typography, and subtle details. Elegance comes from executing the vision well.
+
+Remember: Agent is capable of extraordinary creative work. Don't hold back, show what can truly be created when thinking
+outside the box and committing fully to a distinctive vision.
+
+### Visual Texture
+- Implement a global CSS noise overlay using an inline SVG `<feTurbulence>` filter at **0.05 opacity** to eliminate flat digital gradients.
+- Use a `rounded-[2rem]` to `rounded-[3rem]` radius system for all containers. No sharp corners anywhere.
+
+### Micro-Interactions
+- All buttons must have a **"magnetic" feel**: subtle `scale(1.03)` on hover with `cubic-bezier(0.25, 0.46, 0.45, 0.94)`.
+- Buttons use `overflow-hidden` with a sliding background `<span>` layer for color transitions on hover.
+- Links and interactive elements get a `translateY(-1px)` lift on hover.
+
+## Premium Design Psychology
+
+When designing interfaces intended to feel high-quality, trustworthy, and authoritative, apply these three core psychological principles:
+
+### 1. The Halo Effect (First Impressions)
+It takes roughly 50 milliseconds for a user to form an opinion about a website, coloring their judgment of the entire brand.
+- **Engineer the hero section:** Treat the area visible without scrolling as the most critical real estate.
+- **Define a single feeling:** Design explicitly to evoke one positive emotion (e.g., calm, confidence, excitement) immediately.
+- **Prevent negative halos:** Ruthlessly eliminate cluttered layouts, confusing copy, and low-quality imagery.
+
+### 2. Cognitive Load & Cognitive Fluency
+The brain wants to conserve energy. An interface that is extremely easy to process is automatically interpreted as more trustworthy and of higher quality.
+- **Minimize cognitive load:** Remove all non-essential elements. Simplify navigation to the absolute minimum.
+- **Maximize clarity:** Establish a strict visual hierarchy with exactly *one* primary goal per section.
+- **Strategic negative space:** Use generous white space to let content breathe. White space signals confidence, calm, and exclusivity (e.g., luxury brands).
+
+### 3. Micro Interactions & The Peak-End Rule
+Users remember an experience based on its most intense moments ("peaks") and how it ends, not as an average of every moment.
+- **Implement micro-interactions:** Create small peaks of positive emotion through subtle feedback (e.g., satisfying color changes on hover, form confirmations, smooth transitions).
+- **Prevent static design:** Make the interface feel alive and responsive.
+- **Signal craftsmanship:** Use these thoughtful, tiny details to show that the creator cared about the user's experience on a micro level.
