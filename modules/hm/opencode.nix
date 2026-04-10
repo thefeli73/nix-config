@@ -12,20 +12,7 @@
     commands = {
       init = ./opencode/commands/init.md;
     };
-    skills = {
-      brainstorming = ./opencode/skills/brainstorming;
-      building-native-ui = ./opencode/skills/building-native-ui;
-      copy-editing = ./opencode/skills/copy-editing;
-      copywriting = ./opencode/skills/copywriting;
-      frontend-design = ./opencode/skills/frontend-design;
-      shadcn = ./opencode/skills/shadcn;
-      test-driven-development = ./opencode/skills/test-driven-development;
-      using-git-worktrees = ./opencode/skills/using-git-worktrees;
-      using-superpowers = ./opencode/skills/using-superpowers;
-      vercel-react-native-skills = ./opencode/skills/vercel-react-native-skills;
-      verification-before-completion = ./opencode/skills/verification-before-completion;
-      writing-agents-md = ./opencode/skills/writing-agents-md;
-    };
+    #skills = /home/schulze/git/nix-config/modules/hm/opencode/skills;
     rules = ''
       # AGENTS.md
 
