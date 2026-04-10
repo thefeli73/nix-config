@@ -14,8 +14,6 @@
       ms-python.vscode-pylance # Python LS
       ms-python.black-formatter # Python formatter
 
-      dbaeumer.vscode-eslint # ESLint JS
-      esbenp.prettier-vscode # Prettier code formatting
       bradlc.vscode-tailwindcss # Tailwind IntelliSense
       unifiedjs.vscode-mdx # MDX language
 
@@ -33,6 +31,7 @@
       redhat.vscode-yaml # YAML
       ms-vscode.hexeditor # Hex editor
       # Manually install these (not available as nixpkgs)
+      # oxc.oxc-vscode # Oxlint & Oxfmt code linting and formatting
       # pgourlain.erlang # Erlang language # not available
       # csstools.postcss # PostCSS language # not available
     ];
@@ -53,11 +52,9 @@
       "editor.fontLigatures" = "'ss01'";
       "editor.formatOnSave" = true;
       "editor.minimap.enabled" = true;
-      "editor.defaultFormatter" = "esbenp.prettier-vscode";
+      "editor.defaultFormatter" = "oxc.oxc-vscode";
 
       # Extensions
-      "prettier.printWidth" = 120;
-      "prettier.proseWrap" = "always";
       "vsicons.dontShowNewVersionMessage" = true;
       "redhat.telemetry.enabled" = false;
       "sonarlint.pathToNodeExecutable" = "/run/current-system/sw/bin/node";
