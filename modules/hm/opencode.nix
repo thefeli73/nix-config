@@ -3,6 +3,7 @@
     enable = true;
     package = pkgs-unstable.opencode;
     settings = {
+      autoupdate = false;
       theme = "gruvbox";
       tui = {
         scroll_speed = 1;
