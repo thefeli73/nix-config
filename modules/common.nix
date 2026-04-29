@@ -236,6 +236,7 @@ in {
     nerd-fonts.symbols-only # Symbols
     fira-code # Monospace font for coding
     fira-code-symbols # Symbols
+    league-gothic # League Gothic
   ];
 
   # ================================
