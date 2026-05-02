@@ -101,8 +101,8 @@ in {
         };
       };
     };
-    # Use newer stable kernel packages by default
-    kernelPackages = pkgs.linuxPackages_6_19;
+    # Always use the latest kernel for best hardware support
+    kernelPackages = pkgs.linuxPackages_latest;
   };
 
   # ================================
