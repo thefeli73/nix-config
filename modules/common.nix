@@ -40,6 +40,7 @@ in {
       ./hm/nextcloud.nix # Nextcloud autostart
       ./hm/code-cursor.nix # Cursor config
       ./hm/opencode.nix # OpenCode config
+      ./hm/worktrunk.nix # Worktrunk config
       ./hm/vim.nix # Vim config
       ./hm/hyprsunset.nix # Hyprsunset night mode
       ./hm/btop.nix # Btop config
