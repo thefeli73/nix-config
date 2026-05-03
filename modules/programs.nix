@@ -39,6 +39,7 @@ in {
     mesa-demos
     btop
     lazygit
+    tea
     alejandra
     fzf
     fastfetch
