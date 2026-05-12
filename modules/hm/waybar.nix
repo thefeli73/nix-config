@@ -1,4 +1,7 @@
-{
+{pkgs, ...}: let
+  btopCommand = "${pkgs.ghostty}/bin/ghostty -e ${pkgs.btop}/bin/btop";
+  wpctl = "${pkgs.wireplumber}/bin/wpctl";
+in {
   programs.waybar = {
     enable = true;
     systemd.target = "graphical-session.target";
@@ -8,7 +11,7 @@
         spacing = 8;
         "modules-left" = ["hyprland/workspaces" "mpris" "cava"];
         "modules-center" = ["hyprland/window"];
-        "modules-right" = ["idle_inhibitor" "wireplumber" "backlight" "load" "power-profiles-daemon" "battery" "clock" "tray"];
+        "modules-right" = ["idle_inhibitor" "wireplumber" "backlight" "load" "memory" "power-profiles-daemon" "battery" "clock" "tray"];
 
         "hyprland/workspaces" = {
           "all-outputs" = false;
@@ -20,8 +23,15 @@
           "separate-outputs" = true;
         };
         load = {
+          interval = 5;
           format = " {load1}";
-          "on-click" = "btop";
+          "on-click" = btopCommand;
+        };
+        memory = {
+          interval = 5;
+          format = " {used:0.1f}G";
+          "tooltip-format" = "RAM: {used:0.1f}/{total:0.1f} GiB ({percentage}%)\nSwap: {swapUsed:0.1f}/{swapTotal:0.1f} GiB ({swapPercentage}%)";
+          "on-click" = btopCommand;
         };
         backlight = {
           format = "{icon} {percent}%";
@@ -113,8 +123,8 @@
             car = "";
             default = ["" "" ""];
           };
-          "on-click" = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
-          "on-click-right" = "pavucontrol";
+          "on-click" = "${wpctl} set-mute @DEFAULT_AUDIO_SINK@ toggle";
+          "on-click-right" = "${pkgs.pavucontrol}/bin/pavucontrol";
         };
       }
       {
@@ -300,7 +310,8 @@
       #tray,
       #mpris,
       #power-profiles-daemon,
-      #load {
+      #load,
+      #memory {
           color: @fg;
           padding: 0 15px;
           background: alpha(@bg,.6);
