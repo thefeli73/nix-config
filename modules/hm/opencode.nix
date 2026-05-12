@@ -88,16 +88,6 @@
       ### Boundaries
 
       Code/commits/PRs: write normal. "stop caveman" or "normal mode": revert. Level persist until changed or session end.
-
-      ## Worktrunk
-
-      - Use Worktrunk (`wt`), not raw `git worktree`.
-      - Before feature/bugfix work, run `wt list`.
-      - New isolated branch: `wt switch --create <branch>`.
-      - Existing worktree: `wt switch <branch>`.
-      - Finished worktree: `wt remove <branch>`.
-      - Raw `git worktree add/remove` only if `wt` unavailable.
-      - Repo has `.config/wt.toml`: trust Worktrunk hooks for bootstrap.
     '';
   };
 
