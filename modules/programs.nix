@@ -75,7 +75,6 @@ in {
 
     # Common programs
     ghostty
-    obsidian
     nextcloud-client
     signal-desktop
     slack

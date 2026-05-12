@@ -36,6 +36,7 @@ in {
       ./hm/cursor.nix # Mouse cursor config
       ./hm/rofi.nix # Rofi theme/config
       ./hm/ghostty.nix # Ghostty config
+      ./hm/obsidian.nix # Obsidian config
       ./hm/gtk.nix # GTK theme
       ./hm/nextcloud.nix # Nextcloud autostart
       ./hm/code-cursor.nix # Cursor config
