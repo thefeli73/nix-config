@@ -33,6 +33,7 @@ in {
 
     # cli tools
     jq
+    ripgrep
     yq-go
     pciutils
     lm_sensors
