@@ -1,9 +1,17 @@
-{pkgs-unstable, ...}: {
+{pkgs-unstable, ...}: let
+  ohMyOpenCodeSlimPlugin = "oh-my-opencode-slim@1.1.1";
+in {
   programs.opencode = {
     enable = true;
     package = pkgs-unstable.opencode;
     settings = {
       autoupdate = false;
+      plugin = [ohMyOpenCodeSlimPlugin];
+      agent = {
+        explore.disable = true;
+        general.disable = true;
+      };
+      lsp = true;
       theme = "gruvbox";
       tui = {
         scroll_speed = 1;
