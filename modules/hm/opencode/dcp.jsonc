@@ -2,5 +2,9 @@
   "$schema": "https://raw.githubusercontent.com/Opencode-DCP/opencode-dynamic-context-pruning/master/dcp.schema.json",
   "enabled": true,
   "autoUpdate": false,
-  "pruneNotification": "minimal"
+  "pruneNotification": "minimal",
+  "compress": {
+    "maxContextLimit": 160000,
+    "minContextLimit": 80000
+  }
 }
