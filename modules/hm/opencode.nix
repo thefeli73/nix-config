@@ -91,5 +91,6 @@
     '';
   };
 
+  xdg.configFile."opencode/oh-my-opencode-slim.jsonc".source = ./opencode/oh-my-opencode-slim.jsonc;
   xdg.configFile."opencode/plugins/worktrunk.ts".source = ./opencode/plugins/worktrunk.ts;
 }
