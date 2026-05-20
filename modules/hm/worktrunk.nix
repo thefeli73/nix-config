@@ -4,7 +4,7 @@ in {
   xdg.configFile."worktrunk/config.toml".source = tomlFormat.generate "worktrunk-config.toml" {
     "worktree-path" = "{{ repo_path }}/../{{ repo }}.{{ branch | sanitize }}";
 
-    commit.generation.command = "opencode run -m openai/gpt-5.4-mini-fast --variant low";
+    commit.generation.command = "opencode run -m openai/gpt-5.3-codex-spark --variant low";
 
     list = {
       summary = true;
