@@ -1,12 +1,16 @@
 {pkgs-unstable, ...}: let
   ohMyOpenCodeSlimPlugin = "oh-my-opencode-slim@1.1.1";
+  dcpPlugin = "@tarquinen/opencode-dcp@3.1.12";
 in {
   programs.opencode = {
     enable = true;
     package = pkgs-unstable.opencode;
     settings = {
       autoupdate = false;
-      plugin = [ohMyOpenCodeSlimPlugin];
+      plugin = [
+        ohMyOpenCodeSlimPlugin
+        dcpPlugin
+      ];
       agent = {
         explore.disable = true;
         general.disable = true;
@@ -99,6 +103,7 @@ in {
     '';
   };
 
+  xdg.configFile."opencode/dcp.jsonc".source = ./opencode/dcp.jsonc;
   xdg.configFile."opencode/oh-my-opencode-slim.jsonc".source = ./opencode/oh-my-opencode-slim.jsonc;
   xdg.configFile."opencode/plugins/worktrunk.ts".source = ./opencode/plugins/worktrunk.ts;
 }
