@@ -25,7 +25,7 @@ in {
     commands = {
       init = ./opencode/commands/init.md;
     };
-    #skills = /home/schulze/git/nix-config/modules/hm/opencode/skills;
+    #skills = /home/schulze/git/nix-config/modules/hm/opencode/.agents/skills;
     rules = ''
       # AGENTS.md
 
