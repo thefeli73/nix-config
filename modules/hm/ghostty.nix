@@ -6,7 +6,7 @@
       "font-family" = "Intel One Mono";
       "font-size" = 10;
       "theme" = "Gruvbox Dark";
-      "background-opacity" = 0.6;
+      "background-opacity" = 0.8;
       "mouse-scroll-multiplier" = 1.0;
     };
   };
