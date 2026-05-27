@@ -1,4 +1,6 @@
-{pkgs, ...}: {
+{pkgs, ...}: let
+  scripts = import ../../modules/scripts {inherit pkgs;};
+in {
   imports = [
     ./hardware-configuration.nix
     ../../modules/common.nix
@@ -28,14 +30,32 @@
   networking.firewall.allowedUDPPorts = [];
 
   # host-specific packages
-  environment.systemPackages = with pkgs; [
-    lact
-    #multiviewer-for-f1
-    wasabiwallet
-    prismlauncher
-    #davinci-resolve
-    #ardour
-    btop-rocm
+  environment.systemPackages =
+    (with pkgs; [
+      lact
+      #multiviewer-for-f1
+      wasabiwallet
+      prismlauncher
+      #davinci-resolve
+      #ardour
+      btop-rocm
+    ])
+    ++ [scripts.amdgpu-force-profile];
+
+  security.sudo.extraRules = [
+    {
+      users = ["schulze"];
+      commands = [
+        {
+          command = "/run/current-system/sw/bin/amdgpu-force-profile low";
+          options = ["NOPASSWD"];
+        }
+        {
+          command = "/run/current-system/sw/bin/amdgpu-force-profile auto";
+          options = ["NOPASSWD"];
+        }
+      ];
+    }
   ];
 
   # host-specific Systemd services

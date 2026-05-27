@@ -1,6 +1,22 @@
-{pkgs, ...}: let
+{
+  lib,
+  osConfig ? null,
+  pkgs,
+  ...
+}: let
+  scripts = import ../scripts {inherit pkgs;};
   btopCommand = "${pkgs.ghostty}/bin/ghostty -e ${pkgs.btop}/bin/btop";
   wpctl = "${pkgs.wireplumber}/bin/wpctl";
+  hostName =
+    if osConfig == null
+    then ""
+    else osConfig.networking.hostName or "";
+  isWildfire = hostName == "wildfire";
+  powerProfileModule =
+    if isWildfire
+    then "custom/desktop-power-profile"
+    else "power-profiles-daemon";
+  desktopPowerProfile = scripts.desktop-power-profile;
 in {
   programs.waybar = {
     enable = true;
@@ -11,7 +27,7 @@ in {
         spacing = 8;
         "modules-left" = ["hyprland/workspaces" "mpris" "cava"];
         "modules-center" = ["hyprland/window"];
-        "modules-right" = ["idle_inhibitor" "wireplumber" "backlight" "load" "memory" "power-profiles-daemon" "battery" "clock" "tray"];
+        "modules-right" = ["idle_inhibitor" "wireplumber" "backlight" "load" "memory" powerProfileModule "battery" "clock" "tray"];
 
         "hyprland/workspaces" = {
           "all-outputs" = false;
@@ -81,6 +97,15 @@ in {
             "balanced" = "";
             "power-saver" = "";
           };
+        };
+        "custom/desktop-power-profile" = lib.mkIf isWildfire {
+          exec = "${desktopPowerProfile}/bin/desktop-power-profile status";
+          "return-type" = "json";
+          interval = 5;
+          tooltip = true;
+          "on-click" = "${desktopPowerProfile}/bin/desktop-power-profile next";
+          "on-click-right" = "${desktopPowerProfile}/bin/desktop-power-profile set powersave";
+          "on-click-middle" = "${desktopPowerProfile}/bin/desktop-power-profile set performance";
         };
         battery = {
           interval = 60;
@@ -309,6 +334,7 @@ in {
       #wireplumber,
       #tray,
       #mpris,
+      #custom-desktop-power-profile,
       #power-profiles-daemon,
       #load,
       #memory {
@@ -356,6 +382,21 @@ in {
       }
 
       #power-profiles-daemon.power-saver {
+          background: alpha(@green,.6);
+          color: @fg;
+      }
+
+      #custom-desktop-power-profile.performance {
+          background: alpha(@red,.6);
+          color: @fg;
+      }
+
+      #custom-desktop-power-profile.balanced {
+          background: alpha(@blue,.6);
+          color: @fg;
+      }
+
+      #custom-desktop-power-profile.powersave {
           background: alpha(@green,.6);
           color: @fg;
       }
