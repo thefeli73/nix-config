@@ -11,16 +11,19 @@ in {
   programs.obsidian.enable = true;
 
   xdg.configFile = {
-    "obsidian/obsidian.json".source = lib.mkForce (json.generate "obsidian.json" {
-      vaults.d1112bc6dce7ea81 = {
-        path = vaultHomePath;
-        ts = 1728741178924;
-        open = true;
-      };
-      frame = "hidden";
-      updateDisabled = true;
-      cli = true;
-    });
+    "obsidian/obsidian.json" = {
+      force = true;
+      source = lib.mkForce (json.generate "obsidian.json" {
+        vaults.d1112bc6dce7ea81 = {
+          path = vaultHomePath;
+          ts = 1728741178924;
+          open = true;
+        };
+        frame = "hidden";
+        updateDisabled = true;
+        cli = true;
+      });
+    };
 
     "obsidian/d1112bc6dce7ea81.json".source = json.generate "obsidian-window.json" {
       isMaximized = true;
