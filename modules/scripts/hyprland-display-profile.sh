@@ -13,10 +13,10 @@ apply_profile() {
       hyprctl --batch 'keyword misc:vrr 0; keyword monitor DP-1, 2560x1440@120.00, 0x0, 1, vrr, 0, cm, srgb; keyword monitor DP-3, 2560x1440@120.00, auto-right, 1, vrr, 0, cm, srgb'
       ;;
     balanced)
-      hyprctl --batch 'keyword misc:vrr 1; keyword monitor DP-1, 2560x1440@200.00, 0x0, 1, vrr, 1, cm, srgb; keyword monitor DP-3, 2560x1440@143.97, auto-right, 1, vrr, 1, cm, srgb'
+      hyprctl --batch 'keyword misc:vrr 2; keyword monitor DP-1, 2560x1440@200.00, 0x0, 1, vrr, 2, cm, srgb; keyword monitor DP-3, 2560x1440@143.97, auto-right, 1, vrr, 2, cm, srgb'
       ;;
     performance)
-      hyprctl --batch 'keyword misc:vrr 1; keyword monitor DP-1, 2560x1440@200.00, 0x0, 1, vrr, 1, bitdepth, 10, cm, hdr, sdrbrightness, 1.2; keyword monitor DP-3, 2560x1440@143.97, auto-right, 1, vrr, 1, bitdepth, 10, cm, hdr, sdrbrightness, 1.2'
+      hyprctl --batch 'keyword misc:vrr 2; keyword monitor DP-1, 2560x1440@200.00, 0x0, 1, vrr, 2, bitdepth, 10, cm, hdr, sdrbrightness, 1.2; keyword monitor DP-3, 2560x1440@143.97, auto-right, 1, vrr, 2, bitdepth, 10, cm, hdr, sdrbrightness, 1.2'
       ;;
     *)
       printf 'Unknown Hyprland display profile: %s\n' "$profile" >&2
