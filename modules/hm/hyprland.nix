@@ -68,6 +68,7 @@ in {
         rounding_power = 3.5;
         blur = {
           enabled = true;
+          ignore_opacity = false;
           xray = true;
           size = 4;
           passes = 1;
