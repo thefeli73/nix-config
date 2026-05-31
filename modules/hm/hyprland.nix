@@ -4,6 +4,7 @@ in {
   # Hyprland settings
   wayland.windowManager.hyprland = {
     enable = true;
+    configType = "hyprlang";
     systemd.enable = false;
     settings = {
       exec-once = [
@@ -94,31 +95,28 @@ in {
       };
 
       dwindle = {
-        pseudotile = true;
         preserve_split = true;
         smart_split = true;
       };
 
       # Layer rules
       layerrule = [
-        "blur, waybar" # Blur waybar
-        "ignorezero, waybar"
-        "ignorealpha 0.5, waybar"
-        "noanim, hyprpicker" # fix screenshot border visible
-        "noanim, selection" # fix screenshot border visible
+        "blur on, ignore_alpha 0.5, match:namespace waybar" # Blur waybar
+        "no_anim on, match:namespace hyprpicker" # fix screenshot border visible
+        "no_anim on, match:namespace selection" # fix screenshot border visible
       ];
 
       # Window rules
       windowrule = [
         # Nice transparency for some apps (unless in fullscreen)
-        "opacity 0.9,fullscreen:0,class:^(cursor)$"
-        "opacity 0.9,fullscreen:0,class:^(obsidian)$"
+        "opacity 0.9, match:fullscreen false, match:class ^(cursor)$"
+        "opacity 0.9, match:fullscreen false, match:class ^(obsidian)$"
 
         # Ensure hyprland tearing on games
-        "immediate,class:^(steam_app)$"
+        "immediate on, match:class ^(steam_app)$"
 
         # Keep Rofi focused
-        "stayfocused, class:^(Rofi)$"
+        "stay_focused on, match:class ^(Rofi)$"
       ];
 
       # Bindings

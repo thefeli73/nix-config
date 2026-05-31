@@ -65,9 +65,9 @@ in {
     docker-buildx
     pgadmin4-desktopmode
     postgresql_15
-    beam26Packages.erlang
-    beam26Packages.erlfmt
-    beam26Packages.rebar3
+    beam27Packages.erlang
+    beam27Packages.erlfmt
+    beam27Packages.rebar3
     gnumake
     gcc
     libgcc
