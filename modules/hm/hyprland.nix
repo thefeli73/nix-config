@@ -12,7 +12,6 @@ in {
         "wl-paste --type text --watch cliphist store" # Stores only text data
         "wl-paste --type image --watch cliphist store" # Stores only image data
         "${pkgs.solaar}/bin/solaar --window hide" # Apply Logitech mouse settings after login
-        "stretchly" # Launch Break reminder
       ];
 
       misc = {
@@ -179,5 +178,23 @@ in {
         ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
       ];
     };
+  };
+
+  systemd.user.services.stretchly = {
+    Unit = {
+      Description = "Stretchly break reminder";
+      After = ["graphical-session.target" "waybar.service"];
+      Wants = ["waybar.service"];
+      PartOf = ["graphical-session.target"];
+    };
+
+    Service = {
+      ExecStartPre = "${pkgs.coreutils}/bin/sleep 10";
+      ExecStart = "${pkgs.stretchly}/bin/stretchly";
+      Restart = "on-failure";
+      RestartSec = 5;
+    };
+
+    Install.WantedBy = ["graphical-session.target"];
   };
 }
