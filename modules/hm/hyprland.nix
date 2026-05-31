@@ -1,4 +1,4 @@
-let
+{pkgs, ...}: let
   colors = import ../gruvbox-theme.nix;
 in {
   # Hyprland settings
@@ -11,6 +11,7 @@ in {
         "hyprctl setcursor capitaine-cursors 32" # Set mouse cursor
         "wl-paste --type text --watch cliphist store" # Stores only text data
         "wl-paste --type image --watch cliphist store" # Stores only image data
+        "${pkgs.solaar}/bin/solaar --window hide" # Apply Logitech mouse settings after login
         "stretchly" # Launch Break reminder
       ];
 
