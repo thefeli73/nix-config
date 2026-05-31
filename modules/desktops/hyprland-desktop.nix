@@ -77,16 +77,6 @@ in {
       };
     };
 
-    # UWSM: Universal Wayland Session Manager
-    uwsm = {
-      enable = true;
-      waylandCompositors.hyprland = {
-        prettyName = "Hyprland";
-        comment = "Hyprland compositor managed by UWSM";
-        binPath = "/run/current-system/sw/bin/Hyprland";
-      };
-    };
-
     # Waybar status bar & panel
     waybar.enable = true;
   };
