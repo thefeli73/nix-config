@@ -1,7 +1,7 @@
 let
   nixLogo = ../../../modules/hm/images/nix.png;
-  sunsetRocks = ../../../modules/hm/images/sunset-rocks.png;
-  mountains = ../../../modules/hm/images/mountains.png;
+  forest1 = ../../../modules/hm/images/forest-1.jpg;
+  forest2 = ../../../modules/hm/images/forest-2.png;
 in {
   services.hyprpaper = {
     enable = true;
@@ -15,11 +15,11 @@ in {
         }
         {
           monitor = "DP-3";
-          path = "${mountains}";
+          path = "${forest1}";
         }
         {
           monitor = "DP-1";
-          path = "${sunsetRocks}";
+          path = "${forest2}";
         }
       ];
     };

@@ -1,3 +1,3 @@
 {
-  programs.hyprlock.settings.background.path = "$HOME/git/nix-config/modules/hm/images/control-panel.png";
+  programs.hyprlock.settings.background.path = "$HOME/git/nix-config/modules/hm/images/forest-5.jpg";
 }
