@@ -9,8 +9,7 @@ in {
     enable = true;
     modes = [
       "drun"
-      "run"
-      "filebrowser"
+      "files:rofi-file-search"
       "window"
     ];
     terminal = "ghostty";
@@ -18,11 +17,15 @@ in {
     location = "center";
     extraConfig = {
       "sorting-method" = "fzf";
+      "sort" = true;
+      "matching" = "normal,fuzzy";
+      "tokenize" = true;
+      "case-smart" = true;
+      "click-to-exit" = true;
       "icon-theme" = "Papirus-dark";
       "show-icons" = true;
       "display-drun" = " Apps";
-      "display-run" = " Run";
-      "display-filebrowser" = " Files";
+      "display-files" = " Files";
       "display-window" = " Windows";
       "drun-display-format" = "{name}";
       "window-format" = "{w} · {c} · {t}";
@@ -255,13 +258,14 @@ in {
     }
 
     message {
-      padding: 12px 16px;
+      padding: 0px 16px 8px 16px;
       border-radius: ${rounding};
       background-color: transparent;
     }
 
     textbox {
       text-color: @foreground;
+      font: "Intel One Mono 11";
     }
 
     listview {

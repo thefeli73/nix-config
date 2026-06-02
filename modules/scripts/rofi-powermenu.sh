@@ -1,5 +1,10 @@
 set -euo pipefail
 
+if pgrep -x rofi >/dev/null; then
+  pkill -x rofi
+  exit 0
+fi
+
 theme="${XDG_CONFIG_HOME:-$HOME/.config}/rofi/powermenu-type1-style1-gruvbox.rasi"
 theme_args=()
 

@@ -115,9 +115,6 @@ in {
 
         # Ensure hyprland tearing on games
         "immediate on, match:class ^steam_app(_[0-9]+)?$"
-
-        # Keep Rofi focused
-        "stay_focused on, match:class ^(Rofi)$"
       ];
 
       # Bindings
