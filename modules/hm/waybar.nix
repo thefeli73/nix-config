@@ -21,7 +21,7 @@
 in {
   programs.waybar = {
     enable = true;
-    systemd.target = "graphical-session.target";
+    systemd.targets = ["graphical-session.target"];
     settings = [
       {
         output = ["DP-3" "eDP-1"];

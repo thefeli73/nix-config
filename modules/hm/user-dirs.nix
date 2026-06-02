@@ -1,6 +1,7 @@
 {config, ...}: {
   xdg.userDirs = {
     enable = true;
+    setSessionVariables = true;
     desktop = "${config.home.homeDirectory}/Nextcloud/Home-sync/Desktop";
     documents = "${config.home.homeDirectory}/Nextcloud/Home-sync/Documents";
     download = "${config.home.homeDirectory}/Nextcloud/Home-sync/Downloads";

@@ -1,6 +1,11 @@
-{pkgs, ...}: {
+{
+  config,
+  pkgs,
+  ...
+}: {
   gtk = {
     enable = true;
+    gtk4.theme = config.gtk.theme;
     theme = {
       name = "Colloid-Green-Dark-Gruvbox";
       package = pkgs.colloid-gtk-theme.override {

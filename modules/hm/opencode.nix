@@ -16,17 +16,17 @@ in {
         general.disable = true;
       };
       lsp = true;
+    };
+    tui = {
       theme = "gruvbox";
-      tui = {
-        scroll_speed = 1;
-        scroll_acceleration.enabled = false;
-      };
+      scroll_speed = 1;
+      scroll_acceleration.enabled = false;
     };
     commands = {
       init = ./opencode/commands/init.md;
     };
     #skills = /home/schulze/git/nix-config/modules/hm/opencode/.agents/skills;
-    rules = ''
+    context = ''
       # AGENTS.md
 
       ## Ask Before Acting
