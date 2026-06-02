@@ -50,6 +50,8 @@ in {
       ./hm/waybar.nix # Waybar config
       ./hm/cava.nix # Audio visualizer config
       ./hm/fastfetch.nix # Fastfetch config
+      ./hm/fd.nix # Fd file finder config
+      ./hm/fzf.nix # Fzf fuzzy finder config
       ./hm/eza.nix # Eza config (ls alternative)
       ./hm/user-dirs.nix # XDG User directories config
       ./hm/discord.nix # Discord config

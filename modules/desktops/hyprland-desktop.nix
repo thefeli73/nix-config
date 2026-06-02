@@ -129,6 +129,8 @@ in {
   environment.systemPackages = with pkgs; [
     # ---- CORE HYPRLAND WORKFLOW ----
     rofi # Application launcher and dmenu replacement (rofi has native wayland support)
+    scripts.rofi-launcher # Rofi launcher wrapper
+    scripts.rofi-powermenu # Rofi powermenu wrapper
     mako # Notification daemon
     hyprlock # Screen lock utility
     hyprpicker # Color picker

@@ -32,4 +32,26 @@
     ];
     text = builtins.readFile ./hyprshot-sdr.sh;
   };
+
+  rofi-launcher = pkgs.writeShellApplication {
+    name = "rofi-launcher";
+    runtimeInputs = [
+      pkgs.rofi
+    ];
+    text = builtins.readFile ./rofi-launcher.sh;
+  };
+
+  rofi-powermenu = pkgs.writeShellApplication {
+    name = "rofi-powermenu";
+    runtimeInputs = [
+      pkgs.procps
+      pkgs.coreutils
+      pkgs.gnused
+      pkgs.hyprland
+      pkgs.hyprlock
+      pkgs.rofi
+      pkgs.systemd
+    ];
+    text = builtins.readFile ./rofi-powermenu.sh;
+  };
 }

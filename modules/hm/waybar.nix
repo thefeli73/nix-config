@@ -17,6 +17,7 @@
     then "custom/desktop-power-profile"
     else "power-profiles-daemon";
   desktopPowerProfile = scripts.desktop-power-profile;
+  powermenu = scripts.rofi-powermenu;
 in {
   programs.waybar = {
     enable = true;
@@ -27,7 +28,7 @@ in {
         spacing = 8;
         "modules-left" = ["hyprland/workspaces" "mpris" "cava"];
         "modules-center" = ["hyprland/window"];
-        "modules-right" = ["idle_inhibitor" "wireplumber" "backlight" "load" "memory" powerProfileModule "battery" "clock" "tray"];
+        "modules-right" = ["idle_inhibitor" "wireplumber" "backlight" "load" "memory" powerProfileModule "battery" "clock" "tray" "custom/powermenu"];
 
         "hyprland/workspaces" = {
           "all-outputs" = false;
@@ -106,6 +107,14 @@ in {
           "on-click" = "${desktopPowerProfile}/bin/desktop-power-profile next";
           "on-click-right" = "${desktopPowerProfile}/bin/desktop-power-profile set powersave";
           "on-click-middle" = "${desktopPowerProfile}/bin/desktop-power-profile set performance";
+        };
+        "custom/powermenu" = {
+          exec = "${pkgs.coreutils}/bin/printf ''";
+          format = "{}";
+          interval = "once";
+          tooltip = true;
+          "tooltip-format" = "Power menu";
+          "on-click" = "${powermenu}/bin/rofi-powermenu";
         };
         battery = {
           interval = 60;
@@ -281,13 +290,13 @@ in {
 
       #workspaces {
           background-color: transparent;
-          border: 1px solid alpha(@bg4,.6);
+          border: 1px solid alpha(@bg4,.7);
 
       }
 
       #workspaces button {
           padding: 0 6px;
-          background: alpha(@bg,.6);
+          background: alpha(@bg,.7);
           color: @fg;
           border-radius: 0;
           transition-property: background-color;
@@ -308,18 +317,18 @@ in {
 
       #workspaces button:hover, #workspaces button.active:hover {
           color: @yellow;
-          background: alpha(@bg4,.6);
+          background: alpha(@bg4,.7);
           box-shadow: inherit;
           text-shadow: inherit;
       }
 
       #workspaces button.active {
           color: @orange;
-          background: alpha(@fg,.6);
+          background: alpha(@fg,.7);
       }
 
       #workspaces button.urgent {
-          background: alpha(@purple,.6);
+          background: alpha(@purple,.7);
       }
 
       #idle_inhibitor,
@@ -331,6 +340,7 @@ in {
       #backlight,
       #custom-weather,
       #custom-audio_idle_inhibitor,
+      #custom-powermenu,
       #wireplumber,
       #tray,
       #mpris,
@@ -340,15 +350,15 @@ in {
       #memory {
           color: @fg;
           padding: 0 15px;
-          background: alpha(@bg,.6);
-          border: 1px solid alpha(@bg4,.6);
+          background: alpha(@bg,.7);
+          border: 1px solid alpha(@bg4,.7);
       }
 
       #window {
           padding: 0 15px;
           color: @bg1;
-          background: alpha(@fg,.6);
-          border: 1px solid alpha(@bg4,.6);
+          background: alpha(@fg,.7);
+          border: 1px solid alpha(@bg4,.7);
       }
 
       /* If workspaces is the leftmost module, omit left margin */
@@ -372,55 +382,60 @@ in {
       }
 
       #power-profiles-daemon.performance {
-          background: alpha(@red,.6);
+          background: alpha(@red,.7);
           color: @fg;
       }
 
       #power-profiles-daemon.balanced {
-          background: alpha(@blue,.6);
+          background: alpha(@blue,.7);
           color: @fg;
       }
 
       #power-profiles-daemon.power-saver {
-          background: alpha(@green,.6);
+          background: alpha(@green,.7);
           color: @fg;
       }
 
       #custom-desktop-power-profile.performance {
-          background: alpha(@red,.6);
+          background: alpha(@red,.7);
           color: @fg;
       }
 
       #custom-desktop-power-profile.balanced {
-          background: alpha(@blue,.6);
+          background: alpha(@blue,.7);
           color: @fg;
       }
 
       #custom-desktop-power-profile.powersave {
-          background: alpha(@green,.6);
+          background: alpha(@green,.7);
+          color: @fg;
+      }
+
+      #custom-powermenu:hover {
+          background: alpha(@red,.7);
           color: @fg;
       }
 
       #battery.charging, #battery.plugged, #battery.good {
-          background: alpha(@green,.6);
+          background: alpha(@green,.7);
           color: @fg;
       }
 
       #battery.warning {
-          background: alpha(@yellow,.6);
+          background: alpha(@yellow,.7);
           color: @fglight;
       }
 
       @keyframes blink {
           to {
-              background: alpha(@bg,.6);
+              background: alpha(@bg,.7);
               color: @fg;
           }
       }
 
       /* Using steps() instead of linear as a timing function to limit cpu usage */
       #battery.critical:not(.charging) {
-          background: alpha(@red,.6);
+          background: alpha(@red,.7);
           color: @fg;
           animation-name: blink;
           animation-duration: 0.5s;
@@ -430,7 +445,7 @@ in {
       }
 
       #wireplumber.muted {
-          background: alpha(@blue,.6);
+          background: alpha(@blue,.7);
       }
 
       #tray > .passive {
@@ -442,7 +457,7 @@ in {
       }
 
       #mpris.playing {
-          background: alpha(@blue,.6);
+          background: alpha(@blue,.7);
           color: @fg;
       }
 

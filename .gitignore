@@ -3,3 +3,7 @@
 
 # Logs
 logs/
+
+# Superpowers visual companion
+.superpowers/
+docs/superpowers/

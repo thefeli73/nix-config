@@ -51,7 +51,7 @@ in {
       "$mod" = "SUPER";
       "$terminal" = "ghostty";
       "$filemanager" = "nautilus";
-      "$menu" = "rofi -show-icons -show drun";
+      "$menu" = "rofi-launcher";
 
       general = {
         gaps_in = 6;

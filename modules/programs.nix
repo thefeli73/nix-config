@@ -42,7 +42,6 @@ in {
     lazygit
     tea
     alejandra
-    fzf
     fastfetch
     astroterm # Star map/planetarium
 

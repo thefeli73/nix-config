@@ -26,7 +26,7 @@ in {
         dots_size = 0.2; # Scale of input-field height, 0.2 - 0.8
         dots_spacing = 0.35; # Scale of dots' absolute size, 0.0 - 1.0
         dots_center = true;
-        outer_color = "rgba(${colors.gruvbox-rgb.blue}, 0.8)";
+        outer_color = "rgba(${colors.gruvbox-rgb.bg4}, 0.7)";
         inner_color = "rgba(${colors.gruvbox-rgb.bg0}, 0.7)";
         font_color = "rgba(${colors.gruvbox-rgb.fg1}, 1.0)";
         placeholder_text = "Welcome $USER";
