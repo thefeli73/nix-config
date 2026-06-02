@@ -69,9 +69,8 @@ in {
         blur = {
           enabled = true;
           ignore_opacity = false;
-          xray = true;
-          size = 4;
-          passes = 1;
+          size = 3;
+          passes = 2;
           popups = true;
         };
         shadow.enabled = false;
@@ -103,6 +102,7 @@ in {
       # Layer rules
       layerrule = [
         "blur on, ignore_alpha 0.5, match:namespace waybar" # Blur waybar
+        "blur on, ignore_alpha 0.5, match:namespace rofi" # Blur rofi
         "no_anim on, match:namespace hyprpicker" # fix screenshot border visible
         "no_anim on, match:namespace selection" # fix screenshot border visible
       ];
