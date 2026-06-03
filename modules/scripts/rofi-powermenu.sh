@@ -12,6 +12,13 @@ if [[ -r "$theme" ]]; then
   theme_args=(-theme "$theme")
 fi
 
+rofi_args=(
+  -dmenu
+  -no-sort
+  -no-custom
+  "${theme_args[@]}"
+)
+
 user_name="${USER:-$(whoami)}"
 host_name="$(hostname)"
 user_host="${user_name}@${host_name}"
@@ -29,10 +36,9 @@ no=' No'
 confirm() {
   local answer
   answer="$(printf '%s\n%s\n' "$yes" "$no" | rofi \
-    -dmenu \
+    "${rofi_args[@]}" \
     -p 'Confirmation' \
     -mesg 'Are you sure?' \
-    "${theme_args[@]}" \
     -theme-str 'window { width: 250px; }' \
     -theme-str 'listview { columns: 2; lines: 1; }' \
     -theme-str 'element-text { horizontal-align: 0.5; }')" || return 1
@@ -46,10 +52,9 @@ choice="$(printf '%s\n%s\n%s\n%s\n%s\n' \
   "$logout" \
   "$reboot" \
   "$shutdown" | rofi \
-  -dmenu \
+  "${rofi_args[@]}" \
   -p "$user_host" \
-  -mesg "Uptime: $uptime_text" \
-  "${theme_args[@]}")" || exit 0
+  -mesg "Uptime: $uptime_text")" || exit 0
 
 case "$choice" in
   "$lock")
