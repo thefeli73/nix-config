@@ -107,6 +107,9 @@ in {
       dbPath = "/run/current-system/sw/bin/sqlite3";
     };
 
+    # Runtime linker for editor-downloaded language servers on NixOS
+    nix-ld.enable = true;
+
     # Zoxide for quick directory navigation
     zoxide = {
       enable = true;
