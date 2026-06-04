@@ -1,7 +1,6 @@
 let
-  nixLogo = ../../../modules/hm/images/nix.png;
-  forest3 = ../../../modules/hm/images/forest-3.png;
-  forest4 = ../../../modules/hm/images/forest-4.jpg;
+  nixLogo = ./images/nix.png;
+  forest1 = ./images/forest-1.jpg;
 in {
   services.hyprpaper = {
     enable = true;
@@ -15,15 +14,19 @@ in {
         }
         {
           monitor = "DP-3";
-          path = "${forest3}";
+          path = "${forest1}";
+        }
+        {
+          monitor = "DP-1";
+          path = "${forest1}";
         }
         {
           monitor = "HDMI-A-1";
-          path = "${forest4}";
+          path = "${forest1}";
         }
         {
           monitor = "eDP-1";
-          path = "${forest4}";
+          path = "${forest1}";
         }
       ];
     };

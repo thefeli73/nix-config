@@ -1,12 +1,29 @@
-let
+{pkgs, ...}: let
   colors = import ../gruvbox-theme.nix;
+  forest5 = ./images/forest-5.jpg;
+  forest6 = ./images/forest-6.jpg;
+  randomHyprlock = pkgs.writeShellScriptBin "random-hyprlock" ''
+    set -eu
+
+    : "''${XDG_RUNTIME_DIR:?XDG_RUNTIME_DIR is not set}"
+
+    background_link="$XDG_RUNTIME_DIR/hyprlock-background"
+    background_image="$(${pkgs.coreutils}/bin/printf '%s\n%s\n' \
+      "${forest5}" \
+      "${forest6}" \
+      | ${pkgs.coreutils}/bin/shuf -n 1)"
+
+    ${pkgs.coreutils}/bin/ln -sf "$background_image" "$background_link"
+    exec ${pkgs.hyprlock}/bin/hyprlock "$@"
+  '';
 in {
+  home.packages = [randomHyprlock];
+
   programs.hyprlock = {
     enable = true;
     settings = {
       background = {
-        # Background image is set in host specific configuration
-        #path = "$HOME/git/nixos/modules/hm/images/sky.png";
+        path = "$XDG_RUNTIME_DIR/hyprlock-background";
       };
 
       # GENERAL

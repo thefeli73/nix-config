@@ -31,6 +31,7 @@ in {
     users.schulze.imports = [
       ./hm/home-manager.nix # Base user environment
       ./hm/hyprland.nix # Hyprland window manager user config
+      ./hm/hyprpaper.nix # Hyprpaper wallpaper user config
       ./hm/hyprlock.nix # Hyprlock screen lock user config
       ./hm/hypridle.nix # Hypridle idle daemon user config
       ./hm/cursor.nix # Mouse cursor config

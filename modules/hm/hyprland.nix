@@ -128,7 +128,7 @@ in {
           ", PRINT, exec, hyprshot-sdr -m region" # Screenshot region (HDR-safe)
           "$mod, PRINT, exec, hyprshot-sdr -m window" # Screenshot window (HDR-safe)
           "$mod, F, togglefloating" # Make active window floating
-          "$mod ALT, L, exec, hyprlock" # Lock screen
+          "$mod ALT, L, exec, random-hyprlock" # Lock screen
 
           # Move focus with mainMod + arrow keys or vim keys
           "$mod, left, movefocus, l"
