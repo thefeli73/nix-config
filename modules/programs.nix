@@ -46,7 +46,6 @@ in {
     astroterm # Star map/planetarium
 
     # Development
-    pkgs-unstable.code-cursor
     gitkraken
     git-filter-repo
     git-secrets
@@ -295,10 +294,7 @@ in {
     };
 
     # Vim editor
-    vim = {
-      enable = true;
-      defaultEditor = true;
-    };
+    vim.enable = true;
     ssh.extraConfig = "";
     gnupg.agent = {
       enable = true;

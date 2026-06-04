@@ -39,7 +39,7 @@ in {
       ./hm/obsidian.nix # Obsidian config
       ./hm/gtk.nix # GTK theme
       ./hm/nextcloud.nix # Nextcloud autostart
-      ./hm/code-cursor.nix # Cursor config
+      ./hm/zed.nix # Zed editor config
       ./hm/opencode.nix # OpenCode config
       ./hm/worktrunk.nix # Worktrunk config
       ./hm/vim.nix # Vim config
