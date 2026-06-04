@@ -90,10 +90,17 @@ in {
       enable = true;
       defaultApplications = {
         "default-web-browser" = "firefox.desktop";
+        "application/json" = "dev.zed.Zed.desktop";
         "application/pdf" = "firefox.desktop";
+        "application/x-yaml" = "dev.zed.Zed.desktop";
         "application/xhtml+xml" = "firefox.desktop";
+        "application/yaml" = "dev.zed.Zed.desktop";
         "text/html" = "firefox.desktop";
+        "text/markdown" = "dev.zed.Zed.desktop";
+        "text/plain" = "dev.zed.Zed.desktop";
         "text/xml" = "firefox.desktop";
+        "text/x-nix" = "dev.zed.Zed.desktop";
+        "text/yaml" = "dev.zed.Zed.desktop";
         "x-scheme-handler/ftp" = "firefox.desktop";
         "x-scheme-handler/http" = "firefox.desktop";
         "x-scheme-handler/https" = "firefox.desktop";
