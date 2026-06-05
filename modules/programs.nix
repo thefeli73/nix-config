@@ -60,6 +60,7 @@ in {
     cypress
     playwright
     playwright-driver.browsers
+    agent-browser # Headless browser automation CLI for AI agents
     docker-buildx
     pgadmin4-desktopmode
     postgresql_15
