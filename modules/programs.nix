@@ -11,6 +11,19 @@
     Value = true;
     Status = "locked";
   };
+  firefoxExtensionSettings = {
+    "*".installation_mode = "normal_installed";
+    # uBlock Origin:
+    "uBlock0@raymondhill.net" = {
+      install_url = "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi";
+      installation_mode = "force_installed";
+    };
+    # Privacy Badger:
+    "jid1-MnnxcxisBPnSXQ@jetpack" = {
+      install_url = "https://addons.mozilla.org/firefox/downloads/latest/privacy-badger17/latest.xpi";
+      installation_mode = "force_installed";
+    };
+  };
 in {
   # Common packages for ALL systems
   environment.systemPackages = with pkgs; [
@@ -372,19 +385,7 @@ in {
         */
         # Check about:support for extension/add-on ID strings.
         # Valid strings for installation_mode are "allowed", "blocked", "force_installed" and "normal_installed".
-        ExtensionSettings = {
-          "*".installation_mode = "normal_installed";
-          # uBlock Origin:
-          "uBlock0@raymondhill.net" = {
-            install_url = "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi";
-            installation_mode = "force_installed";
-          };
-          # Privacy Badger:
-          "jid1-MnnxcxisBPnSXQ@jetpack" = {
-            install_url = "https://addons.mozilla.org/firefox/downloads/latest/privacy-badger17/latest.xpi";
-            installation_mode = "force_installed";
-          };
-        };
+        ExtensionSettings = firefoxExtensionSettings;
       };
     };
     thunderbird = {
