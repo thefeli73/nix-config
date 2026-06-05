@@ -17,6 +17,8 @@
     exec ${pkgs.hyprlock}/bin/hyprlock "$@"
   '';
 in {
+  _module.args.randomHyprlock = randomHyprlock;
+
   home.packages = [randomHyprlock];
 
   programs.hyprlock = {
