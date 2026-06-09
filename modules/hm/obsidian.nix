@@ -8,7 +8,10 @@
   vaultPath = "Obsidian/Felix brain vault";
   vaultHomePath = "${config.home.homeDirectory}/${vaultPath}";
 in {
-  programs.obsidian.enable = true;
+  programs.obsidian = {
+    enable = true;
+    cli.enable = true;
+  };
 
   xdg.configFile = {
     "obsidian/obsidian.json" = {
