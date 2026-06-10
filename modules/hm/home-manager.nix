@@ -4,6 +4,8 @@
     file.".docker/cli-plugins/docker-buildx".source = "${pkgs.docker-buildx}/libexec/docker/cli-plugins/docker-buildx";
   };
 
+  programs.fish.enable = true;
+
   xdg.configFile."autostart/remmina-applet.desktop".text = ''
     [Desktop Entry]
     Version=1.0
