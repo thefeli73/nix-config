@@ -15,9 +15,10 @@ in {
     font = "Intel One Mono 14";
     location = "center";
     extraConfig = {
-      "sorting-method" = "fzf";
-      "sort" = true;
-      "matching" = "normal,fuzzy";
+      "sort" = false;
+      "matching" = "fuzzy";
+      "disable-history" = false;
+      "max-history-size" = 25;
       "tokenize" = true;
       "case-smart" = true;
       "click-to-exit" = true;
