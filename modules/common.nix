@@ -253,6 +253,7 @@ in {
     # Screenshot directory for Hyprshot
     HYPRSHOT_DIR = "$HOME/Nextcloud/Home-sync/Pictures/Screenshots";
     GTK_THEME = "Colloid-Green-Dark-Gruvbox";
+    OPENCODE_EXPERIMENTAL_BACKGROUND_SUBAGENTS = "true";
     PLAYWRIGHT_BROWSERS_PATH = "${pkgs.playwright-driver.browsers}";
     PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS = "true";
   };

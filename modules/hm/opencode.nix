@@ -1,6 +1,6 @@
 {pkgs-unstable, ...}: let
-  ohMyOpenCodeSlimPlugin = "oh-my-opencode-slim@1.1.2";
-  dcpPlugin = "@tarquinen/opencode-dcp@3.1.12";
+  ohMyOpenCodeSlimPlugin = "oh-my-opencode-slim@2.0.3";
+  dcpPlugin = "@tarquinen/opencode-dcp@3.1.13";
 in {
   programs.opencode = {
     enable = true;
@@ -21,6 +21,7 @@ in {
       theme = "gruvbox";
       scroll_speed = 1;
       scroll_acceleration.enabled = false;
+      plugin = [dcpPlugin];
     };
     #skills = /home/schulze/git/nix-config/modules/hm/opencode/.agents/skills;
     context = ''
@@ -30,45 +31,38 @@ in {
 
       **Always ask clarifying questions when:**
 
-      - The request is vague or ambiguous
-      - You need specific implementation details
-      - There are multiple reasonable approaches to solve the problem
-      - You're unsure about naming conventions, file locations, or architectural decisions
+      - Request vague or ambiguous
+      - Multiple reasonable approaches to solve the problem
 
-      **Do not assume.** Even if one approach seems "good enough," check with me first when there are multiple viable options. This saves tokens and avoids rework.
+      **Do not assume.** Even if one approach seems "good enough", check with the user first when there are multiple viable options.
 
       **Why This Matters:**
 
       - Reduces wasted tokens on incorrect implementations
       - Saves time by avoiding redo cycles
-      - Ensures the final result matches my actual intent
+      - Ensures the final result matches actual intent
       - Builds shared understanding of the codebase and preferences
 
-      ## Language and Locale Preferences (English language, Swedish locale)
-
-      When writing user-facing text, **write in English** but default to **Swedish local conventions** for formatting:
+      ## Locale Preferences
 
       - Use Swedish characters (`å`, `ä`, `ö`) when appropriate; do not transliterate to ASCII.
-      - Use natural Swedish phrasing when the conversation is in Swedish.
-      - Prefer Swedish date/time formatting:
+      - Date/time formatting:
         - `YYYY-MM-DD` for filenames/structured notes
         - `15 februari 2026` for prose
         - 24-hour time (e.g. `14:30`)
-      - Prefer Swedish number/currency formatting in prose:
+      - Number/currency formatting:
         - decimal comma: `3,14`
         - thousands separator as space: `12 500`
-        - currency style: `12 500 kr`
       - Keep code, commands, IDs, and machine-readable formats unchanged even when locale differs.
 
       ## Path Handling
 
       Prefer short, project-relative paths whenever tool schema and task allow it.
 
-      - Use relative paths for `glob`, `grep`, shell commands, explanations, plans, todos, and file references shown to user.
-      - Use absolute paths only when tool schema requires it, when accessing files outside current project/worktree, or when needed to avoid ambiguity.
-      - Do not copy long opencode internal workspace/worktree prefixes into tool calls unless required.
-      - When tool output returns absolute paths inside current project, convert them back to project-relative paths before reuse when possible.
-      - If unsure whether path is relative to workspace root, project root, or current working directory, ask or verify first.
+      - Use relative paths for `glob`, `grep`, shell commands, explanations, plans, todos, and file references.
+      - Use absolute paths ONLY when tool schema requires it, when accessing files outside current project/worktree, or when needed to avoid ambiguity.
+      - Do not copy long internal workspace/worktree prefixes into tool calls unless required.
+      - When tool output returns absolute paths inside current project, convert them back to project-relative paths before reuse when possible (saves tokens).
 
       ## Caveman
 
