@@ -18,6 +18,7 @@
     else "power-profiles-daemon";
   desktopPowerProfile = scripts.desktop-power-profile;
   powermenu = scripts.rofi-powermenu;
+  uwsm = "${pkgs.uwsm}/bin/uwsm";
 in {
   programs.waybar = {
     enable = true;
@@ -114,7 +115,7 @@ in {
           interval = "once";
           tooltip = true;
           "tooltip-format" = "Power menu";
-          "on-click" = "${powermenu}/bin/rofi-powermenu";
+          "on-click" = "${uwsm} app -- ${powermenu}/bin/rofi-powermenu";
         };
         battery = {
           interval = 60;
