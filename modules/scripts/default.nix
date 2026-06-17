@@ -37,20 +37,8 @@
     name = "rofi-launcher";
     runtimeInputs = [
       pkgs.rofi
-      rofi-file-search
     ];
     text = builtins.readFile ./rofi-launcher.sh;
-  };
-
-  rofi-file-search = pkgs.writeShellApplication {
-    name = "rofi-file-search";
-    runtimeInputs = [
-      pkgs.coreutils
-      pkgs.fd
-      pkgs.nautilus
-      pkgs.xdg-utils
-    ];
-    text = builtins.readFile ./rofi-file-search.sh;
   };
 
   rofi-powermenu = pkgs.writeShellApplication {

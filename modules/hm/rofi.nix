@@ -9,7 +9,6 @@ in {
     enable = true;
     modes = [
       "drun"
-      "files:rofi-file-search"
       "window"
     ];
     terminal = "ghostty";
@@ -25,7 +24,6 @@ in {
       "icon-theme" = "Papirus-dark";
       "show-icons" = true;
       "display-drun" = " Apps";
-      "display-files" = " Files";
       "display-window" = " Windows";
       "drun-display-format" = "{name}";
       "window-format" = "{w} · {c} · {t}";
