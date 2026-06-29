@@ -20,7 +20,7 @@ rofi_args=(
 )
 
 user_name="${USER:-$(whoami)}"
-host_name="$(hostname)"
+host_name="$(uname -n)"
 user_host="${user_name}@${host_name}"
 uptime_text="$(uptime -p | sed 's/^up //')"
 
