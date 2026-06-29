@@ -89,7 +89,7 @@ in {
     # Common programs
     ghostty
     nextcloud-client
-    signal-desktop
+    pkgs-unstable.signal-desktop
     slack
     libreoffice-fresh
     tor-browser
