@@ -43,9 +43,8 @@ in {
       - Ensures the final result matches actual intent
       - Builds shared understanding of the codebase and preferences
 
-      ## Locale Preferences
+      ## Formatting Preferences
 
-      - Use Swedish characters (`å`, `ä`, `ö`) when appropriate; do not transliterate to ASCII.
       - Date/time formatting:
         - `YYYY-MM-DD` for filenames/structured notes
         - `15 februari 2026` for prose
@@ -60,9 +59,8 @@ in {
       Prefer short, project-relative paths whenever tool schema and task allow it.
 
       - Use relative paths for `glob`, `grep`, shell commands, explanations, plans, todos, and file references.
-      - Use absolute paths ONLY when tool schema requires it, when accessing files outside current project/worktree, or when needed to avoid ambiguity.
       - Do not copy long internal workspace/worktree prefixes into tool calls unless required.
-      - When tool output returns absolute paths inside current project, convert them back to project-relative paths before reuse when possible (saves tokens).
+      - When tool output returns absolute paths inside current project, convert back to project-relative paths before reuse when possible (saves tokens).
 
       ## Caveman
 
