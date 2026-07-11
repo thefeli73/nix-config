@@ -17,7 +17,7 @@
       "source": "obra/superpowers",
       "sourceType": "github",
       "skillPath": "skills/brainstorming/SKILL.md",
-      "computedHash": "26a8eb33d548f0c4ead9e7bc13a90c3853398d30345c651245a61a12b869f130"
+      "computedHash": "253570c46990ea018dd4520dba80cd77c35f9e5a8654057da1812face7be30cd"
     },
     "building-native-ui": {
       "source": "expo/skills",
@@ -35,7 +35,7 @@
       "source": "alvinunreal/oh-my-opencode-slim",
       "sourceType": "github",
       "skillPath": "src/skills/codemap/SKILL.md",
-      "computedHash": "68cdaefb57c9a2d873afd7f6a91995547d18f637cc90333cd53c82963cd76516"
+      "computedHash": "d7e1a71de3ef07358f090c4e5c7f75181c0e29af0c578073a970e705bf24ffd0"
     },
     "copy-editing": {
       "source": "coreyhaines31/marketingskills",
@@ -59,7 +59,7 @@
       "source": "expo/skills",
       "sourceType": "github",
       "skillPath": "plugins/expo/skills/eas-update-insights/SKILL.md",
-      "computedHash": "160b705dd270cfc554c572b8f829cebcce711f1279820f4f55527b0981bf125c"
+      "computedHash": "295e60284aff7236a8a3bf65e91db0fd52d27c4f0d6507cbc39f65e836748de0"
     },
     "expo-api-routes": {
       "source": "expo/skills",
@@ -71,7 +71,7 @@
       "source": "expo/skills",
       "sourceType": "github",
       "skillPath": "plugins/expo/skills/expo-brownfield/SKILL.md",
-      "computedHash": "b7e46eba9d7643fd0488adedabc224914f45af2f0aa20c6ee6516aea81acdff9"
+      "computedHash": "393bb62ec8661deb43ea593116f7073dbd8c24f489aaeb0df52029995f36e044"
     },
     "expo-cicd-workflows": {
       "source": "expo/skills",
@@ -89,19 +89,19 @@
       "source": "expo/skills",
       "sourceType": "github",
       "skillPath": "plugins/expo/skills/expo-dev-client/SKILL.md",
-      "computedHash": "af7b1cc2824db64888aa10d5d8c009b960d2c649dd7be2b86ae6b9f092a73ae6"
+      "computedHash": "1e6884aa880a5d1cec669d37935a0fe0a57507cc0ff4cb17e7b183adcf2ff535"
     },
     "expo-module": {
       "source": "expo/skills",
       "sourceType": "github",
       "skillPath": "plugins/expo/skills/expo-module/SKILL.md",
-      "computedHash": "fe91e433d28dcc49439c4edc016e7f931e6f699bc84d65cf6975dd494bc04bfa"
+      "computedHash": "ecb77b398e277259838b560fa9d1478a5cf92b7cf6ce5f5e637dc83db80e2cac"
     },
     "expo-tailwind-setup": {
       "source": "expo/skills",
       "sourceType": "github",
       "skillPath": "plugins/expo/skills/expo-tailwind-setup/SKILL.md",
-      "computedHash": "85d932863950a9837dd4ab528c2908eff7c119e8c7f59c47963815ee7341e826"
+      "computedHash": "dc063bbbc49d87cd68e681a8af2104ce08c52a8b507c90c8549e4a8a3ac24715"
     },
     "frontend-design": {
       "source": "anthropics/skills",
@@ -131,7 +131,7 @@
       "source": "dietrichgebert/ponytail",
       "sourceType": "github",
       "skillPath": "skills/ponytail/SKILL.md",
-      "computedHash": "9c2a14a09838e12a6bc248e054529fe494060c0d8b78a7ff8e1696a980a12eee"
+      "computedHash": "210fa0831f649ce9f8a305f7b7c8cf2a0dd09ac4dd53067109941b96e7811d4e"
     },
     "pricing": {
       "source": "coreyhaines31/marketingskills",
@@ -149,7 +149,7 @@
       "source": "shadcn/ui",
       "sourceType": "github",
       "skillPath": "skills/shadcn/SKILL.md",
-      "computedHash": "ac9d0d69caac7de1d1e5647f3db3bcd2f13af355d6b3a78780fbf7fc80e8dca0"
+      "computedHash": "d81caa0f86aabab65b25e302d454f23a3328760386ed9078345584c0d5c8058e"
     },
     "test-driven-development": {
       "source": "obra/superpowers",
@@ -197,7 +197,7 @@
       "source": "obra/superpowers",
       "sourceType": "github",
       "skillPath": "skills/writing-skills/SKILL.md",
-      "computedHash": "792e9d25ed6fbe38561202af07e6dd570060f745f9b8f4c71d6d13e7bc9597fa"
+      "computedHash": "985a2c1a4242d89bd44a0060cd0e2c81ebb3683e820026fa52ccd7213804ce03"
     }
   }
 }
