@@ -43,6 +43,10 @@ in {
       - Ensures the final result matches actual intent
       - Builds shared understanding of the codebase and preferences
 
+      ## Agent orchestration rule
+
+      Treat restarted or replacement agents as having no prior context. Always resend all information needed to complete the assignment independently
+
       ## Formatting Preferences
 
       - Date/time formatting:
