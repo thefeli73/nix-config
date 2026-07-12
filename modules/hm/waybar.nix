@@ -12,6 +12,15 @@
     then ""
     else osConfig.networking.hostName or "";
   isWildfire = hostName == "wildfire";
+  codexbar = scripts.codexbar-waybar;
+  codexbarModule = {
+    exec = "${codexbar}/bin/codexbar-waybar";
+    "return-type" = "json";
+    format = "{}";
+    interval = 60;
+    signal = 8;
+    tooltip = true;
+  };
   powerProfileModule =
     if isWildfire
     then "custom/desktop-power-profile"
@@ -29,7 +38,7 @@ in {
         spacing = 8;
         "modules-left" = ["hyprland/workspaces" "mpris" "cava"];
         "modules-center" = ["hyprland/window"];
-        "modules-right" = ["idle_inhibitor" "wireplumber" "backlight" "load" "memory" powerProfileModule "battery" "clock" "tray" "custom/powermenu"];
+        "modules-right" = ["idle_inhibitor" "custom/codexbar" "wireplumber" "backlight" "load" "memory" powerProfileModule "battery" "clock" "tray" "custom/powermenu"];
 
         "hyprland/workspaces" = {
           "all-outputs" = false;
@@ -117,6 +126,7 @@ in {
           "tooltip-format" = "Power menu";
           "on-click" = "${uwsm} app -- ${powermenu}/bin/rofi-powermenu";
         };
+        "custom/codexbar" = codexbarModule;
         battery = {
           interval = 60;
           states = {
@@ -348,11 +358,24 @@ in {
       #custom-desktop-power-profile,
       #power-profiles-daemon,
       #load,
+      #custom-codexbar,
       #memory {
           color: @fg;
           padding: 0 15px;
           background: alpha(@bg,.7);
           border: 1px solid alpha(@bg4,.7);
+      }
+
+      #custom-codexbar.ok {
+          color: @green;
+      }
+
+      #custom-codexbar.warning {
+          color: @yellow;
+      }
+
+      #custom-codexbar.critical {
+          color: @red;
       }
 
       #window {

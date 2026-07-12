@@ -1,4 +1,6 @@
 {pkgs}: rec {
+  codexbar-cli = pkgs.callPackage ./codexbar-cli.nix {};
+
   amdgpu-force-profile = pkgs.writeShellApplication {
     name = "amdgpu-force-profile";
     text = builtins.readFile ./amdgpu-force-profile.sh;
@@ -53,5 +55,15 @@
       pkgs.systemd
     ];
     text = builtins.readFile ./rofi-powermenu.sh;
+  };
+
+  codexbar-waybar = pkgs.writeShellApplication {
+    name = "codexbar-waybar";
+    runtimeInputs = [
+      codexbar-cli
+      pkgs.coreutils
+      pkgs.jq
+    ];
+    text = builtins.readFile ./codexbar-waybar.sh;
   };
 }

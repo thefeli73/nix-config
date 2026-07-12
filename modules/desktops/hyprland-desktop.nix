@@ -3,6 +3,7 @@
 {
   inputs,
   pkgs,
+  pkgs-unstable,
   ...
 }: let
   scripts = import ../scripts {inherit pkgs;};
@@ -161,6 +162,8 @@ in {
     wf-recorder # Screen recording for Wayland
 
     # ---- APPLICATION INTEGRATION ----
+    pkgs-unstable.codex # Codex OAuth login for CodexBar
+    scripts.codexbar-cli # ChatGPT subscription usage limits
     libsForQt5.qt5ct # Qt5 application theming control
     nautilus # GNOME file manager (GTK)
   ];
