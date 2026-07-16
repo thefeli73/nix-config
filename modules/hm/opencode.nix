@@ -5,6 +5,7 @@ in {
   programs.opencode = {
     enable = true;
     package = pkgs-unstable.opencode;
+    commands.guardrail = ./opencode/commands/guardrail.md;
     settings = {
       autoupdate = false;
       plugin = [
