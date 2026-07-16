@@ -47,6 +47,11 @@ in {
 
       Treat restarted or replacement agents as having no prior context. Always resend all information needed to complete the assignment independently
 
+      ## Testing Philosophy
+
+      Each test must protect one distinct, consequential observable behavior through a stable public boundary, remain valid across behavior-preserving rewrites, and cover a real risk not already covered; if no such risk exists, add no test.
+      Never test source text or implementation artifacts—including internal structure, exact calls, imports, commands, config literals, dependency versions, manifests, lockfiles, generated files, or other incidental representations—and never add smoke tests or duplicate coverage merely because code changed, TDD was used, or a workflow requests a test.
+
       ## Formatting Preferences
 
       - Date/time formatting:
