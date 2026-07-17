@@ -9,7 +9,7 @@
           publicKey = "a35ZSWhBNzPFkf1RCkg4E7cNnUdGGOr4CsA0EM65H0g=";
           presharedKeyFile = "/home/schulze/Nextcloud/secrets/wireguard/Felix-Wildfire-psk";
           allowedIPs = ["192.168.0.0/24"];
-          endpoint = "vpn.schulze.network:51820";
+          endpoint = "wg.schulze.network:51820";
           persistentKeepalive = 25;
         }
       ];
