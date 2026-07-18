@@ -44,6 +44,10 @@ in {
       - Ensures the final result matches actual intent
       - Builds shared understanding of the codebase and preferences
 
+      ## Generated Artifacts
+
+      Never hand-edit generator-owned output, such as OpenAPI-generated clients or Drizzle SQL migrations. Change its source of truth—the OpenAPI specification or Drizzle schema—and regenerate. If generator cannot express requirement, stop and ask before using an extension; verify clean regeneration produces no diff.
+
       ## Agent orchestration rule
 
       Treat restarted or replacement agents as having no prior context. Always resend all information needed to complete the assignment independently
