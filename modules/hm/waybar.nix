@@ -2,9 +2,10 @@
   lib,
   osConfig ? null,
   pkgs,
+  pkgs-unstable,
   ...
 }: let
-  scripts = import ../scripts {inherit pkgs;};
+  scripts = import ../scripts {inherit pkgs pkgs-unstable;};
   btopCommand = "${pkgs.ghostty}/bin/ghostty -e ${pkgs.btop}/bin/btop";
   wpctl = "${pkgs.wireplumber}/bin/wpctl";
   hostName =

@@ -1,4 +1,7 @@
-{pkgs}: rec {
+{
+  pkgs,
+  pkgs-unstable ? pkgs,
+}: rec {
   codexbar-cli = pkgs.callPackage ./codexbar-cli.nix {};
 
   amdgpu-force-profile = pkgs.writeShellApplication {
@@ -61,6 +64,7 @@
     name = "codexbar-waybar";
     runtimeInputs = [
       codexbar-cli
+      pkgs-unstable.codex
       pkgs.coreutils
       pkgs.jq
     ];
