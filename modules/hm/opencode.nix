@@ -39,6 +39,8 @@ in {
 
       **Do not assume.** Even if approach seems "good enough", check with user first when multiple viable options.
 
+      When user asks to follow existing or previous implementation, inspect exact precedent and understand why works before proposing solution. If reference unclear, ask targeted question; then apply same mechanism at narrowest matching scope.
+
       **Why Matters:**
 
       - Reduces wasted tokens on incorrect implementations
