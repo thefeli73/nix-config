@@ -1,5 +1,5 @@
 {pkgs-unstable, ...}: let
-  ohMyOpenCodeSlimPlugin = "oh-my-opencode-slim@2.2.3";
+  ohMyOpenCodeSlimPlugin = "oh-my-opencode-slim@2.2.4";
   dcpPlugin = "@tarquinen/opencode-dcp@3.1.14";
 in {
   programs.opencode = {
