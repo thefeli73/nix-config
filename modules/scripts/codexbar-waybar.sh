@@ -1,3 +1,7 @@
+unavailable() {
+  printf '%s\n' '{"text":"󰚩 …","tooltip":"Codex usage unavailable","class":"unavailable"}'
+}
+
 codexbar_bin="${CODEXBAR_BIN:-codexbar}"
 
 if ! usage_json="$(timeout --kill-after=5s 25s "$codexbar_bin" usage \
@@ -5,6 +9,7 @@ if ! usage_json="$(timeout --kill-after=5s 25s "$codexbar_bin" usage \
   --source oauth \
   --format json \
   --no-color)"; then
+  unavailable
   exit 0
 fi
 
@@ -77,4 +82,4 @@ jq --argjson current_time "${CODEXBAR_NOW:-null}" -ce '
       ),
       percentage: $remaining
     }
-' <<<"$usage_json" 2>/dev/null || true
+' <<<"$usage_json" 2>/dev/null || unavailable
