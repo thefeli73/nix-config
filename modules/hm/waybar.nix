@@ -52,7 +52,7 @@ in {
         };
         load = {
           interval = 5;
-          format = " {load1}";
+          format = " {load1:0.1f}";
           "on-click" = btopCommand;
         };
         memory = {
