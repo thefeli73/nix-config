@@ -47,7 +47,7 @@ in {
         workspace_swipe_distance = 200;
         workspace_swipe_min_speed_to_force = 0;
       };
-      gesture = "3, horizontal, workspace";
+      gesture = "3, vertical, workspace";
 
       "$mod" = "SUPER";
       "$terminal" = "ghostty";
