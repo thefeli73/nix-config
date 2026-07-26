@@ -39,6 +39,13 @@
     # Intel CPU overheating support
     thermald.enable = true;
 
+    logind.settings.Login = {
+      HandleLidSwitch = "suspend";
+      HandleLidSwitchExternalPower = "suspend";
+      HandleLidSwitchDocked = "suspend";
+      LidSwitchIgnoreInhibited = true;
+    };
+
     # Enable CUPS
     printing = {
       enable = true;
