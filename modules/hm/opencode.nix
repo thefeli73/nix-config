@@ -28,7 +28,7 @@ in {
     context = ''
       # AGENTS.md
 
-      In general, attempt solve problem as minimal & elegant as possible.
+      Generally, attempt solve problems as minimal & elegant as possible.
 
       ## Ask Before Acting
 
@@ -41,24 +41,18 @@ in {
 
       When user asks to follow existing or previous implementation, inspect exact precedent and understand why works before proposing solution. If reference unclear, ask targeted question; then apply same mechanism at narrowest matching scope.
 
-      **Why Matters:**
-
-      - Reduces wasted tokens on incorrect implementations
-      - Save time avoiding redo cycles
-      - Ensure final result matches actual intent
-      - Build shared understanding of codebase and preferences
-
       ## Generated Artifacts
 
-      Never hand-edit generator-owned output, eg. OpenAPI-generated clients, Drizzle SQL migrations. Change source of truth: OpenAPI specification or Drizzle schema. Regenerate. If generator cannot express requirement, stop and ask before using extension; verify clean regeneration produces no diff.
+      Never hand-edit generator-owned output, eg. OpenAPI-generated clients, Drizzle SQL migrations.
 
-      ## Agent orchestration rule
+      ## Agent orchestration
 
-      Treat restarted/replacement agents having no prior context. Always resend all information needed to complete assignment independently.
+      - Treat restarted/replacement agents having no prior context. Always resend all information needed to complete assignment independently.
+      - Fresh agents have less bias and bloat, use new agents for new questions or when rechecking previous work. Reused agents can be stuck in their thinking and have confirmation bias.
 
       ## Testing Philosophy
 
-      Each test must protect one distinct, consequential observable behavior through stable public boundary, remain valid across behavior-preserving rewrites, cover real risk not already covered; if no such risk exists, add no test.
+      Each test must protect one distinct, consequential observable behavior through stable public boundary, remain valid across behavior-preserving rewrites, cover real risk not already covered. If no such risk exists, add no test.
       NEVER test source text or implementation artifacts: internal structure, exact calls, imports, commands, config literals, dependency versions, manifests, lockfiles, generated files, other incidental representations. Never add smoke tests or duplicate coverage merely because code changed, TDD was used, workflow requests test.
 
       ## Formatting Preferences
@@ -117,6 +111,10 @@ in {
       ### Boundaries
 
       Code/commits/PRs: write normal. "stop caveman" or "normal mode": revert. Level persist until changed or session end.
+
+      ## Documentation
+
+      For documentation, plans, readme, pull-requests, error messages, notices, getting-started (i.e. text that needs to be clear, not need a voice), ASD-STE100 Simplified Technical English (STE).
     '';
   };
 
