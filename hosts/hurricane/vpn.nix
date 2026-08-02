@@ -1,14 +1,14 @@
 {
   networking.wg-quick.interfaces = {
     wg-felix = {
-      address = ["10.8.0.4/24"];
+      address = ["10.8.0.4/24" "fdcc:ad94:bacf:61a4::cafe:5/128"];
       dns = ["192.168.0.128"];
       privateKeyFile = "/home/schulze/Nextcloud/secrets/wireguard/Felix-Hurricane-pk";
       peers = [
         {
           publicKey = "a35ZSWhBNzPFkf1RCkg4E7cNnUdGGOr4CsA0EM65H0g=";
           presharedKeyFile = "/home/schulze/Nextcloud/secrets/wireguard/Felix-Hurricane-psk";
-          allowedIPs = ["192.168.0.0/24"];
+          allowedIPs = ["0.0.0.0/0" "::/0"];
           endpoint = "wg.schulze.network:51820";
           persistentKeepalive = 25;
         }
