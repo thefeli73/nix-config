@@ -26,6 +26,10 @@ in {
     upower.enable = true; # Battery and power device monitoring
     power-profiles-daemon.enable = true; # CPU frequency scaling
 
+    # Storage integration for Nautilus
+    gvfs.enable = true;
+    udisks2.enable = true;
+
     # Hypridle, idle daemon
     hypridle.enable = true;
   };
