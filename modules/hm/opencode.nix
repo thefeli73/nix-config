@@ -2,6 +2,8 @@
   ohMyOpenCodeSlimPlugin = "oh-my-opencode-slim@2.2.14";
   dcpPlugin = "@tarquinen/opencode-dcp@3.1.14";
 in {
+  home.packages = [pkgs-unstable.opencode-desktop];
+
   programs.opencode = {
     enable = true;
     package = pkgs-unstable.opencode;
