@@ -32,7 +32,10 @@
 in {
   programs.waybar = {
     enable = true;
-    systemd.targets = ["graphical-session.target"];
+    systemd = {
+      enable = true;
+      targets = ["graphical-session.target"];
+    };
     settings = [
       {
         output = ["DP-3" "eDP-1"];
