@@ -16,8 +16,9 @@
       "xml"
       "astro"
       "nix"
+      "latex"
     ];
-    extraPackages = with pkgs; [alejandra nil];
+    extraPackages = with pkgs; [alejandra nil texlab texlive.combined.scheme-full];
     userSettings = {
       edit_predictions = {
         allow_data_collection = "no";
@@ -50,6 +51,7 @@
         xml = true;
         astro = true;
         nix = true;
+        latex = true;
       };
       autosave = "on_focus_change";
       format_on_save = "on";
@@ -74,6 +76,11 @@
             };
           };
         };
+        LaTeX = {
+          language_servers = ["texlab"];
+          formatter = "language_server";
+          format_on_save = "on";
+        };
         Markdown = {
           format_on_save = "on";
           extend_list_on_newline = true;
@@ -86,6 +93,23 @@
           initialization_options = {
             formatting = {
               command = ["alejandra" "--quiet" "--"];
+            };
+          };
+        };
+        texlab = {
+          settings = {
+            texlab = {
+              build = {
+                executable = "latexmk";
+                args = ["-pdf" "-interaction=nonstopmode" "-synctex=1" "%f"];
+                onSave = true;
+                forwardSearchAfter = true;
+              };
+              forwardSearch = {
+                executable = "zathura";
+                args = ["--synctex-forward" "%l:1:%f" "-x" "zed %%{input}:%%{line}" "%p"];
+              };
+              latexFormatter = "latexindent";
             };
           };
         };

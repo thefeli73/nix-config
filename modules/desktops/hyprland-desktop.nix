@@ -96,7 +96,7 @@ in {
       defaultApplications = {
         "default-web-browser" = "firefox.desktop";
         "application/json" = "dev.zed.Zed.desktop";
-        "application/pdf" = "firefox.desktop";
+        "application/pdf" = "org.pwmt.zathura.desktop";
         "application/x-yaml" = "dev.zed.Zed.desktop";
         "application/xhtml+xml" = "firefox.desktop";
         "application/yaml" = "dev.zed.Zed.desktop";
@@ -105,6 +105,7 @@ in {
         "text/plain" = "dev.zed.Zed.desktop";
         "text/xml" = "firefox.desktop";
         "text/x-nix" = "dev.zed.Zed.desktop";
+        "text/x-tex" = "dev.zed.Zed.desktop";
         "text/yaml" = "dev.zed.Zed.desktop";
         "x-scheme-handler/ftp" = "firefox.desktop";
         "x-scheme-handler/http" = "firefox.desktop";

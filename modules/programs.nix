@@ -99,6 +99,7 @@ in {
 
     # Audio / Visual
     loupe # Image viewer
+    zathura # PDF viewer
     pastel # generate, analyze, convert and manipulate colors
     inkscape # Vector editor
     krita # Image editor
