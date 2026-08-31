@@ -35,7 +35,7 @@
       "source": "coreyhaines31/marketingskills",
       "sourceType": "github",
       "skillPath": "skills/copywriting/SKILL.md",
-      "computedHash": "c8d63b1f77be04fd54981720de65697988810bd28331097dbe0aaf3e166d638a"
+      "computedHash": "779f05c8be67da475e6a7af78de3e0400b0038e371ce898dd6ff9d3331aab7db"
     },
     "cro": {
       "source": "coreyhaines31/marketingskills",
@@ -71,7 +71,7 @@
       "source": "mattpocock/skills",
       "sourceType": "github",
       "skillPath": "skills/productivity/grilling/SKILL.md",
-      "computedHash": "a16b2f661db6caf310d7e02dd0d069e597cb888873e210e66f641eae715c5f23"
+      "computedHash": "4dd886b0196bf43729d954ae326016f2bd9f5f79d892500b407c33a753362f14"
     },
     "marketing-psychology": {
       "source": "coreyhaines31/marketingskills",
@@ -83,25 +83,25 @@
       "source": "vercel/next.js",
       "sourceType": "github",
       "skillPath": "skills/next-cache-components-adoption/SKILL.md",
-      "computedHash": "48828a610ff29005390597d6baca6e92016efabe19733144fb3d0e7c7bbb9327"
+      "computedHash": "b6eddcf230b2a4d12929a234b53a3d91aceebeb3b5ad3588e42eae4f10abe6c5"
     },
     "next-cache-components-optimizer": {
       "source": "vercel/next.js",
       "sourceType": "github",
       "skillPath": "skills/next-cache-components-optimizer/SKILL.md",
-      "computedHash": "bb56d029b57617215a64283adff4a020b2484162234595a9e4cb3703dd9084bf"
+      "computedHash": "894d00267e8793b218eaa9c5b157ad1a57419a975baf4d9959e9633cfdd7cf49"
     },
     "next-dev-loop": {
       "source": "vercel/next.js",
       "sourceType": "github",
       "skillPath": "skills/next-dev-loop/SKILL.md",
-      "computedHash": "5b567d2e521056db6b8b37c46c6b2b9c72de5192c0daeb351c966d61e0702630"
+      "computedHash": "fcfd05ce87d9edafda2e454f3f998bc45cb96fa2a3b695a4c3c144a9a13e7c39"
     },
     "next-partial-prefetching-adoption": {
       "source": "vercel/next.js",
       "sourceType": "github",
       "skillPath": "skills/next-partial-prefetching-adoption/SKILL.md",
-      "computedHash": "d3d665fb981213406206138afd054261169b2ef511039c6a7dd0406af02dc500"
+      "computedHash": "b6373f5d9e18c4fcb9e1ce8b63dd76de62e7e3b6bad53961e5d6de4753a08c0c"
     },
     "ponytail": {
       "source": "dietrichgebert/ponytail",
@@ -113,7 +113,7 @@
       "source": "coreyhaines31/marketingskills",
       "sourceType": "github",
       "skillPath": "skills/pricing/SKILL.md",
-      "computedHash": "b413a03fe63cb2c09d288f8cee9dbc28c0cfa97faf59516abf219fe746e627ab"
+      "computedHash": "b3df24bd014388660fd2c19eef78b5063c7ca8cf67b471fe8d9f4fa6275f0715"
     },
     "react-doctor": {
       "source": "millionco/react-doctor",
@@ -161,7 +161,7 @@
       "source": "vercel-labs/agent-skills",
       "sourceType": "github",
       "skillPath": "skills/react-view-transitions/SKILL.md",
-      "computedHash": "b1be40dfc6e714612020c7583b574cc4c92a1b5bc185a7dd3eea5c0123653d1c"
+      "computedHash": "2033ef20681c90d4f93deee719e55e019c254e496d9bf80381c27cc539292001"
     },
     "verification-before-completion": {
       "source": "obra/superpowers",
