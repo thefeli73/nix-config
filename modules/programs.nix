@@ -24,6 +24,25 @@
       installation_mode = "force_installed";
     };
   };
+  firefox-drm = pkgs.symlinkJoin {
+    name = "firefox-drm";
+    paths = [
+      (pkgs.writeShellScriptBin "firefox-drm" ''
+        mkdir -p "$HOME/.mozilla/firefox/firefox-drm"
+        exec ${pkgs.lib.getBin pkgs.firefox}/bin/firefox \
+          --no-remote \
+          --profile "$HOME/.mozilla/firefox/firefox-drm" \
+          "$@"
+      '')
+      (pkgs.makeDesktopItem {
+        name = "firefox-drm";
+        desktopName = "Firefox (DRM)";
+        exec = "firefox-drm %U";
+        icon = "firefox";
+        categories = ["Network" "WebBrowser"];
+      })
+    ];
+  };
 in {
   # Common packages for ALL systems
   environment.systemPackages = with pkgs; [
@@ -87,6 +106,7 @@ in {
     sqlite
 
     # Common programs
+    firefox-drm
     ghostty
     nextcloud-client
     pkgs-unstable.signal-desktop
