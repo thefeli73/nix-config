@@ -4,7 +4,20 @@
 in {
   programs.opencode = {
     enable = true;
-    package = pkgs-unstable.opencode;
+    package = pkgs-unstable.opencode.overrideAttrs (old: {
+      patches =
+        (old.patches or [])
+        ++ [
+          (pkgs-unstable.fetchurl {
+            url = "https://github.com/anomalyco/opencode/commit/500c46ec79b818a44f7962e0707415ac3227c753.patch";
+            hash = "sha256-e+aRnmnmO4kRgIdWjqeL4ttLzcpXKU3/giW9xY3V9Q0=";
+          })
+          (pkgs-unstable.fetchurl {
+            url = "https://github.com/anomalyco/opencode/commit/02a167e048d3bd7299225068d79e4fce5c830d67.patch";
+            hash = "sha256-ADDTVlz3V5/GzkmLaMTIg5NDDF7Z8B6LJOTLAs/jhro=";
+          })
+        ];
+    });
     commands.guardrail = ./opencode/commands/guardrail.md;
     settings = {
       autoupdate = false;
