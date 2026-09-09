@@ -4,7 +4,7 @@
   "autoUpdate": false,
   "pruneNotification": "minimal",
   "compress": {
-    "maxContextLimit": 230000,
-    "minContextLimit": 160000
+    "maxContextLimit": 350000,
+    "minContextLimit": 200000
   }
 }
