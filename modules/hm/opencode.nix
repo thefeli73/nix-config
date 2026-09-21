@@ -30,6 +30,10 @@ in {
 
       Generally, attempt solve problems as minimal & elegant as possible.
 
+      ## Delivery scope
+
+      Before expanding supporting work for an implementation task, the agent must identify the unmet requirement or concrete risk and set a checkable stopping condition. The agent must defer optional improvements and obtain user approval before expanding delivery scope or completion criteria. Required checks remain mandatory.
+
       ## Ask Before Acting
 
       **Always ask clarifying questions when:**
