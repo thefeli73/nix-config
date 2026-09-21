@@ -5,7 +5,7 @@
       "source": "obra/superpowers",
       "sourceType": "github",
       "skillPath": "skills/brainstorming/SKILL.md",
-      "computedHash": "b58d55b64742ecd37923985ec7bdfbe678ffbcb9895562abd28c0a32dcacd7fb"
+      "computedHash": "b95dc657c5dd79caf7340ee6dead6faf2ce2d1cc613352a027fa8993966b41b7"
     },
     "code-simplification": {
       "source": "addyosmani/agent-skills",
@@ -59,7 +59,7 @@
       "source": "anthropics/skills",
       "sourceType": "github",
       "skillPath": "skills/frontend-design/SKILL.md",
-      "computedHash": "4eabc66183767153e404b39d1b839b1c37f2d82d86f0a0d7e880a579d8d62336"
+      "computedHash": "89496d5dd00f4810205f351759594fc2742bf8eea85a2f2b2d1de59f4bd91576"
     },
     "grill-with-docs": {
       "source": "mattpocock/skills",
@@ -83,25 +83,25 @@
       "source": "vercel/next.js",
       "sourceType": "github",
       "skillPath": "skills/next-cache-components-adoption/SKILL.md",
-      "computedHash": "b6eddcf230b2a4d12929a234b53a3d91aceebeb3b5ad3588e42eae4f10abe6c5"
+      "computedHash": "00bb30ef1b6cdb3946213fa613d3b5a366c13ea243e91b814b61034a9154c0f4"
     },
     "next-cache-components-optimizer": {
       "source": "vercel/next.js",
       "sourceType": "github",
       "skillPath": "skills/next-cache-components-optimizer/SKILL.md",
-      "computedHash": "894d00267e8793b218eaa9c5b157ad1a57419a975baf4d9959e9633cfdd7cf49"
+      "computedHash": "60f603cd578249e5bfc6e192032b20bf7e74764554bdd319fdc543be0b563052"
     },
     "next-dev-loop": {
       "source": "vercel/next.js",
       "sourceType": "github",
       "skillPath": "skills/next-dev-loop/SKILL.md",
-      "computedHash": "fcfd05ce87d9edafda2e454f3f998bc45cb96fa2a3b695a4c3c144a9a13e7c39"
+      "computedHash": "e76687a3348c55045964390be844925baf481d4751a39ea20b299c12ca5fba28"
     },
     "next-partial-prefetching-adoption": {
       "source": "vercel/next.js",
       "sourceType": "github",
       "skillPath": "skills/next-partial-prefetching-adoption/SKILL.md",
-      "computedHash": "b6373f5d9e18c4fcb9e1ce8b63dd76de62e7e3b6bad53961e5d6de4753a08c0c"
+      "computedHash": "ed8e8106385248d02a9da25f66e5434202b98ae131873abd0a70851e2ad061f5"
     },
     "ponytail": {
       "source": "dietrichgebert/ponytail",
@@ -125,19 +125,19 @@
       "source": "shadcn/ui",
       "sourceType": "github",
       "skillPath": "skills/shadcn/SKILL.md",
-      "computedHash": "c1a68ee06a668aced9ab2b5fbdea5f989864123794eb2e056b339a072dbb7f10"
+      "computedHash": "f615de216e085a84e31593ad0fa9062232adc40cd87b7c7ab2b8e49abf6500be"
     },
     "test-driven-development": {
       "source": "obra/superpowers",
       "sourceType": "github",
       "skillPath": "skills/test-driven-development/SKILL.md",
-      "computedHash": "a4126a9c5f17be3c228aa9e5755898ade283448b86099f56f40852e8c14532be"
+      "computedHash": "3cfe4ebb6fa7288f668d87880d279c8e48f7a92b63415e296857060f5ce22e05"
     },
     "unslop": {
       "source": "cursor/plugins",
       "sourceType": "github",
       "skillPath": "pstack/skills/unslop/SKILL.md",
-      "computedHash": "3dfc2afeda677e12c6065497a40df7d895859de1c7d1cffb899b1559d129fe4f"
+      "computedHash": "3b8676e7461f44026b4d555ff0f3369a761df6033b9b9e2cd5152693cb20fbb2"
     },
     "vercel-react-best-practices": {
       "source": "vercel-labs/agent-skills",
@@ -179,7 +179,7 @@
       "source": "obra/superpowers",
       "sourceType": "github",
       "skillPath": "skills/writing-plans/SKILL.md",
-      "computedHash": "27c75044e444a4fc68798c3f799dc23eaff3a6bfabff32e6ad75bb20f881c094"
+      "computedHash": "cc8517a6bc569a0633b585649291688217b8a65d547c2ac5fa0923e56ecffa8c"
     }
   }
 }
