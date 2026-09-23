@@ -73,6 +73,7 @@ in {
     btop
     lazygit
     tea
+    glab
     alejandra
     fastfetch
     astroterm # Star map/planetarium
