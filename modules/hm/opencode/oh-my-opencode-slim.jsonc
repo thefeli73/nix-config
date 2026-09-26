@@ -8,9 +8,9 @@
 	       "code-simplification",
 	       "codebase-design"
        ],     "mcps": [] },
-       "librarian":   { "model": "openai/gpt-6-astra",                "variant": "low",    "skills": [],                          "mcps": [ "websearch", "context7", "grep_app" ] },
-       "explorer":    { "model": "openai/gpt-6-astra",                "variant": "low",    "skills": [],                          "mcps": [] },
-       "designer":    { "model": "openai/gpt-6-astra",                "variant": "medium", "skills": [
+       "librarian":   { "model": "openai/gpt-6-sol",                  "variant": "low",    "skills": [],                          "mcps": [ "websearch", "context7", "grep_app" ] },
+       "explorer":    { "model": "openai/gpt-6-sol",                  "variant": "low",    "skills": [],                          "mcps": [] },
+       "designer":    { "model": "openai/gpt-6-astra",                "variant": "low",    "skills": [
 	       "copywriting",
 	       "cro",
 	       "frontend-design",
@@ -24,7 +24,7 @@
 	       "verification-before-completion",
 	       "web-design-guidelines"
        ], "mcps": [] },
-       "fixer":       { "model": "openai/gpt-6-astra",                "variant": "medium", "skills": [
+       "fixer":       { "model": "openai/gpt-6-astra",                "variant": "low",    "skills": [
 	       "expo-dev-client",
 	       "next-cache-components-optimizer",
 	       "next-dev-loop",
