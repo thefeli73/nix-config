@@ -82,7 +82,6 @@ in {
     gitkraken
     git-filter-repo
     git-secrets
-    pkgs-unstable.worktrunk
 
     bun
     python3
