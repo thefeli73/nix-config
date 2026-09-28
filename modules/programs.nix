@@ -127,6 +127,7 @@ in {
     darktable # Raw editor
     imagemagick # Image processing
     mpv # Video player
+    yt-dlp # Media downloader
     cava # Audio visualizer
     wireplumber # Audio server
     pavucontrol # Audio control
