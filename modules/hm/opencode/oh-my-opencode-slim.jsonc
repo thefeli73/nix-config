@@ -3,14 +3,14 @@
   "autoUpdate": false,
   "presets": {
     "openai": {
-      "orchestrator": { "model": "openai/gpt-6-astra",                "variant": "medium", "skills": ["*"],                       "mcps": [ "*", "!context7"] },
+      "orchestrator": { "model": "openai/gpt-6.1-sol",                "variant": "medium", "skills": ["*"],                       "mcps": [ "*", "!context7"] },
        "oracle":      { "model": "openai/gpt-6-astra",                "variant": "high",   "skills": [
 	       "code-simplification",
 	       "codebase-design"
        ],     "mcps": [] },
        "librarian":   { "model": "openai/gpt-6.1-sol",                "variant": "low",    "skills": [],                          "mcps": [ "websearch", "context7", "grep_app" ] },
        "explorer":    { "model": "openai/gpt-6.1-sol",                "variant": "low",    "skills": [],                          "mcps": [] },
-       "designer":    { "model": "openai/gpt-6.1-sol",                "variant": "medium", "skills": [
+       "designer":    { "model": "openai/gpt-6.1-sol",                "variant": "high",   "skills": [
 	       "copywriting",
 	       "cro",
 	       "frontend-design",
