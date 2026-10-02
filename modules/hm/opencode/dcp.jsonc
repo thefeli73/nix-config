@@ -3,6 +3,9 @@
   "enabled": true,
   "autoUpdate": false,
   "pruneNotification": "minimal",
+  "experimental": {
+    "allowSubAgents": true
+  },
   "compress": {
     "maxContextLimit": 350000,
     "minContextLimit": 200000
