@@ -88,7 +88,7 @@ in {
     ansible
     hugo
     nodejs_24
-    pnpm
+    pnpm_12
     cypress
     playwright
     playwright-driver.browsers
