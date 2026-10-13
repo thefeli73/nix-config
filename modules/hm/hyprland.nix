@@ -64,6 +64,8 @@ in {
         allow_tearing = true;
       };
 
+      render.direct_scanout = 2; # Automatically attempt direct scanout for game content.
+
       decoration = {
         rounding = 10;
         rounding_power = 3.5;
