@@ -34,6 +34,10 @@ in {
 
       Before expanding supporting work for implementation, agent must identify unmet requirement or concrete risk and set checkable stopping condition. Agent must avoid optional improvements (nice to haves). Obtain user approval before expanding delivery scope or completion criteria if such expansion is NOT necessary, to avoid feature creep and scope creep. Required checks remain mandatory.
 
+      ## Clean up
+
+      Clean up after work slice done & accepted, noone does it for you. Don't let leftovers accumulate.
+
       ## Ask Before Acting
 
       **Always ask clarifying questions when:**
@@ -51,6 +55,7 @@ in {
 
       ## Agent orchestration
 
+      - Multiple agents: you can use more than 1 of each subagent type, eg. 3 explorer agents. Agent is only instance of a type.
       - Restarted/replacement agents: no prior context retained. Send fresh subagents all information needed to complete assignment independently.
       - *Fresh* agents: less bias and less contextbloat. Use new/fresh agents frequently and for new questions or when rechecking previous work. Reused/old agents can be stuck in their thinking patterns or solution approach, have confirmation bias.
       - Subagents: limited contextwindow; cannot be used indefinitely.
