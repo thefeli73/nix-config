@@ -73,7 +73,7 @@ in {
           enabled = true;
           ignore_opacity = false;
           size = 3;
-          passes = 2;
+          passes = 1;
           popups = true;
         };
         shadow.enabled = false;
