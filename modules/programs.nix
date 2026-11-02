@@ -53,6 +53,7 @@ in {
     wget
     whois
     dig
+    intermodal
 
     # files
     unzip
