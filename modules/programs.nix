@@ -118,6 +118,8 @@ in {
     remmina
 
     # Audio / Visual
+    pkgs-unstable.audacity
+    pkgs-unstable.lame
     loupe # Image viewer
     zathura # PDF viewer
     pastel # generate, analyze, convert and manipulate colors
