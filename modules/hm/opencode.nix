@@ -40,14 +40,13 @@ in {
 
       ## Ask Before Acting
 
-      **Always ask clarifying questions when:**
-
-      - Request vague/ambiguous
-      - Multiple reasonable approaches solve problem
-
-      **Do not assume.** Even if approach seems "good enough", check with user first when multiple viable options.
+      Always ask clarifying questions when request vague/ambiguous.
 
       When user asks to follow existing or previous implementation, inspect exact precedent and understand why works before proposing solution. If reference unclear, ask targeted question; then apply same mechanism at narrowest matching scope.
+
+      Ask about material scope, product, safety, cost, or irreversible decisions.
+
+      Choose ordinary reversible implementation details within approved bounds yourself.
 
       ## Generated Artifacts
 
