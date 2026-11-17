@@ -34,6 +34,8 @@ in {
 
       Before expanding supporting work for implementation, agent must identify unmet requirement or concrete risk and set checkable stopping condition. Agent must avoid optional improvements (nice to haves). Obtain user approval before expanding delivery scope or completion criteria if such expansion is NOT necessary, to avoid feature creep and scope creep. Required checks remain mandatory.
 
+      For multi-delivery work, the lead agent must keep one completion record in the authoritative issue or plan. Mark each approved criterion verified, remaining, blocked, or unverified, with evidence or next action. Update after each delivery and before choosing work, reporting gaps, or estimating time. Separate missing evidence from missing implementation. Estimate only when recorded scope supports it.
+
       ## Clean up
 
       Clean up after work slice done & accepted, noone does it for you. Don't let leftovers accumulate.
