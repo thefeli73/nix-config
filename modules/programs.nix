@@ -95,7 +95,7 @@ in {
     playwright-driver.browsers
     pkgs-unstable.agent-browser # Headless browser automation CLI for AI agents
     docker-buildx
-    pgadmin4-desktopmode
+    pkgs-unstable.pgadmin4-desktopmode # Includes the fix for pg_attver in generated SQL
     postgresql_15
     beam27Packages.erlang
     beam27Packages.erlfmt
