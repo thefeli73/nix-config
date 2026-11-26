@@ -5,175 +5,204 @@
       "source": "obra/superpowers",
       "sourceType": "github",
       "skillPath": "skills/brainstorming/SKILL.md",
-      "computedHash": "a7424777b7f81e3eb9b4556d29fe233553736d8255780d3e1feea190fef61fef"
+      "computedHash": "a7424777b7f81e3eb9b4556d29fe233553736d8255780d3e1feea190fef61fef",
+      "commit": "22f0b463e7a5e579904dd6211a520321035526f7"
     },
     "codebase-design": {
       "source": "mattpocock/skills",
       "sourceType": "github",
       "skillPath": "skills/engineering/codebase-design/SKILL.md",
-      "computedHash": "d40f025dc1b0f2020663260f38f2bcb8d6ed3523afb11e5fda624b01238677e8"
+      "computedHash": "d40f025dc1b0f2020663260f38f2bcb8d6ed3523afb11e5fda624b01238677e8",
+      "commit": "6f7f7831a625f040a8e06a0e7954826b87ce775a"
     },
     "codemap": {
       "source": "alvinunreal/oh-my-opencode-slim",
       "sourceType": "github",
       "skillPath": "src/skills/codemap/SKILL.md",
-      "computedHash": "84c8c2baffa69e17b257e015b264b8305b63529eaaa937325275222afaa2d5bd"
+      "computedHash": "4865202e4bba8207280f6011a81f73602a9b982639a4861fc07940e3189196b9",
+      "commit": "22751840b97c9f5d4d4d90530a0d332a2a42088a"
     },
     "copy-editing": {
       "source": "coreyhaines31/marketingskills",
       "sourceType": "github",
       "skillPath": "skills/copy-editing/SKILL.md",
-      "computedHash": "faf2d2cb156cdebe9b7ad16df2d25e42494e6069b33f237f5cdd24b04853636b"
+      "computedHash": "faf2d2cb156cdebe9b7ad16df2d25e42494e6069b33f237f5cdd24b04853636b",
+      "commit": "8fd2fcade2fd6629026e9dfe6d133b55b36968b9"
     },
     "copywriting": {
       "source": "coreyhaines31/marketingskills",
       "sourceType": "github",
       "skillPath": "skills/copywriting/SKILL.md",
-      "computedHash": "b948ac03ec661626b8fc198786ecf761a97e0dacf626cb90d3b5016e9e3baf2f"
+      "computedHash": "6b86be15d7e8397c27d339fbcbf72718854f96f096ca617889e45b5b8174c393",
+      "commit": "8fd2fcade2fd6629026e9dfe6d133b55b36968b9"
     },
     "cro": {
       "source": "coreyhaines31/marketingskills",
       "sourceType": "github",
       "skillPath": "skills/cro/SKILL.md",
-      "computedHash": "cc8040529654755144b4dedce5f075ead4667969978257596a05fa4282a5b42f"
+      "computedHash": "cc8040529654755144b4dedce5f075ead4667969978257596a05fa4282a5b42f",
+      "commit": "8fd2fcade2fd6629026e9dfe6d133b55b36968b9"
     },
     "domain-modeling": {
       "source": "mattpocock/skills",
       "sourceType": "github",
       "skillPath": "skills/engineering/domain-modeling/SKILL.md",
-      "computedHash": "b78689833404148c769077355e12dbe5ad996a158a1e21e58ddf169e439d9d8c"
+      "computedHash": "7d4453f798d7785c945972abe0871493caf884fa3ee82725cc71e783de6176ea",
+      "commit": "6f7f7831a625f040a8e06a0e7954826b87ce775a"
     },
     "expo-dev-client": {
       "source": "expo/skills",
       "sourceType": "github",
       "skillPath": "plugins/expo/skills/expo-dev-client/SKILL.md",
-      "computedHash": "e7223bdb38651c4edc41055b0541a9ea42545f19a6cc224a9f8beed1277031b3"
+      "computedHash": "e04d875eff8cbe80ff8179179eea3ed82865c9dbb9eb3172c831dcb4d94e632c",
+      "commit": "6d0506afe7df9334b60ad4b1ceb35969836f01a0"
     },
     "frontend-design": {
       "source": "anthropics/skills",
       "sourceType": "github",
       "skillPath": "skills/frontend-design/SKILL.md",
-      "computedHash": "83485963700bcf11d5bf78118facb301676b69d918fee2e45a95e7f1a2840f6c"
+      "computedHash": "83485963700bcf11d5bf78118facb301676b69d918fee2e45a95e7f1a2840f6c",
+      "commit": "e4bb5d960d87126ff3b3a8af1a104b7db67560ba"
     },
     "grill-with-docs": {
       "source": "mattpocock/skills",
       "sourceType": "github",
       "skillPath": "skills/engineering/grill-with-docs/SKILL.md",
-      "computedHash": "02e258f41d210f9b2e7cce9faf62b3c59e8fcebe5d2736369c3cd07d471324f8"
+      "computedHash": "02e258f41d210f9b2e7cce9faf62b3c59e8fcebe5d2736369c3cd07d471324f8",
+      "commit": "6f7f7831a625f040a8e06a0e7954826b87ce775a"
     },
     "grilling": {
       "source": "mattpocock/skills",
       "sourceType": "github",
       "skillPath": "skills/productivity/grilling/SKILL.md",
-      "computedHash": "485451958784497cd4c4dbea13cb5bbb579da58fac0d0e45f3bcb310fab68ac7"
+      "computedHash": "485451958784497cd4c4dbea13cb5bbb579da58fac0d0e45f3bcb310fab68ac7",
+      "commit": "6f7f7831a625f040a8e06a0e7954826b87ce775a"
     },
     "marketing-psychology": {
       "source": "coreyhaines31/marketingskills",
       "sourceType": "github",
       "skillPath": "skills/marketing-psychology/SKILL.md",
-      "computedHash": "9542dca644cf683b8d171b962054679a51b2e740bfad0692c2edcfd85d129c9c"
+      "computedHash": "9542dca644cf683b8d171b962054679a51b2e740bfad0692c2edcfd85d129c9c",
+      "commit": "8fd2fcade2fd6629026e9dfe6d133b55b36968b9"
     },
     "next-cache-components-adoption": {
       "source": "vercel/next.js",
       "sourceType": "github",
       "skillPath": "skills/next-cache-components-adoption/SKILL.md",
-      "computedHash": "2bf109a8693bb67ba45e05a531021bda876fafe048e764ffffe1bb1c460ec286"
+      "computedHash": "004440bc8cfbf30291fc9564e14ade7874c886189e2df3a4bcbb7c937ef58b07",
+      "commit": "142162b801a6fcaf5d7c9f3c576a63b1a2b9f057"
     },
     "next-cache-components-optimizer": {
       "source": "vercel/next.js",
       "sourceType": "github",
       "skillPath": "skills/next-cache-components-optimizer/SKILL.md",
-      "computedHash": "88f1a9480dbb67bca44060e50fc45559d1bd70c2e7e766a44d015568634a9868"
+      "computedHash": "97a5b125e85aff3ebe90626b887cf016f4de33c01b479a42758bd57fe233db4c",
+      "commit": "142162b801a6fcaf5d7c9f3c576a63b1a2b9f057"
     },
     "next-dev-loop": {
       "source": "vercel/next.js",
       "sourceType": "github",
       "skillPath": "skills/next-dev-loop/SKILL.md",
-      "computedHash": "abe7b5e77b26f95ab21304b10ce1003a41e4e75b601505d76c8a0294e33a450d"
+      "computedHash": "78ebafaabaa8fd170da34957943f5845436f66c04daf85a93fc759f38a50a4ca",
+      "commit": "142162b801a6fcaf5d7c9f3c576a63b1a2b9f057"
     },
     "next-partial-prefetching-adoption": {
       "source": "vercel/next.js",
       "sourceType": "github",
       "skillPath": "skills/next-partial-prefetching-adoption/SKILL.md",
-      "computedHash": "a9ac6534a71de4bc7a43b84fbaa42e1ddeb091fe8db71c9c97038d949df22e0f"
+      "computedHash": "846465406dbe131257bfeba359e9966973a63c19b732cc5551f630851a9435cc",
+      "commit": "142162b801a6fcaf5d7c9f3c576a63b1a2b9f057"
     },
     "ponytail": {
       "source": "dietrichgebert/ponytail",
       "sourceType": "github",
       "skillPath": "skills/ponytail/SKILL.md",
-      "computedHash": "56d72677aca02689ac89bd48734e8c19b40ab86716d1257eaf5f1238b43cda6b"
+      "computedHash": "56d72677aca02689ac89bd48734e8c19b40ab86716d1257eaf5f1238b43cda6b",
+      "commit": "ebd8654c2c627f721eb8f9c0d1bd4090a29f9e10"
     },
     "pricing": {
       "source": "coreyhaines31/marketingskills",
       "sourceType": "github",
       "skillPath": "skills/pricing/SKILL.md",
-      "computedHash": "9bea1819645df0b2d95429ecb64745ef5d2940b0bb161a40131eae3db8222813"
+      "computedHash": "9bea1819645df0b2d95429ecb64745ef5d2940b0bb161a40131eae3db8222813",
+      "commit": "8fd2fcade2fd6629026e9dfe6d133b55b36968b9"
     },
     "react-doctor": {
       "source": "millionco/react-doctor",
       "sourceType": "github",
       "skillPath": "skills/react-doctor/SKILL.md",
-      "computedHash": "c67a5188fbfee848cbd358a570d946e4612e440dd1f15715cc57c73d1acadd5a"
+      "computedHash": "fb85d8da83256d13f6280994fd32151e50121da25c44887a05515d5e98e67e02",
+      "commit": "b6ba66ef427bf81995555e380eeba679f8b5d305"
     },
     "shadcn": {
       "source": "shadcn/ui",
       "sourceType": "github",
       "skillPath": "skills/shadcn/SKILL.md",
-      "computedHash": "388962d16c7a4f13aaeee0d8f128e50a87df8553d42ef7988c39c0e1c74a40e8"
+      "computedHash": "388962d16c7a4f13aaeee0d8f128e50a87df8553d42ef7988c39c0e1c74a40e8",
+      "commit": "0e5b2e621a9ee4cf6a604bbe6c5c0d5b70561eb4"
     },
     "test-driven-development": {
       "source": "obra/superpowers",
       "sourceType": "github",
       "skillPath": "skills/test-driven-development/SKILL.md",
-      "computedHash": "2782702b2cf69ace085ed30d067b6f8bfd2d777ad51770fc5bdae9cb5c1b5c04"
+      "computedHash": "2782702b2cf69ace085ed30d067b6f8bfd2d777ad51770fc5bdae9cb5c1b5c04",
+      "commit": "22f0b463e7a5e579904dd6211a520321035526f7"
     },
     "unslop": {
       "source": "cursor/plugins",
       "sourceType": "github",
       "skillPath": "pstack/skills/unslop/SKILL.md",
-      "computedHash": "204151f4d5cb9adf24f81e4b4f4142b91077d332e71c78511ce7a6a6083660da"
+      "computedHash": "4bbcb6719a8f0f6f7fb46752e1c360791d7758a837708e300a06fc7d6907938c",
+      "commit": "b7b93c36be9bcc36a74db438e0fd385d660bc559"
     },
     "vercel-react-best-practices": {
       "source": "vercel-labs/agent-skills",
       "sourceType": "github",
       "skillPath": "skills/react-best-practices/SKILL.md",
-      "computedHash": "7991ed4fbecdac23f47c1a40c243e00a212a9e7f3604db93959b3ae11dffe299"
+      "computedHash": "7991ed4fbecdac23f47c1a40c243e00a212a9e7f3604db93959b3ae11dffe299",
+      "commit": "5a37a6329fbad3666c3207392a6a7c0110e92efb"
     },
     "vercel-react-native-skills": {
       "source": "vercel-labs/agent-skills",
       "sourceType": "github",
       "skillPath": "skills/react-native-skills/SKILL.md",
-      "computedHash": "4c160f1f4e623b989cadb71f42a0813be574d172acf5e32a6411c87f3e28c05a"
+      "computedHash": "4c160f1f4e623b989cadb71f42a0813be574d172acf5e32a6411c87f3e28c05a",
+      "commit": "5a37a6329fbad3666c3207392a6a7c0110e92efb"
     },
     "vercel-react-view-transitions": {
       "source": "vercel-labs/agent-skills",
       "sourceType": "github",
       "skillPath": "skills/react-view-transitions/SKILL.md",
-      "computedHash": "d5bdffc1f132ae0d6d9260c260ae206d48cd83cb148e3e3b75fc1a3b94b249fa"
+      "computedHash": "d5bdffc1f132ae0d6d9260c260ae206d48cd83cb148e3e3b75fc1a3b94b249fa",
+      "commit": "5a37a6329fbad3666c3207392a6a7c0110e92efb"
     },
     "verification-before-completion": {
       "source": "obra/superpowers",
       "sourceType": "github",
       "skillPath": "skills/verification-before-completion/SKILL.md",
-      "computedHash": "09b0e3a4689c1c38a3b8fc6ef57a1d4165aa33c0013d546dbde9dd348941a319"
+      "computedHash": "09b0e3a4689c1c38a3b8fc6ef57a1d4165aa33c0013d546dbde9dd348941a319",
+      "commit": "22f0b463e7a5e579904dd6211a520321035526f7"
     },
     "web-design-guidelines": {
       "source": "vercel-labs/agent-skills",
       "sourceType": "github",
       "skillPath": "skills/web-design-guidelines/SKILL.md",
-      "computedHash": "4f68ae07187fb0d1fb78c88b503d089da4cf5a9d9625d1f2e425b1590bf96d92"
+      "computedHash": "5994e4cfd86144903d2ba750f862b9e36af15e3297aac983679e347b99f6cb71",
+      "commit": "5a37a6329fbad3666c3207392a6a7c0110e92efb"
     },
     "writing-for-agents": {
       "source": "mattpocock/skills",
       "sourceType": "github",
       "skillPath": "skills/productivity/writing-for-agents/SKILL.md",
-      "computedHash": "e79a2476b2417b228922453478d9505a6b9af19f3a412e560728ce62ed3555ca"
+      "computedHash": "e79a2476b2417b228922453478d9505a6b9af19f3a412e560728ce62ed3555ca",
+      "commit": "6f7f7831a625f040a8e06a0e7954826b87ce775a"
     },
     "writing-plans": {
       "source": "obra/superpowers",
       "sourceType": "github",
       "skillPath": "skills/writing-plans/SKILL.md",
-      "computedHash": "ef082ddb5354d736059397133b3682e8a0c85c57906affe47c9da354cbb7c91e"
+      "computedHash": "ef082ddb5354d736059397133b3682e8a0c85c57906affe47c9da354cbb7c91e",
+      "commit": "22f0b463e7a5e579904dd6211a520321035526f7"
     }
   }
 }
